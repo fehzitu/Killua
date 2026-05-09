@@ -1,7 +1,7 @@
 {
-  "name": "king-bot",
+  "name": "killua",
   "version": "1.0.0",
-  "description": "",
+  "description": "Js discord bot",
   "main": "index.js",
   "scripts": {
     "start": "node src/index.js",
@@ -10,16 +10,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fehzitu/King-bot.git"
+    "url": "git+https://github.com/fehzitu/Killua.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "bugs": {
-    "url": "https://github.com/fehzitu/King-bot/issues"
+    "url": "https://github.com/fehzitu/Killua/issues"
   },
-  "homepage": "https://github.com/fehzitu/King-bot#readme",
+  "homepage": "https://github.com/fehzitu/Killua#readme",
   "dependencies": {
     "@discordjs/builders": "^1.14.1",
     "@discordjs/rest": "^2.6.1",
