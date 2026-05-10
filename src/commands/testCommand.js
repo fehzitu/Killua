@@ -1,11 +1,11 @@
 // command
 const { SlashCommandBuilder } = require('@discordjs/builders');
-const { MessageEmbed, MessageActionRow, MessageButton } = require('discord.js');
+const { MessageActionRow } = require('discord.js');
 
 // import custom functions
 const createEmbed = require('../utils/embed.js');
-const createButton = require('../utils/button.js');
 const createSelect = require('../utils/select.js');
+const createButton = require('../utils/button.js');
 
 module.exports = {
     // slash data
@@ -22,24 +22,45 @@ module.exports = {
         const user = ctx.user || ctx.author;
 
         // embed
-        const embed = createEmbed({user});
+        const embed = createEmbed({ user });
 
-        // button
-        const button = createButton({user});
+        embed.setTitle('🏠 Página inicial');
+        embed.setDescription('Escolha uma página no seletor abaixo.');
 
         // select
-        const select = createSelect({user});
+        const select = createSelect({
+            customId: 'dashboardSelect',
+            user,
+            placeholder: 'Escolha uma página',
+            optionsList: [
+                {
+                    label: 'Perfil',
+                    description: 'Ver perfil do usuário',
+                    value: 'profile'
+                },
+                {
+                    label: 'Configurações',
+                    description: 'Ver configurações',
+                    value: 'settings'
+                }
+            ]
+        });
 
-        // row1
-        const row1 = new MessageActionRow().addComponents(button);
-        
-        // row2
-        const row2 = new MessageActionRow().addComponents(select);
+        // back button
+        const backButton = createButton({
+            customId: 'dashboardBack',
+            label: '↩️ Voltar',
+            user
+        }).setDisabled(true);
+
+        // rows
+        const selectRow = new MessageActionRow().addComponents(select);
+        const buttonRow = new MessageActionRow().addComponents(backButton);
 
         // reply
-        return ctx.reply({ 
+        return ctx.reply({
             embeds: [embed],
-            components: [row1, row2]
+            components: [selectRow, buttonRow]
         });
     }
 };
