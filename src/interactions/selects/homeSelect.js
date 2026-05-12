@@ -6,6 +6,9 @@ const createEmbed = require('../../utils/embed.js');
 const createButton = require('../../utils/button.js');
 const createSelect = require('../../utils/select.js');
 
+// import custom pages
+const home = require('../../pages/homePage.js');
+
 module.exports = {
     customId: 'homeSelect',
     async execute(interaction) {
@@ -22,19 +25,19 @@ module.exports = {
         // get selected value
         const value = interaction.values?.[0];
 
-        // create embed
-        const embed = createEmbed({ user: interaction.user });
+        // embed
+        let embed = home(interaction.user);
 
         // profile page
         if (value === 'profile') {
-            embed
+            embed = createEmbed({ user: interaction.user })
                 .setTitle('👤 Perfil')
                 .setDescription('Essa é a página de perfil.');
         };
 
         // settings page
         if (value === 'settings') {
-            embed
+            embed = createEmbed({ user: interaction.user })
                 .setTitle('⚙️ Configurações')
                 .setDescription('Essa é a página de configurações.');
         };

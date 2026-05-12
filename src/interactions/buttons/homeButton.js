@@ -2,9 +2,11 @@
 const { MessageActionRow } = require('discord.js');
 
 // import custom functions
-const createEmbed = require('../../utils/embed.js');
 const createButton = require('../../utils/button.js');
 const createSelect = require('../../utils/select.js');
+
+// import custom pages
+const home = require('../../pages/homePage.js');
 
 module.exports = {
     customId: 'homeButton',
@@ -20,11 +22,7 @@ module.exports = {
         };
 
         // home embed
-        const embed = createEmbed({ user: interaction.user });
-
-        embed
-            .setTitle('🏠 Página inicial')
-            .setDescription('Escolha uma página no seletor abaixo.');
+        const embed = home(interaction.user);
 
         // select
         const homeSelect = createSelect({
