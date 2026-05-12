@@ -7,7 +7,7 @@ const createButton = require('../../utils/button.js');
 const createSelect = require('../../utils/select.js');
 
 module.exports = {
-    customId: 'dashboardSelect',
+    customId: 'menuSelect',
     async execute(interaction) {
         const [id, ownerId] = interaction.customId.split(':');
 
@@ -40,8 +40,8 @@ module.exports = {
         };
 
         // recreate select
-        const select = createSelect({
-            customId: 'dashboardSelect',
+        const menuSelect = createSelect({
+            customId: 'menuSelect',
             user: interaction.user,
             placeholder: 'Escolha uma página',
             optionsList: [
@@ -59,15 +59,15 @@ module.exports = {
         });
 
         // back button
-        const backButton = createButton({
-            customId: 'dashboardBack',
-            label: '↩️ Voltar',
+        const menuButton = createButton({
+            customId: 'menuButton',
+            label: '🏠 Menu principal',
             user: interaction.user
         }).setDisabled(false);
 
         // rows
-        const selectRow = new MessageActionRow().addComponents(select);
-        const buttonRow = new MessageActionRow().addComponents(backButton);
+        const selectRow = new MessageActionRow().addComponents(menuSelect);
+        const buttonRow = new MessageActionRow().addComponents(menuButton);
 
         // edit message
         return interaction.update({

@@ -1,7 +1,6 @@
 // select
 module.exports = {
     customId: 'defaultSelect',
-
     async execute(interaction) {
         const [id, ownerId] = interaction.customId.split(':');
 
