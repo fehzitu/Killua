@@ -7,7 +7,8 @@ const createButton = require('../../utils/button.js');
 const createSelect = require('../../utils/select.js');
 
 module.exports = {
-    customId: 'menuSelect',
+    customId: 'homeButton',
+
     async execute(interaction) {
         const [id, ownerId] = interaction.customId.split(':');
 
@@ -19,28 +20,15 @@ module.exports = {
             });
         };
 
-        // get selected value
-        const value = interaction.values?.[0];
-
-        // create embed
+        // home embed
         const embed = createEmbed({ user: interaction.user });
 
-        // profile page
-        if (value === 'profile') {
-            embed
-                .setTitle('👤 Perfil')
-                .setDescription('Essa é a página de perfil.');
-        };
+        embed
+            .setTitle('🏠 Página inicial')
+            .setDescription('Escolha uma página no seletor abaixo.');
 
-        // settings page
-        if (value === 'settings') {
-            embed
-                .setTitle('⚙️ Configurações')
-                .setDescription('Essa é a página de configurações.');
-        };
-
-        // recreate select
-        const menuSelect = createSelect({
+        // select
+        const homeSelect = createSelect({
             customId: 'menuSelect',
             user: interaction.user,
             placeholder: 'Escolha uma página',
@@ -58,16 +46,16 @@ module.exports = {
             ]
         });
 
-        // back button
-        const menuButton = createButton({
-            customId: 'menuButton',
+        // disabled back button
+        const homeButton = createButton({
+            customId: 'homeButton',
             label: '🏠 Menu principal',
             user: interaction.user
-        }).setDisabled(false);
+        }).setDisabled(true);
 
         // rows
-        const selectRow = new MessageActionRow().addComponents(menuSelect);
-        const buttonRow = new MessageActionRow().addComponents(menuButton);
+        const selectRow = new MessageActionRow().addComponents(homeSelect);
+        const buttonRow = new MessageActionRow().addComponents(homeButton);
 
         // edit message
         return interaction.update({
