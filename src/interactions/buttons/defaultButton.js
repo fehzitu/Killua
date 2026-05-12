@@ -1,7 +1,6 @@
 // button
 module.exports = {
     customId: 'defaultButton',
-
     async execute(interaction) {
         const [id, ownerId] = interaction.customId.split(':');
 

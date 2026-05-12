@@ -7,7 +7,7 @@ const createButton = require('../../utils/button.js');
 const createSelect = require('../../utils/select.js');
 
 module.exports = {
-    customId: 'dashboardBack',
+    customId: 'homeButton',
 
     async execute(interaction) {
         const [id, ownerId] = interaction.customId.split(':');
@@ -28,8 +28,8 @@ module.exports = {
             .setDescription('Escolha uma página no seletor abaixo.');
 
         // select
-        const select = createSelect({
-            customId: 'dashboardSelect',
+        const menuSelect = createSelect({
+            customId: 'menuSelect',
             user: interaction.user,
             placeholder: 'Escolha uma página',
             optionsList: [
@@ -47,15 +47,15 @@ module.exports = {
         });
 
         // disabled back button
-        const backButton = createButton({
-            customId: 'dashboardBack',
-            label: '↩️ Voltar',
+        const homeButton = createButton({
+            customId: 'homeButton',
+            label: '🏠 Menu principal',
             user: interaction.user
         }).setDisabled(true);
 
         // rows
-        const selectRow = new MessageActionRow().addComponents(select);
-        const buttonRow = new MessageActionRow().addComponents(backButton);
+        const selectRow = new MessageActionRow().addComponents(menuSelect);
+        const buttonRow = new MessageActionRow().addComponents(homeButton);
 
         // edit message
         return interaction.update({
