@@ -28,8 +28,8 @@ module.exports = {
         embed.setDescription('Escolha uma página no seletor abaixo.');
 
         // select
-        const select = createSelect({
-            customId: 'dashboardSelect',
+        const menuSelect = createSelect({
+            customId: 'menuSelect',
             user,
             placeholder: 'Escolha uma página',
             optionsList: [
@@ -47,15 +47,15 @@ module.exports = {
         });
 
         // back button
-        const backButton = createButton({
-            customId: 'dashboardBack',
-            label: '↩️ Voltar',
+        const menuButton = createButton({
+            customId: 'menuButton',
+            label: '🏠 Menu principal',
             user
         }).setDisabled(true);
 
         // rows
-        const selectRow = new MessageActionRow().addComponents(select);
-        const buttonRow = new MessageActionRow().addComponents(backButton);
+        const selectRow = new MessageActionRow().addComponents(menuSelect);
+        const buttonRow = new MessageActionRow().addComponents(menuButton);
 
         // reply
         return ctx.reply({
