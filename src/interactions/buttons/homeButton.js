@@ -8,7 +8,6 @@ const createSelect = require('../../utils/select.js');
 
 module.exports = {
     customId: 'homeButton',
-
     async execute(interaction) {
         const [id, ownerId] = interaction.customId.split(':');
 
@@ -29,7 +28,7 @@ module.exports = {
 
         // select
         const homeSelect = createSelect({
-            customId: 'menuSelect',
+            customId: 'homeSelect',
             user: interaction.user,
             placeholder: 'Escolha uma página',
             optionsList: [
