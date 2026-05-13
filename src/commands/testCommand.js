@@ -27,8 +27,8 @@ module.exports = {
         const embed = home(user);
 
         // select
-        const homeSelect = createSelect({
-            customId: 'homeSelect',
+        const homePageSelect = createSelect({
+            customId: 'homePageSelect',
             user,
             placeholder: 'Escolha uma página',
             optionsList: [
@@ -53,7 +53,7 @@ module.exports = {
         }).setDisabled(true);
 
         // rows
-        const selectRow = new MessageActionRow().addComponents(homeSelect);
+        const selectRow = new MessageActionRow().addComponents(homePageSelect);
         const buttonRow = new MessageActionRow().addComponents(homePageButton);
 
         // reply
