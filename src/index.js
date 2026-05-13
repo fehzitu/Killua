@@ -149,13 +149,14 @@ loadCommands();
 loadInteractions();
 loadEvents();
 
+/*
 // database
 const usersPath = config.database.usersPath;
 
 client.usersData = loadJson(usersPath, {});
 
 // autosave
-/*
+
 setInterval(() => {
     saveJson(usersPath, client.usersData)
         .then(() => log('INFO', 'Database salva automaticamente'))

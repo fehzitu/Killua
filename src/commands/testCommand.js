@@ -7,7 +7,7 @@ const createSelect = require('../utils/select.js');
 const createButton = require('../utils/button.js');
 
 // import custom pages
-const home = require('../pages/homePage.js');
+const home = require('../components/homePage.js');
 
 module.exports = {
     // slash data
