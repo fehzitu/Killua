@@ -6,7 +6,7 @@ const createButton = require('../../utils/button.js');
 const createSelect = require('../../utils/select.js');
 
 // import custom pages
-const home = require('../../components/homePage.js');
+const createHomePage = require('../../components/homePage.js');
 
 module.exports = {
     customId: 'homePageButton',
@@ -22,7 +22,7 @@ module.exports = {
         };
 
         // home embed
-        const embed = home(interaction.user);
+        const embed = createHomePage(interaction.user);
 
         // select
         const homePageSelect = createSelect({

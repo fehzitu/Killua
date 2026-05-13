@@ -7,7 +7,7 @@ const createButton = require('../../utils/button.js');
 const createSelect = require('../../utils/select.js');
 
 // import custom pages
-const home = require('../../components/homePage.js');
+const createHomePage = require('../../components/homePage.js');
 
 module.exports = {
     customId: 'homePageSelect',

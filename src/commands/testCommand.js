@@ -7,7 +7,7 @@ const createSelect = require('../utils/select.js');
 const createButton = require('../utils/button.js');
 
 // import custom pages
-const home = require('../components/homePage.js');
+const createHomePage = require('../components/homePage.js');
 
 module.exports = {
     // slash data
@@ -24,7 +24,7 @@ module.exports = {
         const user = ctx.user || ctx.author;
 
         // embed
-        const embed = home(user);
+        const embed = createHomePage(user);
 
         // select
         const homePageSelect = createSelect({
