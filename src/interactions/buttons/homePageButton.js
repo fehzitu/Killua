@@ -25,8 +25,8 @@ module.exports = {
         const embed = home(interaction.user);
 
         // select
-        const homeSelect = createSelect({
-            customId: 'homeSelect',
+        const homePageSelect = createSelect({
+            customId: 'homePageSelect',
             user: interaction.user,
             placeholder: 'Escolha uma página',
             optionsList: [
@@ -51,7 +51,7 @@ module.exports = {
         }).setDisabled(true);
 
         // rows
-        const selectRow = new MessageActionRow().addComponents(homeSelect);
+        const selectRow = new MessageActionRow().addComponents(homePageSelect);
         const buttonRow = new MessageActionRow().addComponents(homePageButton);
 
         // edit message

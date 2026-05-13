@@ -10,7 +10,7 @@ const createSelect = require('../../utils/select.js');
 const home = require('../../components/homePage.js');
 
 module.exports = {
-    customId: 'homeSelect',
+    customId: 'homePageSelect',
     async execute(interaction) {
         const [id, ownerId] = interaction.customId.split(':');
 
@@ -26,7 +26,7 @@ module.exports = {
         const value = interaction.values?.[0];
 
         // embed
-        let embed = home(interaction.user);
+        let embed = createHomePage(interaction.user);
 
         // profile page
         if (value === 'profile') {
@@ -43,7 +43,7 @@ module.exports = {
         };
 
         // recreate select
-        const homeSelect = createSelect({
+        const homePageSelect = createSelect({
             customId: 'homeSelect',
             user: interaction.user,
             placeholder: 'Escolha uma página',
@@ -69,7 +69,7 @@ module.exports = {
         }).setDisabled(false);
 
         // rows
-        const selectRow = new MessageActionRow().addComponents(homeSelect);
+        const selectRow = new MessageActionRow().addComponents(homePageSelect);
         const buttonRow = new MessageActionRow().addComponents(homePageButton);
 
         // edit message
