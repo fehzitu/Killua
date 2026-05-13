@@ -4,7 +4,7 @@ const createEmbed = require('../utils/embed.js');
 // return an embed with the page
 module.exports = function home(user) {
     return (
-        createEmbed({ user })
+        createEmbed(user)
         .addFields([{
             name: '**💫 Menu de interação**',
             value: '**👤: Perfil - ``Acessa os dados do perfil``\n🎮: Jogos - ``Lista de jogos``\n📄: Comandos - ``Lista de comandos``\n🏆: Ranking - ``Lista de ranking``\n⚙️: Informações - ``Infos do bot``\n❓: Suporte - ``Suporte do bot``**'
