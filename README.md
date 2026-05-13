@@ -53,12 +53,13 @@ This project focuses not only on features, but also on code quality, structure, 
   ┣ 📂 deploy
   ┃ ┗ 📜 deploy-commands.js (deploy all commands)
   ┣ 📂 utils
-  ┃ ┗ 📜 files to create UI, sys logic, helpers and other
+  ┃ ┗ 📜 files to create sys logic, helpers and other
+  ┣ 📂 components
+  ┃ ┗ 📜 files to create UI
   ┣ 📂 commands
   ┃ ┗ 📜 every .js file here is a command
   ┣ 📂 interactions
-  ┃ ┗ 📂 buttons
-  ┃   ┗ 📜 every button of the system here
+  ┃ ┗ 📂 every type of interactions
   ┗ 📂 events
     ┣ 📂 client
     ┃ ┗ 📜 client events
