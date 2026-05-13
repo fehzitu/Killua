@@ -46,15 +46,15 @@ module.exports = {
         });
 
         // back button
-        const homeButton = createButton({
-            customId: 'homeButton',
+        const homePageButton = createButton({
+            customId: 'homePageButton',
             label: '🏠 Menu principal',
             user
         }).setDisabled(true);
 
         // rows
         const selectRow = new MessageActionRow().addComponents(homeSelect);
-        const buttonRow = new MessageActionRow().addComponents(homeButton);
+        const buttonRow = new MessageActionRow().addComponents(homePageButton);
 
         // reply
         return ctx.reply({

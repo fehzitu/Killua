@@ -62,15 +62,15 @@ module.exports = {
         });
 
         // back button
-        const homeButton = createButton({
-            customId: 'homeButton',
+        const homePageButton = createButton({
+            customId: 'homePageButton',
             label: '🏠 Menu principal',
             user: interaction.user
         }).setDisabled(false);
 
         // rows
         const selectRow = new MessageActionRow().addComponents(homeSelect);
-        const buttonRow = new MessageActionRow().addComponents(homeButton);
+        const buttonRow = new MessageActionRow().addComponents(homePageButton);
 
         // edit message
         return interaction.update({

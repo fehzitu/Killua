@@ -2,7 +2,7 @@
 const createEmbed = require('../utils/embed.js');
 
 // return an embed with the page
-module.exports = function home(user) {
+module.exports = function createHomePage(user) {
     return (
         createEmbed(user)
         .addFields([{

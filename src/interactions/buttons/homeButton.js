@@ -9,7 +9,7 @@ const createSelect = require('../../utils/select.js');
 const home = require('../../components/homePage.js');
 
 module.exports = {
-    customId: 'homeButton',
+    customId: 'homePageButton',
     async execute(interaction) {
         const [id, ownerId] = interaction.customId.split(':');
 
@@ -44,15 +44,15 @@ module.exports = {
         });
 
         // disabled back button
-        const homeButton = createButton({
-            customId: 'homeButton',
+        const homePageButton = createButton({
+            customId: 'homePageButton',
             label: '🏠 Menu principal',
             user: interaction.user
         }).setDisabled(true);
 
         // rows
         const selectRow = new MessageActionRow().addComponents(homeSelect);
-        const buttonRow = new MessageActionRow().addComponents(homeButton);
+        const buttonRow = new MessageActionRow().addComponents(homePageButton);
 
         // edit message
         return interaction.update({
