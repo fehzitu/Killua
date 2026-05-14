@@ -10,11 +10,11 @@ const createHomeSelect = require('../components/selects/homePage.js');
 module.exports = {
     // slash data
     data: new SlashCommandBuilder()
-        .setName('teste')
-        .setDescription('Interações de teste'),
+        .setName('menu')
+        .setDescription('Menu principal'),
 
     // prefix name
-    name: 'teste',
+    name: 'menu',
 
     // execute
     async execute(ctx, args) {
