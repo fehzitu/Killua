@@ -36,7 +36,7 @@ module.exports = {
 
         // recreate select
         const homePageSelect = createSelect({
-            customId: 'homeSelect',
+            customId: 'homePageSelect',
             user: interaction.user,
             placeholder: 'Escolha uma página',
             optionsList: [

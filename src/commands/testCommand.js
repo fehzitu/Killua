@@ -29,18 +29,13 @@ module.exports = {
         // select
         const homePageSelect = createSelect({
             customId: 'homePageSelect',
-            user,
+            user: user,
             placeholder: 'Escolha uma página',
             optionsList: [
                 {
-                    label: 'Perfil',
-                    description: 'Ver perfil do usuário',
-                    value: 'profile'
-                },
-                {
                     label: 'Configurações',
                     description: 'Ver configurações',
-                    value: 'settings'
+                    value: 'test'
                 }
             ]
         });
