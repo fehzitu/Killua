@@ -4,10 +4,10 @@ const { MessageActionRow } = require('discord.js');
 
 // import custom functions
 const createSelect = require('../utils/select.js');
-const createButton = require('../utils/button.js');
 
-// import custom pages
-const createHomePage = require('../components/homePage.js');
+// import custom components
+const createHomePage = require('../components/embeds/homePage.js');
+const createHomeButton = require('../components/buttons/homePage.js');
 
 module.exports = {
     // slash data
@@ -46,15 +46,11 @@ module.exports = {
         });
 
         // back button
-        const homePageButton = createButton({
-            customId: 'homePageButton',
-            label: '🏠 Menu principal',
-            user
-        }).setDisabled(true);
+        const button = createHomeButton(user);
 
         // rows
         const selectRow = new MessageActionRow().addComponents(homePageSelect);
-        const buttonRow = new MessageActionRow().addComponents(homePageButton);
+        const buttonRow = new MessageActionRow().addComponents(button);
 
         // reply
         return ctx.reply({

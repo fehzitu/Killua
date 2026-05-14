@@ -1,12 +1,5 @@
-// discord
-const { MessageActionRow } = require('discord.js');
-
-// import custom functions
-const createButton = require('../../utils/button.js');
-const createSelect = require('../../utils/select.js');
-
 // import custom pages
-const createHomePage = require('../../components/homePage.js');
+const createHomePage = require('../../components/embeds/homePage.js');
 
 module.exports = {
     customId: 'homePageButton',
@@ -24,40 +17,10 @@ module.exports = {
         // home embed
         const embed = createHomePage(interaction.user);
 
-        // select
-        const homePageSelect = createSelect({
-            customId: 'homePageSelect',
-            user: interaction.user,
-            placeholder: 'Escolha uma página',
-            optionsList: [
-                {
-                    label: 'Perfil',
-                    description: 'Ver perfil do usuário',
-                    value: 'profile'
-                },
-                {
-                    label: 'Configurações',
-                    description: 'Ver configurações',
-                    value: 'settings'
-                }
-            ]
-        });
-
-        // disabled back button
-        const homePageButton = createButton({
-            customId: 'homePageButton',
-            label: '🏠 Menu principal',
-            user: interaction.user
-        }).setDisabled(true);
-
-        // rows
-        const selectRow = new MessageActionRow().addComponents(homePageSelect);
-        const buttonRow = new MessageActionRow().addComponents(homePageButton);
-
         // edit message
         return interaction.update({
             embeds: [embed],
-            components: [selectRow, buttonRow]
+            components: [/* ADD LATER */]
         });
     }
 };

@@ -6,7 +6,7 @@ const createEmbed = require('../../utils/embed.js');
 const createSelect = require('../../utils/select.js');
 
 // import custom pages
-const createHomePage = require('../../components/homePage.js');
+const createHomePage = require('../../components/embeds/homePage.js');
 
 module.exports = {
     customId: 'homePageSelect',
