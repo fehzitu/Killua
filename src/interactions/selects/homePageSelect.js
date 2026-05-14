@@ -1,5 +1,5 @@
 // import custom pages
-const createEmbed = require('../utils/embed.js');
+const createEmbed = require('../../utils/embed.js');
 
 module.exports = {
     customId: 'homePageSelect',

@@ -5,7 +5,7 @@ const { MessageActionRow } = require('discord.js');
 // import custom components
 const createHomePage = require('../components/embeds/homePage.js');
 const createHomeButton = require('../components/buttons/homePage.js');
-const createHomeselect = require('../components/selects/homePage.js');
+const createHomeSelect = require('../components/selects/homePage.js');
 
 module.exports = {
     // slash data
@@ -27,7 +27,7 @@ module.exports = {
         // select
         const select = createHomeSelect(user);
 
-        // back button
+        // button
         const button = createHomeButton(user);
 
         // rows
