@@ -2,12 +2,10 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const { MessageActionRow } = require('discord.js');
 
-// import custom functions
-const createSelect = require('../utils/select.js');
-
 // import custom components
 const createHomePage = require('../components/embeds/homePage.js');
 const createHomeButton = require('../components/buttons/homePage.js');
+const createHomeselect = require('../components/selects/homePage.js');
 
 module.exports = {
     // slash data
@@ -27,24 +25,13 @@ module.exports = {
         const embed = createHomePage(user);
 
         // select
-        const homePageSelect = createSelect({
-            customId: 'homePageSelect',
-            user: user,
-            placeholder: 'Escolha uma página',
-            optionsList: [
-                {
-                    label: 'Configurações',
-                    description: 'Ver configurações',
-                    value: 'test'
-                }
-            ]
-        });
+        const select = createHomeSelect(user);
 
         // back button
         const button = createHomeButton(user);
 
         // rows
-        const selectRow = new MessageActionRow().addComponents(homePageSelect);
+        const selectRow = new MessageActionRow().addComponents(select);
         const buttonRow = new MessageActionRow().addComponents(button);
 
         // reply

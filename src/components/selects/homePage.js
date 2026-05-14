@@ -7,11 +7,10 @@ module.exports = function createHomeSelect(user) {
         customId: 'homePageSelect',
         user,
         placeholder: 'Escolha uma página',
-        optionsList: [
-        {
+        optionsList: [{
             label: 'Configurações',
             description: 'Ver configurações',
             value: 'test'
-        }
-    ]
-});
+        }]
+    });
+};
