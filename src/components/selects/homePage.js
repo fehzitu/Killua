@@ -8,11 +8,10 @@ module.exports = function createHomeSelect(user) {
         user,
         placeholder: 'Escolha uma página',
         optionsList: [
-            {
-                label: 'Configurações',
-                description: 'Ver configurações',
-                value: 'test'
-            }
-        ]
-    });
-};
+        {
+            label: 'Configurações',
+            description: 'Ver configurações',
+            value: 'test'
+        }
+    ]
+});

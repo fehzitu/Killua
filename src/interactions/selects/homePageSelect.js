@@ -1,5 +1,5 @@
 // import custom pages
-const createHomePage = require('../../components/embeds/homePage.js');
+const createEmbed = require('../utils/embed.js');
 
 module.exports = {
     customId: 'homePageSelect',
@@ -18,15 +18,15 @@ module.exports = {
         const value = interaction.values?.[0];
 
         // home page
-        if (value === 'home') {
-            const embed = createHomePage(interaction.user);
-            const select = createHomeSelect(interaction.user);
-            const button = createHomeButton(interaction.user);
-
-            return interaction.update({
-                embeds: [embed],
-                components: [/* ADD LATER */]
-            });
+        if (value === 'test') {
+            embed = createEmbed({ user: interaction.user })
+                .setTitle('⚙️ Em manutenção')
+                .setDescription('Essa é a página de teste.');
         };
+        
+        return interaction.update({
+            embeds: [embed],
+            components: [/* ADD LATER */]
+        });
     }
 };
