@@ -27,12 +27,12 @@ This project focuses not only on features, but also on code quality, structure, 
 
 ## 🧠 Current / Planned Features
 
-- [ ] Automatic logs
+- [x] Automatic logs
 - [ ] Persistent log
-- [ ] Basic command handler
-- [ ] Event handler system
-- [ ] Slash commands
-- [ ] Prefix commands
+- [x] Basic command handler
+- [x] Event handler system
+- [x] Slash commands
+- [x] Prefix commands
 - [ ] Fun commands
 - [ ] Leveling system
 - [ ] Economy system

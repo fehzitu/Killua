@@ -26,20 +26,13 @@ module.exports = {
         const value = interaction.values?.[0];
 
         // embed
-        let embed = createHomePage(interaction.user);
-
-        // profile page
-        if (value === 'profile') {
-            embed = createEmbed({ user: interaction.user })
-                .setTitle('👤 Perfil')
-                .setDescription('Essa é a página de perfil.');
-        };
+        let embed = createEmbed(interaction.user);
 
         // settings page
-        if (value === 'settings') {
+        if (value === 'teste') {
             embed = createEmbed({ user: interaction.user })
-                .setTitle('⚙️ Configurações')
-                .setDescription('Essa é a página de configurações.');
+                .setTitle('⚙️ Em manutenção')
+                .setDescription('Essa é a página de teste.');
         };
 
         // recreate select
@@ -48,11 +41,6 @@ module.exports = {
             user: interaction.user,
             placeholder: 'Escolha uma página',
             optionsList: [
-                {
-                    label: 'Perfil',
-                    description: 'Ver perfil do usuário',
-                    value: 'profile'
-                },
                 {
                     label: 'Configurações',
                     description: 'Ver configurações',
