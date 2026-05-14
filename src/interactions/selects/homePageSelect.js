@@ -51,7 +51,7 @@ module.exports = {
         // edit message
         return interaction.update({
             embeds: [embed],
-            components: []
+            components: [/* ADD LATER */]
         });
     }
 };
