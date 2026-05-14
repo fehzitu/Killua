@@ -1,10 +1,3 @@
-// discord
-const { MessageActionRow } = require('discord.js');
-
-// import custom functions
-const createEmbed = require('../../utils/embed.js');
-const createSelect = require('../../utils/select.js');
-
 // import custom pages
 const createHomePage = require('../../components/embeds/homePage.js');
 
@@ -21,37 +14,19 @@ module.exports = {
             });
         };
 
-        // get selected value
+        // selected value
         const value = interaction.values?.[0];
 
-        // embed
-        let embed = createEmbed(interaction.user);
+        // home page
+        if (value === 'home') {
+            const embed = createHomePage(interaction.user);
+            const select = createHomeSelect(interaction.user);
+            const button = createHomeButton(interaction.user);
 
-        // settings page
-        if (value === 'test') {
-            embed = createEmbed({ user: interaction.user })
-                .setTitle('⚙️ Em manutenção')
-                .setDescription('Essa é a página de teste.');
+            return interaction.update({
+                embeds: [embed],
+                components: [/* ADD LATER */]
+            });
         };
-
-        // recreate select
-        const homePageSelect = createSelect({
-            customId: 'homePageSelect',
-            user: interaction.user,
-            placeholder: 'Escolha uma página',
-            optionsList: [
-                {
-                    label: 'Configurações',
-                    description: 'Ver configurações',
-                    value: 'test'
-                }
-            ]
-        });
-
-        // edit message
-        return interaction.update({
-            embeds: [embed],
-            components: [/* ADD LATER */]
-        });
     }
 };
