@@ -1,4 +1,4 @@
-// command
+// discord imports
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const { MessageActionRow } = require('discord.js');
 

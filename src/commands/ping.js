@@ -1,4 +1,4 @@
-// command
+// discord implements
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const createEmbed = require('../utils/embed');
 

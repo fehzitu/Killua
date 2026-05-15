@@ -1,3 +1,6 @@
+// discord imports
+const { MessageActionRow } = require('discord.js');
+
 // import custom pages
 const createEmbed = require('../../utils/embed.js');
 const createHomeSelect = require('../../components/selects/homePage.js');
@@ -15,25 +18,30 @@ module.exports = {
             });
         };
 
+        // select
+        const select = createHomeSelect(interaction.user);
+
+        // rows
+        const selectRow = new MessageActionRow().addComponents(select);
+
+        // components lisy
+        let componentsList = [selectRow]
+
         // selected value
         const value = interaction.values?.[0];
 
         // support page
         if (value === 'support') {
-            embed = createEmbed({ user: interaction.user })
-                .setTitle('⚙️ Em manutenção')
-                .setDescription('Essa é a página de teste.');
+            // create embed page
+            embed = createEmbed(interaction.user)
+                .setTitle('Titulo')
+                .setDescription('Descrição');
+            componentsList = [];
         };
-
-        // select
-        const select = createHomeSelect(user);
-
-        // rows
-        const selectRow = new MessageActionRow().addComponents(select);
 
         return interaction.update({
             embeds: [embed],
-            components: [selectRow]
+            components: componentsList
         });
     }
 };
