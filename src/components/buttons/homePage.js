@@ -7,5 +7,5 @@ module.exports = function createHomeButton(user) {
         customId: 'homePageButton',
         label: '🏠 Menu principal',
         user
-    }).setDisabled(true);
+    });
 };

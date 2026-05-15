@@ -1,5 +1,9 @@
-// import custom pages
+// discord imports
+const { MessageActionRow } = require('discord.js');
+
+// import custom components
 const createHomePage = require('../../components/embeds/homePage.js');
+const createHomeSelect = require('../../components/selects/homePage.js');
 
 module.exports = {
     customId: 'homePageButton',
@@ -17,10 +21,16 @@ module.exports = {
         // home embed
         const embed = createHomePage(interaction.user);
 
+        // select
+        const select = createHomeSelect(interaction.user);
+        
+        // rows
+        let selectRow = new MessageActionRow().addComponents(select);
+
         // edit message
         return interaction.update({
             embeds: [embed],
-            components: [/* ADD LATER */]
+            components: [selectRow]
         });
     }
 };
