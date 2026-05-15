@@ -4,6 +4,7 @@ const { MessageActionRow } = require('discord.js');
 // import custom pages
 const createEmbed = require('../../utils/embed.js');
 const createHomeSelect = require('../../components/selects/homePage.js');
+const createHomeButton = require('../../components/buttons/homePage.js');
 
 module.exports = {
     customId: 'homePageSelect',
@@ -21,10 +22,14 @@ module.exports = {
         // select
         const select = createHomeSelect(interaction.user);
 
+        // button
+        const button = createHomeButton(interaction.user);
+
         // rows
         const selectRow = new MessageActionRow().addComponents(select);
+        const buttonRow = new MessageActionRow().addComponents(button);
 
-        // components lisy
+        // components list
         let componentsList = [selectRow]
 
         // selected value
@@ -36,7 +41,7 @@ module.exports = {
             embed = createEmbed(interaction.user)
                 .setTitle('Titulo')
                 .setDescription('Descrição');
-            componentsList = [];
+            componentsList = [buttonRow];
         };
 
         return interaction.update({
