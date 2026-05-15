@@ -23,7 +23,7 @@ module.exports = {
         const select = createHomeSelect(interaction.user);
 
         // button
-        const button = createHomeButton(interaction.user);
+        const button = createHomeButton(interaction.user).setDisabled(false);
 
         // rows
         const selectRow = new MessageActionRow().addComponents(select);
