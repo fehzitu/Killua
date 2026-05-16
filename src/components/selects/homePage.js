@@ -6,7 +6,7 @@ module.exports = function createHomeSelect(user) {
     return createSelect({
         customId: 'homePageSelect',
         user,
-        placeholder: 'Escolha uma página',
+        placeholder: '🧾 Escolha uma página',
         optionsList: [{
             label: '❓ Suporte',
             description: 'Ver info sobre nosso suporte',
