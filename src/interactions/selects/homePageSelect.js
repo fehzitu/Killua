@@ -3,6 +3,7 @@ const { MessageActionRow } = require('discord.js');
 
 // import custom pages
 const createInfoPage = require('../../components/embeds/infoPage.js');
+const createHelpPage = require('../../components/embeds/helpPage.js');
 const createSupportPage = require('../../components/embeds/supportPage.js');
 
 // import custom buttons

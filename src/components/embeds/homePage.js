@@ -7,7 +7,7 @@ module.exports = function createHomePage(user) {
         createEmbed(user)
         .addFields([{
             name: '**💫 Menu de interação**',
-            value: '**👤: Perfil - ``Acessa os dados do perfil`` { OFF }\n🎮: Jogos - ``Lista de jogos`` { OFF }\n📄: Comandos - ``Lista de comandos`` { OFF }\n🏆: Ranking - ``Lista de ranking`` { OFF }\n⚙️: Informações - ``Infos do bot``\n📋: Ajuda - ``Ajuda simples sobre o bot``\n❓: Suporte - ``Suporte do bot``**'
+            value: '**👤: Perfil - ``Acessa os dados do perfil`` { OFF }\n🎮: Jogos - ``Lista de jogos`` { OFF }\n📄: Comandos - ``Lista de comandos`` { OFF }\n🏆: Ranking - ``Lista de ranking`` { OFF }\n⚙️: Informações - ``Infos do bot``\n📋: Ajuda - ``Receba ajuda sobre o bot``\n❓: Suporte - ``Suporte do bot``**'
         }])
         .setImage('https://cdn.discordapp.com/attachments/1477290272638632068/1492176849478881481/6D1510C7-334E-4562-BA2F-7AC458BE2AF2.gif?ex=69dbb2fc&is=69da617c&hm=de7e998bd6a0ae9d05ec1cba4480b5f9faf69a1b3d5da212775d70d863302e3e&')
         .setTimestamp()
