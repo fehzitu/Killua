@@ -2,7 +2,7 @@
 const { MessageActionRow } = require('discord.js');
 
 // import custom pages
-const createEmbed = require('../../utils/embed.js');
+const createSupportPage = require('../../components/embeds/supportPage.js');
 const createHomeSelect = require('../../components/selects/homePage.js');
 const createHomeButton = require('../../components/buttons/homePage.js');
 
@@ -38,9 +38,7 @@ module.exports = {
         // support page
         if (value === 'support') {
             // create embed page
-            embed = createEmbed(interaction.user)
-                .setTitle('Titulo')
-                .setDescription('Descrição');
+            embed = createSupportPage(interaction.user);
             componentsList = [buttonRow];
         };
 
