@@ -13,6 +13,11 @@ module.exports = function createHomeSelect(user) {
             value: 'info'
         },
         {
+            label: '📋 Ajuda',
+            description: 'Uma ajudinha sobre o bot',
+            value: 'help'
+        },
+        {
             label: '❓ Suporte',
             description: 'Ver info sobre nosso suporte',
             value: 'support'

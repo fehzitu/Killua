@@ -49,6 +49,13 @@ module.exports = {
             componentsList = [buttonRow];
         };
 
+        // info page
+        if (value === 'help') {
+            // create embed page
+            embed = createHelpPage(user, client);
+            componentsList = [buttonRow];
+        };
+
         // support page
         if (value === 'support') {
             // create embed page
