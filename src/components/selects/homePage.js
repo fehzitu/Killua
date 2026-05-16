@@ -9,7 +9,7 @@ module.exports = function createHomeSelect(user) {
         placeholder: '🧾 Escolha uma página',
         optionsList: [{
             label: '⚙️ Informações',
-            description: 'Ver info sobre nosso sistema',
+            description: 'Ver info sobre nosso bot',
             value: 'info'
         },
         {
