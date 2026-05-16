@@ -8,6 +8,11 @@ module.exports = function createHomeSelect(user) {
         user,
         placeholder: '🧾 Escolha uma página',
         optionsList: [{
+            label: '⚙️ Informações',
+            description: 'Ver info sobre nosso sistema',
+            value: 'info'
+        },
+        {
             label: '❓ Suporte',
             description: 'Ver info sobre nosso suporte',
             value: 'support'

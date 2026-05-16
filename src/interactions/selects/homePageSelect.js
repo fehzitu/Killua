@@ -2,6 +2,7 @@
 const { MessageActionRow } = require('discord.js');
 
 // import custom pages
+const createInfoPage = require('../../components/embeds/infoPage.js');
 const createSupportPage = require('../../components/embeds/supportPage.js');
 
 // import custom buttons
@@ -13,8 +14,12 @@ module.exports = {
     async execute(interaction) {
         const [id, ownerId] = interaction.customId.split(':');
 
+        // get client and user
+        const client = interaction.client;
+        const user = interaction.user;
+
         // user restriction
-        if (ownerId && interaction.user.id !== ownerId) {
+        if (ownerId && user.id !== ownerId) {
             return interaction.reply({
                 content: '❌ Isso não é pra você!',
                 ephemeral: true
@@ -22,10 +27,10 @@ module.exports = {
         };
 
         // select
-        const select = createHomeSelect(interaction.user);
+        const select = createHomeSelect(user);
 
         // button
-        const button = createHomeButton(interaction.user);
+        const button = createHomeButton(user);
 
         // rows
         const selectRow = new MessageActionRow().addComponents(select);
@@ -37,10 +42,17 @@ module.exports = {
         // selected value
         const value = interaction.values?.[0];
 
+        // info page
+        if (value === 'info') {
+            // create embed page
+            embed = createInfoPage(user, client);
+            componentsList = [buttonRow];
+        };
+
         // support page
         if (value === 'support') {
             // create embed page
-            embed = createSupportPage(interaction.user);
+            embed = createSupportPage(user);
             componentsList = [buttonRow];
         };
 

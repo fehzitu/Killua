@@ -17,7 +17,8 @@ module.exports = {
 
     // execute
     async execute(ctx, args) {
-        // get user
+        // get client and user
+        const client = ctx.client;
         const user = ctx.user || ctx.author;
 
         // embed
