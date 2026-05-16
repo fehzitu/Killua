@@ -3,6 +3,8 @@ const { MessageActionRow } = require('discord.js');
 
 // import custom pages
 const createSupportPage = require('../../components/embeds/supportPage.js');
+
+// import custom buttons
 const createHomeSelect = require('../../components/selects/homePage.js');
 const createHomeButton = require('../../components/buttons/homePage.js');
 
