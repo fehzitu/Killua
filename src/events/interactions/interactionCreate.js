@@ -29,7 +29,7 @@ module.exports = {
         const userTag = interaction.user.tag;
 
         // get user profile
-        const profile = ensureProfile(client,);
+        const profile = ensureProfile(client, userId, userTag);
 
         // buttons
         if (interaction.isButton()) {
