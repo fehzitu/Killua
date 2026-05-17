@@ -13,11 +13,12 @@ module.exports = {
         if (message.author.bot) return;
 
         // get user id and tag
+        const user = message.author;
         const userId = message.author.id;
         const userTag = message.author.tag;
 
         // get user profile
-        const profile = ensureProfile(client, userId, userTag);
+        const profile = ensureProfile(client, user);
 
         // log message
         const guild = message.guild ? message.guild.name : 'DM';

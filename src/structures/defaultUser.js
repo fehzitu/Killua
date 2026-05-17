@@ -13,7 +13,7 @@ function createDefaultUser() {
             prestige: []
         },
         karma: {
-            karma: '🌀 (Sem karma)',
+            personality: '(Sem karma)',
             positive: 0,
             negative: 0
         },

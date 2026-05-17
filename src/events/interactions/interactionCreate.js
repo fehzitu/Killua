@@ -25,11 +25,12 @@ module.exports = {
     name: 'interactionCreate',
     async execute(client, interaction) {
         // get user id and tag
+        const user = interaction.user;
         const userId = interaction.user.id;
         const userTag = interaction.user.tag;
 
         // get user profile
-        const profile = ensureProfile(client, userId, userTag);
+        const profile = ensureProfile(client, user);
 
         // buttons
         if (interaction.isButton()) {

@@ -2,7 +2,7 @@
 const createEmbed = require('../../utils/embed');
 
 // return an embed with the page
-module.exports = function createInfoPage(user, client) {
+module.exports = function createInfoPage(client, user) {
     // bot stats
     const totalUsers = client.guilds.cache.reduce((acc, guild) => acc + guild.memberCount, 0);
     const totalGuilds = client.guilds.cache.size;

@@ -47,14 +47,14 @@ module.exports = {
         // info page
         if (value === 'profile') {
             // create embed page
-            embed = createProfilePage(user, client);
+            embed = createProfilePage(client, user);
             componentsList = [buttonRow];
         };
 
         // info page
         if (value === 'info') {
             // create embed page
-            embed = createInfoPage(user, client);
+            embed = createInfoPage(client, user);
             componentsList = [buttonRow];
         };
 
