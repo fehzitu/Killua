@@ -41,7 +41,7 @@ module.exports = {
                 return;
             };
 
-            log('RESET', `Botão: ${id} usado por ${userTag}`);
+            // log('RESET', `Botão: ${id} usado por ${userTag}`);
 
             return safeExecute(button, interaction);
         };
@@ -56,7 +56,7 @@ module.exports = {
                 return;
             };
 
-            log('RESET', `Seletor: ${id} usado por ${userTag}`);
+            // log('RESET', `Seletor: ${id} usado por ${userTag}`);
 
             return safeExecute(select, interaction);
         };
@@ -71,7 +71,7 @@ module.exports = {
                 return;
             };
 
-            log('RESET', `Modal: ${id} usado por ${userTag}`);
+            // log('RESET', `Modal: ${id} usado por ${userTag}`);
 
             return safeExecute(modal, interaction);
         };
@@ -111,8 +111,8 @@ module.exports = {
         );
 
         try {
-            log('WARNING', `Comando /${interaction.commandName} usado por ${userTag}`);
             await command.execute(interaction);
+            // log('WARNING', `Comando /${interaction.commandName} usado por ${userTag}`);
         } catch (error) {
             log('ERROR', `Erro no comando (${interaction.commandName}): ${error.message}`);
 
