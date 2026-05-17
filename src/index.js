@@ -155,12 +155,12 @@ const usersPath = config.database.usersPath;
 // save users data into bot ram
 client.usersData = loadJson(usersPath, {});
 
-// autosave
+// autosave in 1h
 setInterval(() => {
     saveJson(usersPath, client.usersData)
         .then(() => log('INFO', 'Database salva automaticamente'))
         .catch(err => log('ERROR', err.message));
-}, 60000);
+}, 3600000);
 
 // login
 log('INFO', 'Iniciando login');
