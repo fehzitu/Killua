@@ -23,6 +23,4 @@ function createDefaultUser() {
     });
 };
 
-module.exports = {
-    createDefaultUser
-};
+module.exports = createDefaultUser;

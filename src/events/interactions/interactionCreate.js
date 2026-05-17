@@ -1,7 +1,7 @@
-const constants = require('../../config/constants.js');
+const constants = require('../../config/constants');
 const checkCooldown = require('../../utils/cooldown');
 const createEmbed = require('../../utils/embed');
-const log = require('../../utils/logger.js');
+const log = require('../../utils/logger');
 
 // safe execution
 async function safeExecute(handler, interaction) {
