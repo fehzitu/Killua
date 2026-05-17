@@ -60,6 +60,8 @@ This project focuses not only on features, but also on code quality, structure, 
   ┃ ┗ 📜 every .js file here is a command
   ┣ 📂 interactions
   ┃ ┗ 📂 every type of interactions
+  ┣ 📂 structures
+  ┃ ┗ 📂 system structure like patterns
   ┗ 📂 events
     ┣ 📂 client
     ┃ ┗ 📜 client events
