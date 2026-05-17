@@ -5,17 +5,21 @@ function createDefaultUser() {
         rpg: {
             level: 1,
             xp: 0,
+            money: 100
+        },
+        honor: {
+            achievements: [],
+            medals: [],
+            prestige: []
+        },
+        karma: {
             karma: '🌀 (Sem karma)',
-            money: 100,
-            medals: []
+            positive: 0,
+            negative: 0
         },
         stats: {
             messages: 0,
             commands: 0
-        },
-        karma: {
-            positive: 0,
-            negative: 0
         },
         cooldowns: {
             xp: 0
