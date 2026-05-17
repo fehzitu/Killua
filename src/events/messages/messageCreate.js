@@ -29,7 +29,7 @@ module.exports = {
         const prefix = config.prefix;
 
         // check prefix
-        if (!message.content.startsWith(prefix)) return;
+        if (!message.content.toLowerCase().startsWith(prefix.toLowerCase())) return;
 
         // args
         const args = message.content.slice(prefix.length).trim().split(/ +/);
