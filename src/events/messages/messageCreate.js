@@ -2,6 +2,7 @@ const config = require('../../config');
 const constants = require('../../config/constants');
 const checkCooldown = require('../../utils/cooldown');
 const createEmbed = require('../../utils/embed');
+const ensureProfile = require('../../utils/ensureProfile');
 const log = require('../../utils/logger');
 
 module.exports = {
@@ -10,7 +11,12 @@ module.exports = {
         // ignore bots
         if (message.author.bot) return;
 
+        // get user tag
         const userTag = message.author.tag;
+
+        // get user profile
+        const profile = ensureProfile(message, message.author);
+        console.log(profile);
 
         // log message
         const guild = message.guild ? message.guild.name : 'DM';

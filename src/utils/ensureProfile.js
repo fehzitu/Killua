@@ -6,12 +6,12 @@ function ensureProfile(ctx, user) {
     const users = ctx.client.usersData;
 
     // check if the user has a profile
-    if (!users[userId]) {
+    if (!users[user.id]) {
         // create new profile
-        users[userId] = createDefaultUser();
+        users[user.id] = createDefaultUser();
 
         // log
-        console.log(`🏆 Novo perfil criado para ${userTag}`);
+        console.log(`🏆 Novo perfil criado para ${user.username}`);
     };
 
     return users[user.id];
