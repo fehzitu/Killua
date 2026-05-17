@@ -103,13 +103,15 @@ module.exports = {
             });
         };
 
+        // formated info
         const guild = interaction.guild ? interaction.guild.name : 'DM';
         const channel = interaction.guild ? interaction.channel.name : 'DM';
 
-        log(
-            'RESET',
-            `[${new Date().toLocaleDateString()} ${new Date().toLocaleTimeString()} @${userTag} ${guild} ${channel}]: /${interaction.commandName}`
-        );
+        // add stats
+        profile.stats.commands++;
+
+        // command log
+        log('RESET', `[${new Date().toLocaleDateString()} ${new Date().toLocaleTimeString()} @${userTag} ${guild} ${channel}]: /${interaction.commandName}`);
 
         try {
             await command.execute(interaction);

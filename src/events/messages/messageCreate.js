@@ -24,13 +24,18 @@ module.exports = {
         const guild = message.guild ? message.guild.name : 'DM';
         const channel = message.guild ? message.channel.name : 'DM';
 
+        // message log
         log('RESET', `[${new Date().toLocaleDateString()} ${new Date().toLocaleTimeString()} @${userTag} ${guild} ${channel}]: ${message.content}`);
 
         // prefix
         const prefix = config.prefix;
 
         // check prefix
-        if (!message.content.toLowerCase().startsWith(prefix.toLowerCase())) return;
+        if (!message.content.toLowerCase().startsWith(prefix.toLowerCase())) {
+            // add stats
+            profile.stats.messages++;
+            return;
+        };
 
         // args
         const args = message.content.slice(prefix.length).trim().split(/ +/);
@@ -59,6 +64,11 @@ module.exports = {
             });
         };
 
+
+        // add stats
+        profile.stats.commands++;
+
+        // command log
         log('WARNING', `Comando k.${commandName} usado por ${userTag}`);
 
         // execute command
