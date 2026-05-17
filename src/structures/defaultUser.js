@@ -1,6 +1,6 @@
 // Create an default profile user
-const createDefaultUser() {
-    return {
+function createDefaultUser() {
+    return ({
         profileCreatedAt: new Date().toISOString(),
         rpg: {
             level: 1,
@@ -20,7 +20,7 @@ const createDefaultUser() {
         cooldowns: {
             xp: 0
         }
-    };
+    });
 };
 
 module.exports = {

@@ -78,7 +78,7 @@ const rest = new REST({ version: '9' }).setToken(TOKEN);
             { body: commands }
         );
 
-        log('SUCCESS',`Comandos registrados com sucesso: ${commands.length}`);
+        log('SUCCESS', `Comandos registrados com sucesso: ${commands.length}`);
     } catch (error) {
         log('ERROR', `Erro ao registrar comandos: ${error.message}`);
     };

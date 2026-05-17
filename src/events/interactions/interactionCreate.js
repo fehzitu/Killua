@@ -78,18 +78,18 @@ module.exports = {
             log('ERROR', `Comando não encontrado: ${interaction.commandName}`);
             return;
         };
-        
+
         // cooldown
         const userId = interaction.user.id;
         const remaining = checkCooldown(userId, constants.COOLDOWNS.COMMAND);
-        
+
         if (remaining > 0) {
             const seconds = (remaining / 1000).toFixed(1);
-        
+
             const embed = createEmbed({ user: interaction.user });
-        
+
             embed.setDescription(`⏳ Sem spam!\nEspere **${seconds}s** para usar novamente.`);
-        
+
             return interaction.reply({
                 embeds: [embed],
                 ephemeral: true

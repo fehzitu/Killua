@@ -6,10 +6,10 @@ module.exports = function createSelect(options = {}) {
         customId,
         placeholder = 'ℹ️ Selecione uma opção',
         optionsList = [{
-                label: '1️⃣ Exemplo 1',
-                description: '⁉️ Aqui realmente é só um exemplo',
-                value: 'exemplo 1'
-            }],
+            label: '1️⃣ Exemplo 1',
+            description: '⁉️ Aqui realmente é só um exemplo',
+            value: 'exemplo 1'
+        }],
         user
     } = options;
 

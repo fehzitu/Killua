@@ -23,7 +23,7 @@ module.exports = {
 
         // select
         const select = createHomeSelect(interaction.user);
-        
+
         // rows
         let selectRow = new MessageActionRow().addComponents(select);
 
