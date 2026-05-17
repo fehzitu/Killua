@@ -1,6 +1,8 @@
+// import custom functions
 const constants = require('../../config/constants');
 const checkCooldown = require('../../utils/cooldown');
 const createEmbed = require('../../utils/embed');
+const ensureProfile = require('../../utils/ensureProfile');
 const log = require('../../utils/logger');
 
 // safe execution
@@ -22,7 +24,12 @@ async function safeExecute(handler, interaction) {
 module.exports = {
     name: 'interactionCreate',
     async execute(client, interaction) {
+        // get user id and tag
+        const userId = interaction.user.id;
         const userTag = interaction.user.tag;
+
+        // get user profile
+        const profile = ensureProfile(client,);
 
         // buttons
         if (interaction.isButton()) {
@@ -80,13 +87,12 @@ module.exports = {
         };
 
         // cooldown
-        const userId = interaction.user.id;
         const remaining = checkCooldown(userId, constants.COOLDOWNS.COMMAND);
 
         if (remaining > 0) {
             const seconds = (remaining / 1000).toFixed(1);
 
-            const embed = createEmbed({ user: interaction.user });
+            const embed = createEmbed(interaction.user);
 
             embed.setDescription(`⏳ Sem spam!\nEspere **${seconds}s** para usar novamente.`);
 
@@ -101,7 +107,7 @@ module.exports = {
 
         log(
             'RESET',
-            `[${new Date().toLocaleDateString()}] [${new Date().toLocaleTimeString()}] [@${userTag}] [${guild}] [${channel}]: /${interaction.commandName}`
+            `[${new Date().toLocaleDateString()} ${new Date().toLocaleTimeString()} @${userTag} ${guild} ${channel}]: /${interaction.commandName}`
         );
 
         try {

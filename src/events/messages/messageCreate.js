@@ -1,3 +1,4 @@
+// import custom functions
 const config = require('../../config');
 const constants = require('../../config/constants');
 const checkCooldown = require('../../utils/cooldown');
@@ -11,18 +12,18 @@ module.exports = {
         // ignore bots
         if (message.author.bot) return;
 
-        // get user tag
+        // get user id and tag
+        const userId = message.author.id;
         const userTag = message.author.tag;
 
         // get user profile
-        const profile = ensureProfile(message, message.author);
-        console.log(profile);
+        const profile = ensureProfile(client, userId, userTag);
 
         // log message
         const guild = message.guild ? message.guild.name : 'DM';
         const channel = message.guild ? message.channel.name : 'DM';
 
-        log('RESET', `[${new Date().toLocaleDateString()}] [${new Date().toLocaleTimeString()}] [@${userTag}] [${guild}] [${channel}]: ${message.content}`);
+        log('RESET', `[${new Date().toLocaleDateString()} ${new Date().toLocaleTimeString()} @${userTag} ${guild} ${channel}]: ${message.content}`);
 
         // prefix
         const prefix = config.prefix;
@@ -43,13 +44,12 @@ module.exports = {
         };
 
         // cooldown
-        const userId = message.author.id;
         const remaining = checkCooldown(userId, constants.COOLDOWNS.COMMAND);
 
         if (remaining > 0) {
             const seconds = (remaining / 1000).toFixed(1);
 
-            const embed = createEmbed({ user: message.author });
+            const embed = createEmbed(message.author);
 
             embed.setDescription(`⏳ Sem spam!\nEspere **${seconds}s** para usar novamente.`);
 

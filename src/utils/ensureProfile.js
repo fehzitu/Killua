@@ -1,20 +1,21 @@
-// import custom components
+// import custom functions
 const createDefaultUser = require('../structures/defaultUser');
+const log = require('./logger');
 
-function ensureProfile(ctx, user) {
+function ensureProfile(client, userId, userTag) {
     // get the users
-    const users = ctx.client.usersData;
+    const users = client.usersData;
 
     // check if the user has a profile
-    if (!users[user.id]) {
+    if (!users[userId]) {
         // create new profile
-        users[user.id] = createDefaultUser();
+        users[userId] = createDefaultUser();
 
         // log
-        console.log(`🏆 Novo perfil criado para ${user.username}`);
+        log('RESET', `Novo perfil criado para ${userTag}`);
     };
 
-    return users[user.id];
+    return users[userId];
 };
 
 module.exports = ensureProfile;
