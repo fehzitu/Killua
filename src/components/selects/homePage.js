@@ -8,6 +8,11 @@ module.exports = function createHomeSelect(user) {
         user,
         placeholder: '🧾 Escolha uma página',
         optionsList: [{
+            label: '👤 Perfil',
+            description: 'Acessa seu perfil',
+            value: 'profile'
+        },
+        {
             label: '⚙️ Informações',
             description: 'Ver info sobre nosso bot',
             value: 'info'

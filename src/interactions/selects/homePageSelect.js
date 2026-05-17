@@ -2,11 +2,12 @@
 const { MessageActionRow } = require('discord.js');
 
 // import custom pages
+const createProfilePage = require('../../components/embeds/profilePage');
 const createInfoPage = require('../../components/embeds/infoPage');
 const createHelpPage = require('../../components/embeds/helpPage');
 const createSupportPage = require('../../components/embeds/supportPage');
 
-// import custom buttons
+// import custom interactions
 const createHomeSelect = require('../../components/selects/homePage');
 const createHomeButton = require('../../components/buttons/homePage');
 
@@ -16,8 +17,8 @@ module.exports = {
         const [id, ownerId] = interaction.customId.split(':');
 
         // get client and user
-        const client = interaction.client;
         const user = interaction.user;
+        const client = interaction.client;
 
         // user restriction
         if (ownerId && user.id !== ownerId) {
@@ -44,6 +45,13 @@ module.exports = {
         const value = interaction.values?.[0];
 
         // info page
+        if (value === 'profile') {
+            // create embed page
+            embed = createProfilePage(user, client);
+            componentsList = [buttonRow];
+        };
+
+        // info page
         if (value === 'info') {
             // create embed page
             embed = createInfoPage(user, client);
@@ -53,7 +61,7 @@ module.exports = {
         // info page
         if (value === 'help') {
             // create embed page
-            embed = createHelpPage(user, client);
+            embed = createHelpPage(user);
             componentsList = [buttonRow];
         };
 
