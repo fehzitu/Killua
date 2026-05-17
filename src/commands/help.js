@@ -3,7 +3,7 @@ const { SlashCommandBuilder } = require('@discordjs/builders');
 const { MessageEmbed } = require('discord.js');
 
 // import custom functions
-const createEmbed = require('../utils/embed.js');
+const createEmbed = require('../utils/embed');
 
 module.exports = {
     // slash data

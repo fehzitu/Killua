@@ -1,6 +1,6 @@
-const activities = require('../../config/activities.js');
-const constants = require('../../config/constants.js');
-const log = require('../../utils/logger.js');
+const activities = require('../../config/activities');
+const constants = require('../../config/constants');
+const log = require('../../utils/logger');
 
 module.exports = {
     name: 'ready',

@@ -1,5 +1,5 @@
 // import custom functions
-const createEmbed = require('../../utils/embed.js');
+const createEmbed = require('../../utils/embed');
 
 // return an embed with the page
 module.exports = function createSupportPage(user) {

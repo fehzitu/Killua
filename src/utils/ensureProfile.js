@@ -1,5 +1,5 @@
 // import custom components
-const createDefaultUser = require('../structures/defaultUser.js');
+const createDefaultUser = require('../structures/defaultUser');
 
 function ensureProfile(ctx, user) {
     // get the users

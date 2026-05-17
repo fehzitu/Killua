@@ -2,13 +2,13 @@
 const { MessageActionRow } = require('discord.js');
 
 // import custom pages
-const createInfoPage = require('../../components/embeds/infoPage.js');
-const createHelpPage = require('../../components/embeds/helpPage.js');
-const createSupportPage = require('../../components/embeds/supportPage.js');
+const createInfoPage = require('../../components/embeds/infoPage');
+const createHelpPage = require('../../components/embeds/helpPage');
+const createSupportPage = require('../../components/embeds/supportPage');
 
 // import custom buttons
-const createHomeSelect = require('../../components/selects/homePage.js');
-const createHomeButton = require('../../components/buttons/homePage.js');
+const createHomeSelect = require('../../components/selects/homePage');
+const createHomeButton = require('../../components/buttons/homePage');
 
 module.exports = {
     customId: 'homePageSelect',

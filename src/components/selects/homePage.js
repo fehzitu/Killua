@@ -1,5 +1,5 @@
 // import custom functions
-const createSelect = require('../../utils/select.js');
+const createSelect = require('../../utils/select');
 
 // create home page select
 module.exports = function createHomeSelect(user) {
