@@ -160,7 +160,7 @@ setInterval(() => {
     saveJson(usersPath, client.usersData)
         .then(() => log('INFO', 'Database salva automaticamente'))
         .catch(err => log('ERROR', err.message));
-}, 3600000);
+}, 60000);
 
 // login
 log('INFO', 'Iniciando login');
