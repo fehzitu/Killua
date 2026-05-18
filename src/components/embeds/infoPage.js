@@ -16,7 +16,7 @@ module.exports = function createInfoPage(client, user) {
     const formattedUptime = `${hours}h ${minutes}m ${seconds}s`;
 
     return (
-        createEmbed(user, tag = true)
+        createEmbed(user)
             .addFields({
                 name: `👑 Nome: **${client.user.tag}**`,
                 value: `⏳ Tempo ativo: **${formattedUptime}**`,

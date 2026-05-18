@@ -4,7 +4,7 @@ const createEmbed = require('../../utils/embed');
 // return an embed with the page
 module.exports = function createHelpPage(user) {
     return (
-        createEmbed(user, tag = true)
+        createEmbed(user)
             .addFields([{
                 name: '🥀 Em **qualquer servidor que eu estiver** basta **você utilizar** meu comando base pra **abrir o menu e interagir comigo** no chat.',
                 value: '**👉 comando base "k.menu" ou "/menu"**'
