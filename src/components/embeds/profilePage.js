@@ -8,9 +8,9 @@ module.exports = function createProfilePage(client, user) {
     const profile = ensureProfile(client, user);
 
     return (
-        createEmbed(user)
+        createEmbed(user, tag = true)
             .addFields([{
-                name: `👤 **${user.globalName}**`,
+                name: '👤 **Status**',
                 value: `>>> ⏳ **Lv.${profile.rpg.level}『 ${profile.rpg.xp}xp / ${Math.floor(100 * Math.pow(profile.rpg.level + 1, 1.5))}xp 』**💸 **R$${profile.rpg.money}**\n🧿 **Personalidade: ${profile.karma.personality}**\n📚 **Mensagens: ${profile.stats.messages}**\n📡 **Comandos: ${profile.stats.commands}**`
             },
             {
