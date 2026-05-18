@@ -10,6 +10,5 @@ module.exports = function createSupportPage(user) {
                 value: '**☕ Bora tomar um café?**'
             }])
             .setImage('https://cdn.discordapp.com/attachments/1477290272638632068/1491798480216264824/93f04b4b1103cc4e6410bb4f831acb6c.gif?ex=69d90119&is=69d7af99&hm=ca14d33797d593d0914af41ff129a00fc1f87c8ab1ce3a564058456fc749bb34&')
-            .setTimestamp()
     );
 };

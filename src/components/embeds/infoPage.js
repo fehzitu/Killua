@@ -28,6 +28,5 @@ module.exports = function createInfoPage(client, user) {
                     inline: true
                 })
             .setImage('https://cdn.discordapp.com/attachments/1477290272638632068/1491764536322035802/yuliowo.gif?ex=69d8e17d&is=69d78ffd&hm=93ba3d94e4fa0d41eacb0ffc689604c26d884ee632a491e54c9c3e9b6cfd9e9f')
-            .setTimestamp()
     );
 };
