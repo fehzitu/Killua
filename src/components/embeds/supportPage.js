@@ -4,7 +4,7 @@ const createEmbed = require('../../utils/embed');
 // return an embed with the page
 module.exports = function createSupportPage(user) {
     return (
-        createEmbed(user)
+        createEmbed(user, tag = true)
             .addFields([{
                 name: '**🤖 Ainda estou em desenvolvimento então pode ser que algo de errado ou inesperado aconteça.Se for o caso informe aos desenvolvedores ou o suporte no nosso servidor:\n__https://discord.gg/Wpgu4qXWUk__**',
                 value: '**☕ Bora tomar um café?**'
