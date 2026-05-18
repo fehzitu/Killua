@@ -76,7 +76,7 @@ module.exports = {
         // support page
         if (value === 'ping') {
             // create page
-            embed = createPingPage(user);
+            embed = createPingPage(client, user);
             componentsList = [buttonRow];
         };
 

@@ -2,7 +2,7 @@
 const createEmbed = require('../../utils/embed');
 
 // return an embed with the page
-module.exports = function createPingPage(user) {
+module.exports = function createPingPage(client, user) {
     return (
         createEmbed(user)
             .addFields([{
