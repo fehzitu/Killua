@@ -6,6 +6,7 @@ const createProfilePage = require('../../components/embeds/profilePage');
 const createInfoPage = require('../../components/embeds/infoPage');
 const createHelpPage = require('../../components/embeds/helpPage');
 const createSupportPage = require('../../components/embeds/supportPage');
+const createPingPage = require('../../components/embeds/pingPage');
 
 // import custom interactions
 const createHomeSelect = require('../../components/selects/homePage');
@@ -46,29 +47,36 @@ module.exports = {
 
         // info page
         if (value === 'profile') {
-            // create embed page
+            // create page
             embed = createProfilePage(client, user);
             componentsList = [buttonRow];
         };
 
         // info page
         if (value === 'info') {
-            // create embed page
+            // create page
             embed = createInfoPage(client, user);
             componentsList = [buttonRow];
         };
 
         // info page
         if (value === 'help') {
-            // create embed page
+            // create page
             embed = createHelpPage(user);
             componentsList = [buttonRow];
         };
 
         // support page
         if (value === 'support') {
-            // create embed page
+            // create page
             embed = createSupportPage(user);
+            componentsList = [buttonRow];
+        };
+
+        // support page
+        if (value === 'ping') {
+            // create page
+            embed = createPingPage(user);
             componentsList = [buttonRow];
         };
 

@@ -26,6 +26,11 @@ module.exports = function createHomeSelect(user) {
             label: '❓ Suporte',
             description: 'Ver info sobre nosso suporte',
             value: 'support'
+        },
+        {
+            label: '📡 Ping',
+            description: 'Ver o ping do bot',
+            value: 'ping'
         }]
     });
 };
