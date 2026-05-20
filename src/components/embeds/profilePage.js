@@ -14,7 +14,7 @@ module.exports = function createProfilePage(client, user) {
         createEmbed(user)
             .addFields([{
                 name: '👤 **Status**',
-                value: `>>> ⏳ **Lv.${profile.rpg.level}『 ${getXpNeeded(profile.rpg.level)}xp 』**💸 **R$${profile.rpg.money}**\n🧿 **Personalidade: ${profile.karma.personality}**\n📚 **Mensagens: ${profile.stats.messages}**\n📡 **Comandos: ${profile.stats.commands}**`
+                value: `>>> ⏳ **Lv.${profile.rpg.level}『 ${profile.rpg.xp} / ${getXpNeeded(profile.rpg.level)}xp 』**💸 **R$${profile.rpg.money}**\n🧿 **Personalidade: ${profile.karma.personality}**\n📚 **Mensagens: ${profile.stats.messages}**\n📡 **Comandos: ${profile.stats.commands}**`
             },
             {
                 name: '🎖️ **Honra**',
