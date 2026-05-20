@@ -2,7 +2,7 @@
 const createDefaultUser = require('../structures/defaultUser');
 const log = require('./logger');
 
-function ensureProfile(client, user) {
+module.exports = function ensureProfile(client, user) {
     // get the users
     const users = client.usersData;
 
@@ -17,5 +17,3 @@ function ensureProfile(client, user) {
 
     return users[user.id];
 };
-
-module.exports = ensureProfile;

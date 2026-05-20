@@ -1,7 +1,7 @@
 const constants = require('../config/constants');
 
 // log
-function log(type, message) {
+module.exports = function log(type, message) {
     const colors = constants.LOG_COLORS || {};
     const emojis = constants.EMOJIS || {};
 
@@ -13,5 +13,3 @@ function log(type, message) {
 
     console.log(`${color}[${emoji}] ${message}${reset}`);
 };
-
-module.exports = log;
