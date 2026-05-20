@@ -2,6 +2,9 @@
 const createEmbed = require('../../utils/embed');
 const ensureProfile = require('../../utils/ensureProfile');
 
+// import an single functions from various exports
+const { getXpNeeded } = require('../../utils/levelSystem')
+
 // return an embed with the page
 module.exports = function createProfilePage(client, user) {
     // get the user profile
@@ -11,7 +14,7 @@ module.exports = function createProfilePage(client, user) {
         createEmbed(user)
             .addFields([{
                 name: '👤 **Status**',
-                value: `>>> ⏳ **Lv.${profile.rpg.level}『 ${profile.rpg.xp}xp / ${Math.floor(100 * Math.pow(profile.rpg.level + 1, 1.5))}xp 』**💸 **R$${profile.rpg.money}**\n🧿 **Personalidade: ${profile.karma.personality}**\n📚 **Mensagens: ${profile.stats.messages}**\n📡 **Comandos: ${profile.stats.commands}**`
+                value: `>>> ⏳ **Lv.${profile.rpg.level}『 ${getXpNeeded(profile.rpg.level)}xp 』**💸 **R$${profile.rpg.money}**\n🧿 **Personalidade: ${profile.karma.personality}**\n📚 **Mensagens: ${profile.stats.messages}**\n📡 **Comandos: ${profile.stats.commands}**`
             },
             {
                 name: '🎖️ **Honra**',
