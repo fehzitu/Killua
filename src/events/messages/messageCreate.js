@@ -27,6 +27,19 @@ module.exports = {
         // message log
         log('RESET', `[${new Date().toLocaleDateString()} ${new Date().toLocaleTimeString()} @${userTag} ${guild} ${channel}]: ${message.content}`);
 
+        // add xp
+        profile.rpg.xp += 50;
+
+        // check xp
+        const result = checkLevelUp(profile);
+
+        // check xp result
+        if (result.leveledUp) {
+            if (message.channel) {
+                message.channel.send(`🎉 **${message.author} subiu para o nível ${result.level}**!`);
+            };
+        };
+
         // prefix
         const prefix = config.prefix;
 
