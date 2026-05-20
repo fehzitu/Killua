@@ -4,6 +4,8 @@ const checkCooldown = require('../../utils/cooldown');
 const createEmbed = require('../../utils/embed');
 const ensureProfile = require('../../utils/ensureProfile');
 const log = require('../../utils/logger');
+
+// import an single functions from various exports
 const { checkLevelUp } = require('../../utils/levelSystem');
 
 // safe execution

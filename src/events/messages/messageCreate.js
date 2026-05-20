@@ -6,6 +6,9 @@ const createEmbed = require('../../utils/embed');
 const ensureProfile = require('../../utils/ensureProfile');
 const log = require('../../utils/logger');
 
+// import an single functions from various exports
+const { checkLevelUp } = require('../../utils/levelSystem');
+
 module.exports = {
     name: 'messageCreate',
     async execute(client, message) {
@@ -35,9 +38,7 @@ module.exports = {
 
         // check xp result
         if (result.leveledUp) {
-            if (message.channel) {
-                message.channel.send(`🎉 **${message.author} subiu para o nível ${result.level}**!`);
-            };
+            if (message.channel) message.channel.send(`🎉 **${message.author} subiu para o nível ${result.level}**!`);
         };
 
         // prefix
@@ -87,6 +88,8 @@ module.exports = {
         // execute command
         try {
             await command.execute(message, args);
+                    // add xp
+                    profile.rpg.xp += 50;
         } catch (error) {
             log('ERROR', `Erro no comando (${commandName}): ${error.message}`);
         };
