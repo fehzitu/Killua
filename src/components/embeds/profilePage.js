@@ -3,7 +3,7 @@ const createEmbed = require('../../utils/embed');
 const ensureProfile = require('../../utils/ensureProfile');
 
 // import an single functions from various exports
-const { getXpNeeded } = require('../../utils/levelSystem')
+const { getXpNeeded } = require('../../utils/levelSystem');
 
 // return an embed with the page
 module.exports = function createProfilePage(client, user) {
