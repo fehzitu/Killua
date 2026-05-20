@@ -37,7 +37,4 @@ function checkLevelUp(profile) {
     };
 };
 
-module.exports = {
-    getXpNeeded,
-    checkLevelUp
-};
+module.exports = checkLevelUp;
