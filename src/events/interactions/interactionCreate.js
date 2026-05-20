@@ -4,6 +4,7 @@ const checkCooldown = require('../../utils/cooldown');
 const createEmbed = require('../../utils/embed');
 const ensureProfile = require('../../utils/ensureProfile');
 const log = require('../../utils/logger');
+const { checkLevelUp } = require('../../utils/levelSystem');
 
 // safe execution
 async function safeExecute(handler, interaction) {
@@ -116,6 +117,26 @@ module.exports = {
         try {
             await command.execute(interaction);
             // log('WARNING', `Comando /${interaction.commandName} usado por ${userTag}`);
+
+            // add xp
+            profile.rpg.xp += 100;
+
+            const resultLevel = checkLevelUp(profile);
+
+            // level up message
+            if (resultLevel.leveledUp) {
+                const levelMsg = `🎉 **${interaction.user} subiu para o nível ${resultLevel.level}**!`;
+
+                if (interaction.replied || interaction.deferred) {
+                    await interaction.followUp({
+                        content: levelMsg
+                    });
+                } else {
+                    await interaction.reply({
+                        content: levelMsg
+                    });
+                };
+            };
         } catch (error) {
             log('ERROR', `Erro no comando (${interaction.commandName}): ${error.message}`);
 
