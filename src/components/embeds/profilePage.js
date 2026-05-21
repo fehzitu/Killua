@@ -5,6 +5,9 @@ const ensureProfile = require('../../utils/ensureProfile');
 // import an single functions from various exports
 const { getXpNeeded } = require('../../utils/levelSystem');
 
+// import achievements list
+const achievementsList = require('../../structures/achievementsList');
+
 // return an embed with the page
 module.exports = function createProfilePage(client, user) {
     // get the user profile
@@ -18,7 +21,7 @@ module.exports = function createProfilePage(client, user) {
             },
             {
                 name: '🎖️ **Honra**',
-                value: `>>> 🏆 **Conquistas: 『${profile.honor.achievements.length} / 50』**\n🏅 **Medalhas: 『${profile.honor.medals.length} / 25』**\n✨ **Prestigio: 『${profile.honor.prestige.length} / 15』**`
+                value: `>>> 🏆 **Conquistas: 『${profile.honor.achievements.length} / ${achievementsList.length}』**\n🏅 **Medalhas: 『${profile.honor.medals.length} / ...』**\n✨ **Prestigio: 『${profile.honor.prestige.length} / ...』**`
             }])
             .setImage('https://i.pinimg.com/originals/fb/7d/25/fb7d25365c6f2deca04b86f35c8fee63.gif')
     );

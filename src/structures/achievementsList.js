@@ -1,3 +1,4 @@
+// create an default profile user
 module.exports = [
     {
         id: 'first_message',

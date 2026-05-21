@@ -1,4 +1,4 @@
-// Create an default profile user
+// create an default profile user
 function createDefaultUser() {
     return ({
         profileCreatedAt: new Date().toISOString(),
