@@ -5,6 +5,7 @@ const checkCooldown = require('../../utils/cooldown');
 const createEmbed = require('../../utils/embed');
 const ensureProfile = require('../../utils/ensureProfile');
 const log = require('../../utils/logger');
+const checkMessageAchievements = require('../../utils/achievements/checkMessageAchievements');
 
 // import an single functions from various exports
 const { checkLevelUp } = require('../../utils/levelSystem');
@@ -48,6 +49,22 @@ module.exports = {
         if (!message.content.toLowerCase().startsWith(prefix.toLowerCase())) {
             // add stats
             profile.stats.messages++;
+
+           // check achievements
+            const unlocked = checkMessageAchievements(profile);
+
+            // send achievement messages
+            for (const achievement of unlocked) {
+                await message.reply({
+                    content:
+                        `🏆 **Conquista desbloqueada!**\n` +
+                        `${achievement.icon} **${achievement.name}**\n` +
+                        `${achievement.description}\n\n` +
+                        `✨ +${achievement.reward?.xp || 0} XP\n` +
+                        `💰 +$${achievement.reward?.money || 0}`
+                });
+            };
+
             return;
         };
 
@@ -77,7 +94,6 @@ module.exports = {
                 embeds: [embed]
             });
         };
-
 
         // add stats
         profile.stats.commands++;
