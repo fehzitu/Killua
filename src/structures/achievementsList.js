@@ -1,4 +1,4 @@
-// create an default profile user
+// create an achievements list
 module.exports = [
     {
         id: 'first_message',
