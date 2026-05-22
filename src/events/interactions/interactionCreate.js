@@ -6,6 +6,7 @@ const ensureProfile = require('../../utils/ensureProfile');
 const createEmbed = require('../../utils/embed');
 const log = require('../../utils/logger');
 const checkMessageAchievements = require('../../utils/achievements/checkMessageAchievements');
+const checkCommandAchievements = require('../../utils/achievements/checkCommandAchievements');
 
 // import an single function from various exports
 const { checkLevelUp } = require('../../utils/levelSystem');
@@ -115,6 +116,29 @@ module.exports = {
 
         // add stats
         profile.stats.commands++;
+
+        // check command achievements
+        const unlocked = checkCommandAchievements(profile);
+        
+        // send achievement messages
+        for (const achievement of unlocked) {
+            const content =
+                `🏆 **Conquista desbloqueada!**\n` +
+                `${achievement.icon} **${achievement.name}**\n` +
+                `${achievement.description}\n\n` +
+                `✨ +${achievement.reward?.xp || 0} XP\n` +
+                `💰 +$${achievement.reward?.money || 0}`;
+        
+            if (interaction.replied || interaction.deferred) {
+                await interaction.followUp({
+                    content
+                });
+            } else {
+                await interaction.reply({
+                    content
+                });
+            };
+        };
 
         // command log
         log('RESET', `[${new Date().toLocaleDateString()} ${new Date().toLocaleTimeString()} @${userTag} ${guild} ${channel}]: /${interaction.commandName}`);
