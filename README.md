@@ -53,6 +53,7 @@ This project focuses not only on features, but also on code quality, structure, 
   ┣ 📂 deploy
   ┃ ┗ 📜 deploy-commands.js (deploy all commands)
   ┣ 📂 utils
+  ┃ ┗ 📂 achievements (achievements system)
   ┃ ┗ 📜 files to create sys logic, helpers and other
   ┣ 📂 components
   ┃ ┗ 📜 files to create UI
