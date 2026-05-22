@@ -2,12 +2,11 @@
 const config = require('../../config');
 const constants = require('../../config/constants');
 const checkCooldown = require('../../utils/cooldown');
-const defaultMessages = require('../../config/defaultMessages');
 const ensureProfile = require('../../utils/ensureProfile');
 const log = require('../../utils/logger');
 const checkMessageAchievements = require('../../utils/achievements/checkMessageAchievements');
 
-// import an single functions from various exports
+// import an single function from various exports
 const { checkLevelUp } = require('../../utils/levelSystem');
 
 module.exports = {
