@@ -3,15 +3,13 @@ const config = require('../../config');
 const constants = require('../../config/constants');
 const checkCooldown = require('../../utils/cooldown');
 const ensureProfile = require('../../utils/ensureProfile');
+const createEmbed = require('../../utils/embed');
 const log = require('../../utils/logger');
 const checkMessageAchievements = require('../../utils/achievements/checkMessageAchievements');
 
 // import an single function from various exports
 const { checkLevelUp } = require('../../utils/levelSystem');
 const { createLevelUpMessage } = require('../../structures/defaultMessages');
-
-// remove later
-const createEmbed = require('../../utils/embed');
 
 module.exports = {
     name: 'messageCreate',

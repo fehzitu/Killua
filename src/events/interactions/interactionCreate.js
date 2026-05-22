@@ -1,12 +1,15 @@
 // import custom functions
+const config = require('../../config');
 const constants = require('../../config/constants');
 const checkCooldown = require('../../utils/cooldown');
-const createEmbed = require('../../utils/embed');
 const ensureProfile = require('../../utils/ensureProfile');
+const createEmbed = require('../../utils/embed');
 const log = require('../../utils/logger');
+const checkMessageAchievements = require('../../utils/achievements/checkMessageAchievements');
 
-// import an single functions from various exports
+// import an single function from various exports
 const { checkLevelUp } = require('../../utils/levelSystem');
+const { createLevelUpMessage } = require('../../structures/defaultMessages');
 
 // safe execution
 async function safeExecute(handler, interaction) {
@@ -127,15 +130,16 @@ module.exports = {
 
             // level up message
             if (resultLevel.leveledUp) {
-                const levelMsg = `🎉 **${interaction.user} subiu para o nível ${resultLevel.level}**!`;
+                // level up message
+                const levelUpEmbed = createLevelUpMessage(interaction.user, resultLevel.level);
 
                 if (interaction.replied || interaction.deferred) {
                     await interaction.followUp({
-                        content: levelMsg
+                        embeds: [levelUpEmbed]
                     });
                 } else {
                     await interaction.reply({
-                        content: levelMsg
+                        embeds: [levelUpEmbed]
                     });
                 };
             };
