@@ -130,11 +130,11 @@ module.exports = {
                 `💰 +$${achievement.reward?.money || 0}`;
         
             if (interaction.replied || interaction.deferred) {
-                await interaction.followUp({
+                await interaction.channel.send({
                     content
                 });
             } else {
-                await interaction.reply({
+                await interaction.channel.send({
                     content
                 });
             };
