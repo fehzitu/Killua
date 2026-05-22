@@ -8,6 +8,10 @@ const checkMessageAchievements = require('../../utils/achievements/checkMessageA
 
 // import an single function from various exports
 const { checkLevelUp } = require('../../utils/levelSystem');
+const { createLevelUpMessage } = require('../../structures/defaultMessages');
+
+// remove later
+const createEmbed = require('../../utils/embed');
 
 module.exports = {
     name: 'messageCreate',
@@ -34,11 +38,16 @@ module.exports = {
         profile.rpg.xp += 50;
 
         // check xp
-        const result = checkLevelUp(profile);
+        const messageResult = checkLevelUp(profile);
+
+        // level up message
+        const levelUpEmbed = createLevelUpMessage(message.author, messageResult.level);
 
         // check xp result
-        if (result.leveledUp) {
-            if (message.channel) message.channel.send(`🎉 **${message.author} subiu para o nível ${result.level}**!`);
+        if (messageResult.leveledUp) {
+            if (message.channel) message.channel.send({
+                embeds: [levelUpEmbed]
+            });
         };
 
         // prefix
@@ -103,8 +112,18 @@ module.exports = {
         // execute command
         try {
             await command.execute(message, args);
-                    // add xp
-                    profile.rpg.xp += 50;
+            // add an extra xp for commands
+            profile.rpg.xp += 50;
+
+            // check xp
+            const commandResult = checkLevelUp(profile);
+            
+            // check xp result
+            if (commandResult.leveledUp) {
+                if (message.channel) message.channel.send({
+                    embeds: [levelUpEmbed]
+                });
+            };
         } catch (error) {
             log('ERROR', `Erro no comando (${commandName}): ${error.message}`);
         };

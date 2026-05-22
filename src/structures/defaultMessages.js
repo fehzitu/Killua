@@ -8,7 +8,7 @@ function createLevelUpMessage(user, level) {
             .addFields([{
                 name: '🎉 **Parabéns!**',
                 value: `**${user} subiu para o nível ${level}**!`
-            }]);
+            }])
     );
 };
 
