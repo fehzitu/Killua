@@ -7,6 +7,7 @@ const createEmbed = require('../../utils/embed');
 const log = require('../../utils/logger');
 const checkMessageAchievements = require('../../utils/achievements/checkMessageAchievements');
 const checkCommandAchievements = require('../../utils/achievements/checkCommandAchievements');
+const checkLevelAchievements = require('../../utils/achievements/checkLevelAchievements');
 
 // import an single function from various exports
 const { checkLevelUp } = require('../../utils/levelSystem');
@@ -151,6 +152,23 @@ module.exports = {
             profile.rpg.xp += 100;
 
             const resultLevel = checkLevelUp(profile);
+
+            // check level achievements
+            const unlockedLevels = checkLevelAchievements(profile);
+            
+            // send achievement messages
+            for (const achievement of unlockedLevels) {
+                const content =
+                    `🏆 **Conquista desbloqueada!**\n` +
+                    `${achievement.icon} **${achievement.name}**\n` +
+                    `${achievement.description}\n\n` +
+                    `✨ +${achievement.reward?.xp || 0} XP\n` +
+                    `💰 +$${achievement.reward?.money || 0}`;
+            
+                await interaction.channel.send({
+                    content
+                });
+            };
 
             // level up message
             if (resultLevel.leveledUp) {
