@@ -153,6 +153,22 @@ module.exports = {
 
             const resultLevel = checkLevelUp(profile);
 
+            // level up message
+            if (resultLevel.leveledUp) {
+                // level up message
+                const levelUpEmbed = createLevelUpMessage(interaction.user, resultLevel.level);
+
+                if (interaction.replied || interaction.deferred) {
+                    await interaction.followUp({
+                        embeds: [levelUpEmbed]
+                    });
+                } else {
+                    await interaction.reply({
+                        embeds: [levelUpEmbed]
+                    });
+                };
+            };
+
             // check level achievements
             const unlockedLevels = checkLevelAchievements(profile);
             
@@ -168,22 +184,6 @@ module.exports = {
                 await interaction.channel.send({
                     content
                 });
-            };
-
-            // level up message
-            if (resultLevel.leveledUp) {
-                // level up message
-                const levelUpEmbed = createLevelUpMessage(interaction.user, resultLevel.level);
-
-                if (interaction.replied || interaction.deferred) {
-                    await interaction.followUp({
-                        embeds: [levelUpEmbed]
-                    });
-                } else {
-                    await interaction.reply({
-                        embeds: [levelUpEmbed]
-                    });
-                };
             };
         } catch (error) {
             log('ERROR', `Erro no comando (${interaction.commandName}): ${error.message}`);

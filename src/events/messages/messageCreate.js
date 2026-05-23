@@ -40,6 +40,16 @@ module.exports = {
         // check xp
         const messageResult = checkLevelUp(profile);
 
+        // level up message
+        const levelUpEmbed = createLevelUpMessage(message.author, messageResult.level);
+
+        // check xp result
+        if (messageResult.leveledUp) {
+            if (message.channel) message.channel.send({
+                embeds: [levelUpEmbed]
+            });
+        };
+
         // check level achievements
         const unlockedLevels = checkLevelAchievements(profile);
         
@@ -52,16 +62,6 @@ module.exports = {
                     `${achievement.description}\n\n` +
                     `✨ +${achievement.reward?.xp || 0} XP\n` +
                     `💰 +$${achievement.reward?.money || 0}`
-            });
-        };
-
-        // level up message
-        const levelUpEmbed = createLevelUpMessage(message.author, messageResult.level);
-
-        // check xp result
-        if (messageResult.leveledUp) {
-            if (message.channel) message.channel.send({
-                embeds: [levelUpEmbed]
             });
         };
 
@@ -148,6 +148,13 @@ module.exports = {
             // check xp
             const commandResult = checkLevelUp(profile);
 
+            // check xp result
+            if (commandResult.leveledUp) {
+                if (message.channel) message.channel.send({
+                    embeds: [levelUpEmbed]
+                });
+            };
+
             // check level achievements
             const unlockedLevels = checkLevelAchievements(profile);
             
@@ -160,13 +167,6 @@ module.exports = {
                         `${achievement.description}\n\n` +
                         `✨ +${achievement.reward?.xp || 0} XP\n` +
                         `💰 +$${achievement.reward?.money || 0}`
-                });
-            };
-
-            // check xp result
-            if (commandResult.leveledUp) {
-                if (message.channel) message.channel.send({
-                    embeds: [levelUpEmbed]
                 });
             };
         } catch (error) {
