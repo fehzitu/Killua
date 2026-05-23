@@ -55,7 +55,7 @@ module.exports = {
         
         // send achievement messages
         for (const achievement of unlockedLevels) {
-            await message.reply({
+            await message.channel.send({
                 content:
                     `🏆 **Conquista desbloqueada!**\n` +
                     `${achievement.icon} **${achievement.name}**\n` +
@@ -78,7 +78,7 @@ module.exports = {
 
             // send achievement messages
             for (const achievement of unlocked) {
-                await message.reply({
+                await message.channel.send({
                     content:
                         `🏆 **Conquista desbloqueada!**\n` +
                         `${achievement.icon} **${achievement.name}**\n` +
@@ -113,7 +113,7 @@ module.exports = {
 
             embed.setDescription(`⏳ Sem spam!\nEspere **${seconds}s** para usar novamente.`);
 
-            return message.reply({
+            return message.channel.send({
                 embeds: [embed]
             });
         };
@@ -126,7 +126,7 @@ module.exports = {
         
         // send achievement messages
         for (const achievement of unlockedCommands) {
-            await message.reply({
+            await message.channel.send({
                 content:
                     `🏆 **Conquista desbloqueada!**\n` +
                     `${achievement.icon} **${achievement.name}**\n` +
@@ -159,7 +159,7 @@ module.exports = {
             
             // send achievement messages
             for (const achievement of unlockedLevels) {
-                await message.reply({
+                await message.channel.send({
                     content:
                         `🏆 **Conquista desbloqueada!**\n` +
                         `${achievement.icon} **${achievement.name}**\n` +
@@ -173,6 +173,11 @@ module.exports = {
             await command.execute(message, args);
         } catch (error) {
             log('ERROR', `Erro no comando (${commandName}): ${error.message}`);
+
+            await message.channel.send({
+                content: 'Erro ao executar comando.',
+                ephemeral: true
+            });
         };
     }
 };

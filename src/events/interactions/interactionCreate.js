@@ -40,6 +40,10 @@ module.exports = {
         // get user profile
         const profile = ensureProfile(client, user);
 
+        // formated info
+        const guild = interaction.guild ? interaction.guild.name : 'DM';
+        const channel = interaction.guild ? interaction.channel.name : 'DM';
+
         // buttons
         if (interaction.isButton()) {
             const id = interaction.customId.split(':')[0];
@@ -111,62 +115,25 @@ module.exports = {
             });
         };
 
-        // formated info
-        const guild = interaction.guild ? interaction.guild.name : 'DM';
-        const channel = interaction.guild ? interaction.channel.name : 'DM';
-
         // add stats
         profile.stats.commands++;
 
-        // check command achievements
-        const unlocked = checkCommandAchievements(profile);
-        
-        // send achievement messages
-        for (const achievement of unlocked) {
-            const content =
-                `🏆 **Conquista desbloqueada!**\n` +
-                `${achievement.icon} **${achievement.name}**\n` +
-                `${achievement.description}\n\n` +
-                `✨ +${achievement.reward?.xp || 0} XP\n` +
-                `💰 +$${achievement.reward?.money || 0}`;
-        
-            if (interaction.replied || interaction.deferred) {
-                await interaction.channel.send({
-                    content
-                });
-            } else {
-                await interaction.channel.send({
-                    content
-                });
-            };
-        };
-
-        // command log
-        log('RESET', `[${new Date().toLocaleDateString()} ${new Date().toLocaleTimeString()} @${userTag} ${guild} ${channel}]: /${interaction.commandName}`);
-
         try {
-            await command.execute(interaction);
-            // log('WARNING', `Comando /${interaction.commandName} usado por ${userTag}`);
-
             // add xp
             profile.rpg.xp += 100;
 
+            // check level
             const resultLevel = checkLevelUp(profile);
 
             // level up message
-            if (resultLevel.leveledUp) {
-                // level up message
-                const levelUpEmbed = createLevelUpMessage(interaction.user, resultLevel.level);
+            const levelUpEmbed = createLevelUpMessage(interaction.user, resultLevel.level);
 
-                if (interaction.replied || interaction.deferred) {
-                    await interaction.followUp({
-                        embeds: [levelUpEmbed]
-                    });
-                } else {
-                    await interaction.reply({
-                        embeds: [levelUpEmbed]
-                    });
-                };
+            // level up message
+            if (resultLevel.leveledUp) {
+                // send level up message
+                await interaction.channel.send({
+                    embeds: [levelUpEmbed]
+                });
             };
 
             // check level achievements
@@ -185,6 +152,30 @@ module.exports = {
                     content
                 });
             };
+
+            // check command achievements
+            const unlocked = checkCommandAchievements(profile);
+            
+            // send achievement messages
+            for (const achievement of unlocked) {
+                const content =
+                    `🏆 **Conquista desbloqueada!**\n` +
+                    `${achievement.icon} **${achievement.name}**\n` +
+                    `${achievement.description}\n\n` +
+                    `✨ +${achievement.reward?.xp || 0} XP\n` +
+                    `💰 +$${achievement.reward?.money || 0}`;
+    
+                await interaction.channel.send({
+                    content
+                });
+            };
+
+            // try execute command
+            await command.execute(interaction);
+            // log('WARNING', `Comando /${interaction.commandName} usado por ${userTag}`);
+
+            // command log
+            log('RESET', `[${new Date().toLocaleDateString()} ${new Date().toLocaleTimeString()} @${userTag} ${guild} ${channel}]: /${interaction.commandName}`);
         } catch (error) {
             log('ERROR', `Erro no comando (${interaction.commandName}): ${error.message}`);
 
