@@ -12,7 +12,19 @@ function createLevelUpMessage(user, level) {
     );
 };
 
+// achievements msg
+function createAchievementsMessage(user, achievement) {
+    return (
+        createEmbed(user, achievement)
+            .addFields([{
+                name: `🏆 **Conquista desbloqueada!**\n>>> ${achievement.icon} **${achievement.name}**\n${achievement.description}`,
+                value: `>>> ✨ +${achievement.reward?.xp || 0} Xp\n💸 +R$${achievement.reward?.money || 0}`
+            }])
+    );
+};
+
 // create an messages list
 module.exports = {
-    createLevelUpMessage
+    createLevelUpMessage,
+    createAchievementsMessage
 };

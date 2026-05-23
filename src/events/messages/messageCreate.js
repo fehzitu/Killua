@@ -12,6 +12,7 @@ const checkLevelAchievements = require('../../utils/achievements/checkLevelAchie
 // import an single function from various exports
 const { checkLevelUp } = require('../../utils/levelSystem');
 const { createLevelUpMessage } = require('../../structures/defaultMessages');
+const { createAchievementsMessage } = require('../../structures/defaultMessages');
 
 module.exports = {
     name: 'messageCreate',
@@ -55,13 +56,11 @@ module.exports = {
         
         // send achievement messages
         for (const achievement of unlockedLevels) {
+            // achievement message
+            const achievementEmbed = createAchievementsMessage(message.author, achievement);
+
             await message.channel.send({
-                content:
-                    `🏆 **Conquista desbloqueada!**\n` +
-                    `${achievement.icon} **${achievement.name}**\n` +
-                    `${achievement.description}\n\n` +
-                    `✨ +${achievement.reward?.xp || 0} XP\n` +
-                    `💰 +$${achievement.reward?.money || 0}`
+                embeds: [achievementEmbed]
             });
         };
 
@@ -78,13 +77,11 @@ module.exports = {
 
             // send achievement messages
             for (const achievement of unlocked) {
+                // achievement message
+                const achievementEmbed = createAchievementsMessage(message.author, achievement);
+
                 await message.channel.send({
-                    content:
-                        `🏆 **Conquista desbloqueada!**\n` +
-                        `${achievement.icon} **${achievement.name}**\n` +
-                        `${achievement.description}\n\n` +
-                        `✨ +${achievement.reward?.xp || 0} XP\n` +
-                        `💰 +$${achievement.reward?.money || 0}`
+                    embeds: [achievementEmbed]
                 });
             };
 
@@ -126,13 +123,11 @@ module.exports = {
         
         // send achievement messages
         for (const achievement of unlockedCommands) {
+            // achievement message
+            const achievementEmbed = createAchievementsMessage(message.author, achievement);
+
             await message.channel.send({
-                content:
-                    `🏆 **Conquista desbloqueada!**\n` +
-                    `${achievement.icon} **${achievement.name}**\n` +
-                    `${achievement.description}\n\n` +
-                    `✨ +${achievement.reward?.xp || 0} XP\n` +
-                    `💰 +$${achievement.reward?.money || 0}`
+                embeds: [achievementEmbed]
             });
         };
 
@@ -159,13 +154,11 @@ module.exports = {
             
             // send achievement messages
             for (const achievement of unlockedLevels) {
+                // achievement message
+                const achievementEmbed = createAchievementsMessage(message.author, achievement);
+
                 await message.channel.send({
-                    content:
-                        `🏆 **Conquista desbloqueada!**\n` +
-                        `${achievement.icon} **${achievement.name}**\n` +
-                        `${achievement.description}\n\n` +
-                        `✨ +${achievement.reward?.xp || 0} XP\n` +
-                        `💰 +$${achievement.reward?.money || 0}`
+                    embeds: [achievementEmbed]
                 });
             };
 

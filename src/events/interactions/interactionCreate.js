@@ -12,6 +12,7 @@ const checkLevelAchievements = require('../../utils/achievements/checkLevelAchie
 // import an single function from various exports
 const { checkLevelUp } = require('../../utils/levelSystem');
 const { createLevelUpMessage } = require('../../structures/defaultMessages');
+const { createAchievementsMessage } = require('../../structures/defaultMessages');
 
 // safe execution
 async function safeExecute(handler, interaction) {
@@ -141,15 +142,11 @@ module.exports = {
             
             // send achievement messages
             for (const achievement of unlockedLevels) {
-                const content =
-                    `🏆 **Conquista desbloqueada!**\n` +
-                    `${achievement.icon} **${achievement.name}**\n` +
-                    `${achievement.description}\n\n` +
-                    `✨ +${achievement.reward?.xp || 0} XP\n` +
-                    `💰 +$${achievement.reward?.money || 0}`;
-            
+                // achievement message
+                const achievementEmbed = createAchievementsMessage(interaction.user, achievement);
+    
                 await interaction.channel.send({
-                    content
+                    embeds: [achievementEmbed]
                 });
             };
 
@@ -158,15 +155,11 @@ module.exports = {
             
             // send achievement messages
             for (const achievement of unlocked) {
-                const content =
-                    `🏆 **Conquista desbloqueada!**\n` +
-                    `${achievement.icon} **${achievement.name}**\n` +
-                    `${achievement.description}\n\n` +
-                    `✨ +${achievement.reward?.xp || 0} XP\n` +
-                    `💰 +$${achievement.reward?.money || 0}`;
+                // achievement message
+                const achievementEmbed = createAchievementsMessage(interaction.user, achievement);
     
                 await interaction.channel.send({
-                    content
+                    embeds: [achievementEmbed]
                 });
             };
 
