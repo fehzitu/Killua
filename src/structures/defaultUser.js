@@ -8,9 +8,7 @@ function createDefaultUser() {
             money: 100
         },
         honor: {
-            achievements: [],
-            medals: [],
-            prestige: []
+            achievements: []
         },
         karma: {
             personality: '(Sem karma)',
