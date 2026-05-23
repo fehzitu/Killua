@@ -141,7 +141,6 @@ module.exports = {
 
         // execute command
         try {
-            await command.execute(message, args);
             // add an extra xp for commands
             profile.rpg.xp += 50;
 
@@ -169,6 +168,9 @@ module.exports = {
                         `💰 +$${achievement.reward?.money || 0}`
                 });
             };
+
+            // execute the command
+            await command.execute(message, args);
         } catch (error) {
             log('ERROR', `Erro no comando (${commandName}): ${error.message}`);
         };
