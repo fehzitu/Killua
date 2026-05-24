@@ -6,11 +6,11 @@ module.exports = function createProfileSelector(user) {
     return createSelector({
         customId: 'profilePageSelector',
         user,
-        placeholder: 'ESSE COMPONENTE É UM TESTE APENAS',
+        placeholder: '🏆 Todas as conquistas',
         optionsList: [{
-            label: 'CAMPO 1',
-            description: 'CAMPO DE TESTE 1',
-            value: 'teste_1'
+            label: '1',
+            description: '1',
+            value: '1'
         }]
-    }).setDisabled(true);
+    });
 };
