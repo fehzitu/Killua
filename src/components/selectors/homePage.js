@@ -1,10 +1,10 @@
 // import custom functions
-const createSelect = require('../../utils/select');
+const createSelector = require('../../utils/selector');
 
 // create home page select
-module.exports = function createHomeSelect(user) {
-    return createSelect({
-        customId: 'homePageSelect',
+module.exports = function createHomeSelector(user) {
+    return createSelector({
+        customId: 'homePageSelector',
         user,
         placeholder: '🧾 Escolha uma página',
         optionsList: [{

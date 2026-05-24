@@ -3,7 +3,7 @@ const { MessageActionRow } = require('discord.js');
 
 // import custom components
 const createHomePage = require('../../components/embeds/homePage');
-const createHomeSelect = require('../../components/selects/homePage');
+const createHomeSelector = require('../../components/selectors/homePage');
 
 module.exports = {
     customId: 'homePageButton',
@@ -22,15 +22,15 @@ module.exports = {
         const embed = createHomePage(interaction.user);
 
         // select
-        const select = createHomeSelect(interaction.user);
+        const selector = createHomeSelector(interaction.user);
 
         // rows
-        let selectRow = new MessageActionRow().addComponents(select);
+        let selectorRow = new MessageActionRow().addComponents(selector);
 
         // edit message
         return interaction.update({
             embeds: [embed],
-            components: [selectRow]
+            components: [selectorRow]
         });
     }
 };
