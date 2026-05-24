@@ -43,7 +43,6 @@ module.exports = {
 
         // selected value
         const value = interaction.values?.[0];
-        console.log(value);
 
         // reset embed
         await interaction.update({
