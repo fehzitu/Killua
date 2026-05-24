@@ -22,60 +22,21 @@ module.exports = [
         hidden: false,
 
         reward: {
-            xp: 75,
-            money: 150
+            xp: 50,
+            money: 100
         }
     },
     {
-        id: 'level_5',
-        name: 'Aprendiz',
-        description: 'Alcance o nível 5',
-        icon: '🌱',
+        id: 'rookie',
+        name: 'Nível 5',
+        description: 'Chegue ao nível 5',
+        icon: '5️⃣',
         rarity: 'common',
         hidden: false,
 
         reward: {
-            xp: 100,
-            money: 300
-        }
-    },
-    {
-        id: 'level_25',
-        name: 'Veterano',
-        description: 'Alcance o nível 25',
-        icon: '🔥',
-        rarity: 'rare',
-        hidden: false,
-
-        reward: {
-            xp: 500,
-            money: 1000
-        }
-    },
-    {
-        id: 'first_1000',
-        name: 'Primeiras moedas',
-        description: 'Consiga 1000 moedas',
-        icon: '💰',
-        rarity: 'common',
-        hidden: false,
-
-        reward: {
-            xp: 150,
-            money: 250
-        }
-    },
-    {
-        id: 'social_person',
-        name: 'Tagarela',
-        description: 'Envie 1000 mensagens',
-        icon: '🗣️',
-        rarity: 'rare',
-        hidden: false,
-
-        reward: {
-            xp: 750,
-            money: 2000
+            xp: 250,
+            money: 500
         }
     },
     {
@@ -84,11 +45,11 @@ module.exports = [
         description: 'Receba 50 karmas positivos',
         icon: '✨',
         rarity: 'epic',
-        hidden: false,
+        hidden: true,
 
         reward: {
-            xp: 1200,
-            money: 3500
+            xp: 1000,
+            money: 2000
         }
     },
     {
@@ -97,11 +58,11 @@ module.exports = [
         description: 'Receba 50 karmas negativos',
         icon: '😈',
         rarity: 'epic',
-        hidden: false,
+        hidden: true,
 
         reward: {
-            xp: 1200,
-            money: 3500
+            xp: 1000,
+            money: 2000
         }
     },
     {
@@ -115,19 +76,6 @@ module.exports = [
         reward: {
             xp: 5000,
             money: 10000
-        }
-    },
-    {
-        id: 'night_owl',
-        name: 'Coruja',
-        description: 'Use o bot às 3 da manhã',
-        icon: '🦉',
-        rarity: 'secret',
-        hidden: true,
-
-        reward: {
-            xp: 2000,
-            money: 5000
         }
     }
 ];

@@ -16,16 +16,6 @@ function checkCommandAchievements(profile) {
         if (achievement) unlocked.push(achievement);
     };
 
-    // command addict achievement
-    if (profile.stats.commands >= 100) {
-        const achievement = unlockAchievement(
-            profile,
-            'command_addict'
-        );
-
-        if (achievement) unlocked.push(achievement);
-    };
-
     // return unlocked achievements
     return unlocked;
 };

@@ -16,46 +16,6 @@ function checkLevelAchievements(profile) {
         if (achievement) unlocked.push(achievement);
     };
 
-    // adventurer achievement
-    if (profile.rpg.level >= 15) {
-        const achievement = unlockAchievement(
-            profile,
-            'adventurer'
-        );
-
-        if (achievement) unlocked.push(achievement);
-    };
-
-    // veteran achievement
-    if (profile.rpg.level >= 30) {
-        const achievement = unlockAchievement(
-            profile,
-            'veteran'
-        );
-
-        if (achievement) unlocked.push(achievement);
-    };
-
-    // elite achievement
-    if (profile.rpg.level >= 50) {
-        const achievement = unlockAchievement(
-            profile,
-            'elite'
-        );
-
-        if (achievement) unlocked.push(achievement);
-    };
-
-    // legend achievement
-    if (profile.rpg.level >= 100) {
-        const achievement = unlockAchievement(
-            profile,
-            'legend'
-        );
-
-        if (achievement) unlocked.push(achievement);
-    };
-
     // return unlocked achievements
     return unlocked;
 };

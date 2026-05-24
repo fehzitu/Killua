@@ -16,16 +16,6 @@ function checkMessageAchievements(profile) {
         if (achievement) unlocked.push(achievement);
     };
 
-    // social person achievement
-    if (profile.stats.messages >= 1000) {
-        const achievement = unlockAchievement(
-            profile,
-            'social_person'
-        );
-
-        if (achievement) unlocked.push(achievement);
-    };
-
     // return unlocked achievements
     return unlocked;
 };
