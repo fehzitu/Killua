@@ -44,7 +44,7 @@ module.exports = {
         let buttonRow = new MessageActionRow();
 
         // components list
-        let componentsList = [selectorRow]
+        let componentsList = [selectorRow];
 
         // selected value
         const value = interaction.values?.[0];

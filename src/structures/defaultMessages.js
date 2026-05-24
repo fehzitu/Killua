@@ -17,9 +17,10 @@ function createAchievementsMessage(user, achievement) {
     return (
         createEmbed(user, achievement)
             .addFields([{
-                name: `🏆 **Conquista desbloqueada!**\n>>> ${achievement.icon} **${achievement.name}**\n${achievement.description}`,
+                name: `🏆 **Conquista desbloqueada!**\n>>> 📝 ${achievement.description}`,
                 value: `>>> ✨ +${achievement.reward?.xp || 0} Xp\n💸 +R$${achievement.reward?.money || 0}`
             }])
+            .setImage('https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExNmNsbnp5dHNmcXYzdzZ6OGtwZDllbDF0d2hzbHVveDVnbDllem9iaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/KQhEzQYoNveKEI0giY/giphy.gif')
     );
 };
 

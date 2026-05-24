@@ -5,6 +5,7 @@ module.exports = [
         name: 'Primeira palavra',
         description: 'Envie sua primeira mensagem',
         icon: '💬',
+        link: 'https://cdn.discordapp.com/attachments/1477290272638632068/1508160229316104325/achievement.png?ex=6a14872a&is=6a1335aa&hm=9ca2b8e5d9f288635a2c6dd6bc5cb74b83a8558030d517a84e27efbdeb292a34',
         rarity: 'common',
         hidden: false,
 
@@ -12,7 +13,7 @@ module.exports = [
             xp: 50,
             money: 100
         }
-    },
+    }/*,
     {
         id: 'first_command',
         name: 'Iniciante',
@@ -77,5 +78,5 @@ module.exports = [
             xp: 5000,
             money: 10000
         }
-    }
+    }*/
 ];

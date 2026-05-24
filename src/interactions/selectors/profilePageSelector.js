@@ -1,8 +1,15 @@
 // discord imports
 const { MessageActionRow } = require('discord.js');
 
-// import custom functions
-const createEmbed = require('../../utils/embed');
+// import custom pages
+const createProfilePage = require('../../components/embeds/profilePage');
+
+// import custom interactions
+const createHomeButton = require('../../components/buttons/homePage');
+const createProfileSelector = require('../../components/selectors/profilePage');
+
+// import achievements list
+const achievementsList = require('../../structures/achievementsList');
 
 module.exports = {
     customId: 'profilePageSelector',
@@ -21,14 +28,32 @@ module.exports = {
             });
         };
 
-        // option 1
-        if (value === '1') {
-            const embed = createEmbed({});
-        };
+        // profile page embed
+        const profilePage = createProfilePage(client, user);
 
-        return interaction.update({
-            embeds: [embed],
-            components: componentsList
+        // profile page selector
+        const profilePageSelector = createProfileSelector(user);
+
+        // back to menu button
+        const backHomeButton = createHomeButton(user);
+
+        // rows
+        const profileSelectorRow = new MessageActionRow().addComponents(profilePageSelector);
+        const profileButtonRow = new MessageActionRow().addComponents(backHomeButton);
+
+        // selected value
+        const value = interaction.values?.[0];
+
+        // reset embed
+        await interaction.update({
+            embeds: [profilePage],
+            components: [profileSelectorRow, profileButtonRow]
+        });
+
+        // send achievement response
+        return interaction.followUp({
+            content: achievementsList[value].link,
+            ephemeral: true
         });
     }
 };
