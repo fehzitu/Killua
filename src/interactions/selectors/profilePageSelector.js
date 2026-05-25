@@ -52,7 +52,7 @@ module.exports = {
 
         // send achievement response
         return interaction.followUp({
-            content: `${achievementsList[value].link}`,
+            files: [`${achievementsList[value].file}`],
             ephemeral: true
         });
     }
