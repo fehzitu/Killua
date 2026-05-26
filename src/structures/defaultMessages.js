@@ -4,7 +4,7 @@ const createEmbed = require('../utils/embed');
 // level msg
 function createLevelUpMessage(user, level) {
     return (
-        createEmbed(user, level)
+        createEmbed(user)
             .addFields([{
                 name: '🎉 **Parabéns!**',
                 value: `**${user} subiu para o nível ${level}**!`
@@ -15,7 +15,7 @@ function createLevelUpMessage(user, level) {
 // achievements msg
 function createAchievementsMessage(user, achievement) {
     return (
-        createEmbed(user, achievement)
+        createEmbed(user)
             .addFields([{
                 name: `🏆 **Conquista desbloqueada!**\n>>> 📝 ${achievement.name}`,
                 value: `>>> ✨ +${achievement.reward?.xp || 0} Xp\n💸 +R$${achievement.reward?.money || 0}`
