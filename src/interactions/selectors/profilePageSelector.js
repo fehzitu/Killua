@@ -3,6 +3,7 @@ const { MessageActionRow } = require('discord.js');
 
 // import custom pages
 const createProfilePage = require('../../components/embeds/profilePage');
+const createAchievementsPage = require('../../components/embeds/achievementsPage');
 
 // import custom interactions
 const createHomeButton = require('../../components/buttons/homePage');
@@ -43,17 +44,15 @@ module.exports = {
 
         // selected value
         const value = interaction.values?.[0];
+        
+        // create an achievement page
+        const achievementsPage = createAchievementsPage(user);
+        // finish this embed on components
 
         // reset embed
-        await interaction.update({
+        return interaction.update({
             embeds: [profilePage],
             components: [profileSelectorRow, profileButtonRow]
-        });
-
-        // send achievement response
-        return interaction.followUp({
-            files: [`${achievementsList[value].file}`],
-            ephemeral: true
         });
     }
 };
