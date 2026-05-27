@@ -20,7 +20,7 @@ module.exports = function createAchievementsPage(client, user, achievementIndex)
         createEmbed(user)
             .addFields([{
                 name: `🏆 **Detalhes da conquista:**\n>>> 📝 ${achievement.name}\n${achievement.goal}`,
-                value: `🤑 **Recompensas:**\n> ✨ +${achievement.reward?.xp || 0} Xp\n> 💸 +R$ ${achievement.reward?.money || 0}\n🫡 **Obtida?**\n${obtained}`
+                value: `✨️ **Raridade:**\n> ${achievement.rarity}\n🤑 **Recompensas:**\n> ✨ +${achievement.reward?.xp || 0} Xp\n> 💸 +R$ ${achievement.reward?.money || 0}\n🫡 **Obtida?**\n${obtained}`
             }])
             .setImage('https://media2.giphy.com/media/v1.Y2lkPTZjMDliOTUybWZjYjFteHRobDJ4c2RqZ21jd25oOWJoOGc3aHNvczY0MGgyeTJqbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/R0nn6JhamSFd2LlP6B/giphy.gif')
     );
