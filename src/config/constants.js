@@ -1,7 +1,7 @@
 module.exports = {
     BOT: {
-        NAME: "King",
-        VERSION: "0.0.1",
+        NAME: 'Killua',
+        VERSION: '0.0.1',
     },
 
     LOG_COLORS: {
@@ -20,10 +20,10 @@ module.exports = {
     },
 
     EMOJIS: {
-        SUCCESS: "🟢",
-        ERROR: "🔴",
-        WARNING: "🟡",
-        INFO: "🔵"
+        SUCCESS: '🟢',
+        ERROR: '🔴',
+        WARNING: '🟡',
+        INFO: '🔵'
     },
 
     COOLDOWNS: {
