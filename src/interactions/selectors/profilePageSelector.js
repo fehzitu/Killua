@@ -9,9 +9,6 @@ const createAchievementsPage = require('../../components/embeds/achievementsPage
 const createHomeButton = require('../../components/buttons/homePage');
 const createProfileSelector = require('../../components/selectors/profilePage');
 
-// import achievements list
-const achievementsList = require('../../structures/achievementsList');
-
 module.exports = {
     customId: 'profilePageSelector',
     async execute(interaction) {
@@ -46,12 +43,11 @@ module.exports = {
         const value = interaction.values?.[0];
         
         // create an achievement page
-        const achievementsPage = createAchievementsPage(user);
-        // finish this embed on components
+        const achievementsPage = createAchievementsPage(user, value);
 
         // reset embed
         return interaction.update({
-            embeds: [profilePage],
+            embeds: [achievementsPage],
             components: [profileSelectorRow, profileButtonRow]
         });
     }
