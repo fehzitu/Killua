@@ -4,7 +4,7 @@ module.exports = [
         id: 'first_message',
         name: 'Timido',
         icon: '💬',
-        objective: 'Enviar uma mensagem pela primeira vez',
+        goal: 'Enviar uma mensagem pela primeira vez',
         rarity: 'common',
         hidden: false,
 
@@ -17,7 +17,7 @@ module.exports = [
         id: 'first_command',
         name: 'Novato',
         icon: '⚡',
-        objective: 'Usar um comando pela primeira vez',
+        goal: 'Usar um comando pela primeira vez',
         rarity: 'common',
         hidden: false,
 
@@ -30,7 +30,7 @@ module.exports = [
         id: 'rookie',
         name: '5',
         icon: '5️⃣',
-        objective: 'Chegar ao nivel 5',
+        goal: 'Chegar ao nivel 5',
         rarity: 'common',
         hidden: false,
 
@@ -43,7 +43,7 @@ module.exports = [
         id: 'positive_karma',
         name: 'Boa alma',
         icon: '✨',
-        objective: 'Ter 50 karmas positivos',
+        goal: 'Ter 50 karmas positivos',
         rarity: 'epic',
         hidden: true,
 
@@ -56,7 +56,7 @@ module.exports = [
         id: 'negative_karma',
         name: 'Caótico',
         icon: '😈',
-        objective: 'Ter 50 karmas negativos',
+        goal: 'Ter 50 karmas negativos',
         rarity: 'epic',
         hidden: true,
 
@@ -69,7 +69,7 @@ module.exports = [
         id: 'beta_user',
         name: 'Betinha',
         icon: '👑',
-        objective: 'Participar da beta',
+        goal: 'Participar da beta',
         rarity: 'legendary',
         hidden: false,
 
