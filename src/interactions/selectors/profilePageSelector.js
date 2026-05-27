@@ -43,7 +43,7 @@ module.exports = {
         const value = interaction.values?.[0];
         
         // create an achievement page
-        const achievementsPage = createAchievementsPage(user, value);
+        const achievementsPage = createAchievementsPage(client, user, value);
 
         // reset embed
         return interaction.update({

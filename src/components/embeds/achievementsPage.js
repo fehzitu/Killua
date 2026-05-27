@@ -6,7 +6,7 @@ const ensureProfile = require('../../utils/ensureProfile');
 const achievementsList = require('../../structures/achievementsList');
 
 // return an embed with the page
-module.exports = function createAchievementsPage(user, achievementIndex) {
+module.exports = function createAchievementsPage(client, user, achievementIndex) {
     // get the user profile
     const profile = ensureProfile(client, user);
 
@@ -14,7 +14,7 @@ module.exports = function createAchievementsPage(user, achievementIndex) {
     const achievement = achievementsList[achievementIndex];
     
     // check if user have this achievement
-    const obtained = '...'; // finish later
+    const obtained = profile.honor.achievements.includes(achievement.id)? '> 🟢 Sim': '> 🔴 Não';
 
     return (
         createEmbed(user)
@@ -22,5 +22,6 @@ module.exports = function createAchievementsPage(user, achievementIndex) {
                 name: `🏆 **Detalhes da conquista:**\n>>> 📝 ${achievement.name}\n${achievement.goal}`,
                 value: `🤑 **Recompensas:**\n> ✨ +${achievement.reward?.xp || 0} Xp\n> 💸 +R$ ${achievement.reward?.money || 0}\n🫡 **Obtida?**\n${obtained}`
             }])
+            .setImage('https://media2.giphy.com/media/v1.Y2lkPTZjMDliOTUybWZjYjFteHRobDJ4c2RqZ21jd25oOWJoOGc3aHNvczY0MGgyeTJqbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/R0nn6JhamSFd2LlP6B/giphy.gif')
     );
 };
