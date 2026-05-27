@@ -28,7 +28,7 @@ module.exports = [
     },
     {
         id: 'rookie',
-        name: '5',
+        name: 'Nível 5',
         icon: '5️⃣',
         goal: 'Chegar ao nivel 5',
         rarity: '⭐️',
@@ -41,7 +41,7 @@ module.exports = [
     },
     {
         id: 'rookie',
-        name: '10',
+        name: 'Nível 10',
         icon: '🔟',
         goal: 'Chegar ao nivel 10',
         rarity: '⭐️⭐️',

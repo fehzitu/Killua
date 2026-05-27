@@ -12,7 +12,7 @@ module.exports = function createProfileSelector(user) {
         placeholder: '🏆 Todas as conquistas',
         optionsList: achievementsList.map((achievement, index) => ({
             label: `${achievement.icon} ${achievement.name}`,
-            description: 'Ver mais detalhes',
+            description: `Raridade: [${achievement.rarity}]\nVer mais detalhes`,
             value: String(index)
         }))
     });
