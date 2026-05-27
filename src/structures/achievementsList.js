@@ -5,7 +5,7 @@ module.exports = [
         name: 'Timido',
         icon: '💬',
         goal: 'Enviar uma mensagem pela primeira vez',
-        rarity: 'common',
+        rarity: 'Comum',
         hidden: false,
 
         reward: {
@@ -18,7 +18,7 @@ module.exports = [
         name: 'Novato',
         icon: '⚡',
         goal: 'Usar um comando pela primeira vez',
-        rarity: 'common',
+        rarity: 'Comum',
         hidden: false,
 
         reward: {
@@ -31,7 +31,7 @@ module.exports = [
         name: '5',
         icon: '5️⃣',
         goal: 'Chegar ao nivel 5',
-        rarity: 'common',
+        rarity: 'Comum',
         hidden: false,
 
         reward: {
@@ -44,7 +44,7 @@ module.exports = [
         name: 'Boa alma',
         icon: '✨',
         goal: 'Ter 50 karmas positivos',
-        rarity: 'epic',
+        rarity: 'Épica',
         hidden: true,
 
         reward: {
@@ -57,7 +57,7 @@ module.exports = [
         name: 'Caótico',
         icon: '😈',
         goal: 'Ter 50 karmas negativos',
-        rarity: 'epic',
+        rarity: 'Épica',
         hidden: true,
 
         reward: {
@@ -70,7 +70,7 @@ module.exports = [
         name: 'Betinha',
         icon: '👑',
         goal: 'Participar da beta',
-        rarity: 'legendary',
+        rarity: 'Lendária',
         hidden: false,
 
         reward: {
