@@ -2,10 +2,10 @@
 const createButton = require('../../../utils/button');
 
 // create rank button
-module.exports = function createMoneyRankButton(user) {
+module.exports = function createAchievementRankButton(user) {
     return createButton({
-        customId: 'moneyRankButton',
-        label: '💰',
+        customId: 'achievementRankButton',
+        label: '🏅',
         user
     });
 };

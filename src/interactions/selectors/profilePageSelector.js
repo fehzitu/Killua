@@ -32,12 +32,12 @@ module.exports = {
         // profile page selector
         const profilePageSelector = createProfileSelector(user);
 
-        // back to menu button
-        const backHomeButton = createHomeButton(user);
+        // menu button
+        const homeButton = createHomeButton(user);
 
         // rows
         const profileSelectorRow = new MessageActionRow().addComponents(profilePageSelector);
-        const profileButtonRow = new MessageActionRow().addComponents(backHomeButton);
+        const profileButtonRow = new MessageActionRow().addComponents(homeButton);
 
         // selected value
         const value = interaction.values?.[0];

@@ -4,6 +4,7 @@ const { MessageActionRow } = require('discord.js');
 // import custom components
 const createMoneyRankPage = require('../../../components/embeds/ranking/moneyRank');
 const createMoneyRankButton = require('../../../components/buttons/ranking/moneyRank');
+const createHomeButton = require('../../../components/buttons/homePage');
 
 module.exports = {
     customId: 'moneyRankButton',
@@ -24,13 +25,17 @@ module.exports = {
         // money rank button
         const moneyRankButton = createMoneyRankButton(interaction.user);
 
+       // menu button
+        const homeButton = createHomeButton(interaction.user);
+
         // rows
-        let buttonRow = new MessageActionRow().addComponents(moneyRankButton);
+        const buttonRow = new MessageActionRow().addComponents(moneyRankButton);
+        const buttonRow2 = new MessageActionRow().addComponents(homeButton);
 
         // edit message
         return interaction.update({
             embeds: [embed],
-            components: [buttonRow]
+            components: [buttonRow, buttonRow2]
         });
     }
 };
