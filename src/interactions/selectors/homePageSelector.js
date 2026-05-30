@@ -3,6 +3,7 @@ const { MessageActionRow } = require('discord.js');
 
 // import custom pages
 const createProfilePage = require('../../components/embeds/profilePage');
+const createRankingPage = require('../../components/embeds/rankingPage');
 const createInfoPage = require('../../components/embeds/infoPage');
 const createHelpPage = require('../../components/embeds/helpPage');
 const createSupportPage = require('../../components/embeds/supportPage');
@@ -58,6 +59,17 @@ module.exports = {
             // create page
             embed = createProfilePage(client, user);
             componentsList = [selectorRow, buttonRow];
+        };
+        
+        // ranking page
+        if (value === 'ranking') {
+            // add componens to rows
+            //selectorRow.addComponents(rankingPageSelector);
+            buttonRow.addComponents(backHomeButton);
+
+            // create page
+            embed = createRankingPage(user);
+            componentsList = [buttonRow];
         };
 
         // info page

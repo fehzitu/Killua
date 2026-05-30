@@ -13,6 +13,11 @@ module.exports = function createHomeSelector(user) {
             value: 'profile'
         },
         {
+            label: '🏆 Ranking',
+            description: 'Acessa o ranking',
+            value: 'ranking'
+        },
+        {
             label: '⚙️ Informações',
             description: 'Ver info sobre nosso bot',
             value: 'info'
