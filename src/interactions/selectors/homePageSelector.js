@@ -69,7 +69,7 @@ module.exports = {
 
             // create page
             embed = createRankingPage(user);
-            componentsList = [buttonRow];
+            componentsList = [/*selectorRow,*/buttonRow];
         };
 
         // info page
