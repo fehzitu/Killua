@@ -10,6 +10,7 @@ const createSupportPage = require('../../components/embeds/supportPage');
 const createPingPage = require('../../components/embeds/pingPage');
 
 // import custom interactions
+const createMoneyRankButton = require('../../components/buttons/ranking/moneyRank');
 const createHomeButton = require('../../components/buttons/homePage');
 const createHomeSelector = require('../../components/selectors/homePage');
 const createProfileSelector = require('../../components/selectors/profilePage');
@@ -34,6 +35,9 @@ module.exports = {
         // back to menu button
         const backHomeButton = createHomeButton(user);
 
+        // money rank button
+        const moneyRankButton = createMoneyRankButton(user);
+
         // home page selector
         const homePageSelector = createHomeSelector(user);
 
@@ -43,6 +47,7 @@ module.exports = {
         // rows
         let selectorRow = new MessageActionRow();
         let buttonRow = new MessageActionRow();
+        let buttonRow2 = new MessageActionRow();
 
         // components list
         let componentsList = [selectorRow];
@@ -64,11 +69,12 @@ module.exports = {
         // ranking page
         if (value === 'ranking') {
             // add componens to rows
-            buttonRow.addComponents(backHomeButton);
+            buttonRow.addComponents(moneyRankButton);
+            buttonRow2.addComponents(backHomeButton);
 
             // create page
             embed = createRankingPage(user);
-            componentsList = [buttonRow];
+            componentsList = [buttonRow, buttonRow2];
         };
 
         // info page

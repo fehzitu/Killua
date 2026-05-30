@@ -1,8 +1,8 @@
 // import custom functions
 const createButton = require('../../../utils/button');
 
-// create home page back button
-module.exports = function createHomeButton(user) {
+// create money rank button
+module.exports = function createMoneyRankButton(user) {
     return createButton({
         customId: 'moneyRankButton',
         label: '💰',
