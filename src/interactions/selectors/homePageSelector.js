@@ -64,12 +64,11 @@ module.exports = {
         // ranking page
         if (value === 'ranking') {
             // add componens to rows
-            //selectorRow.addComponents(rankingPageSelector);
             buttonRow.addComponents(backHomeButton);
 
             // create page
             embed = createRankingPage(user);
-            componentsList = [/*selectorRow,*/buttonRow];
+            componentsList = [buttonRow];
         };
 
         // info page
