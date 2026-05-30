@@ -3,7 +3,7 @@ const { MessageActionRow } = require('discord.js');
 
 // import custom pages
 const createProfilePage = require('../../components/embeds/profilePage');
-const createAchievementsPage = require('../../components/embeds/achievementsPage');
+const createAchievementsPage = require('../../components/embeds/achievement/achievementsPage');
 
 // import custom interactions
 const createHomeButton = require('../../components/buttons/homePage');

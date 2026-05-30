@@ -1,9 +1,9 @@
 // import custom functions
-const createEmbed = require('../../utils/embed');
-const ensureProfile = require('../../utils/ensureProfile');
+const createEmbed = require('../../../utils/embed');
+const ensureProfile = require('../../../utils/ensureProfile');
 
 // import achievements list
-const achievementsList = require('../../structures/achievementsList');
+const achievementsList = require('../../../structures/achievementsList');
 
 // return an embed with the page
 module.exports = function createAchievementsPage(client, user, achievementIndex) {
