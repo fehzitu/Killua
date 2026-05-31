@@ -10,6 +10,10 @@ module.exports = {
     async execute(interaction) {
         const [id, ownerId] = interaction.customId.split(':');
 
+        // get client and user
+        const user = interaction.user;
+        const client = interaction.client;
+
         // user restriction
         if (ownerId && interaction.user.id !== ownerId) {
             return interaction.reply({
@@ -19,10 +23,10 @@ module.exports = {
         };
 
         // home embed
-        const embed = createHomePage(interaction.user);
+        const embed = createHomePage(user);
 
         // select
-        const selector = createHomeSelector(interaction.user);
+        const selector = createHomeSelector(user);
 
         // rows
         let selectorRow = new MessageActionRow().addComponents(selector);

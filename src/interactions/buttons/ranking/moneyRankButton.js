@@ -11,6 +11,10 @@ module.exports = {
     async execute(interaction) {
         const [id, ownerId] = interaction.customId.split(':');
 
+        // get client and user
+        const user = interaction.user;
+        const client = interaction.client;
+
         // user restriction
         if (ownerId && interaction.user.id !== ownerId) {
             return interaction.reply({
@@ -20,13 +24,13 @@ module.exports = {
         };
 
         // home embed
-        const embed = createMoneyRankPage(interaction.user);
+        const embed = createMoneyRankPage(client, user);
         
         // money rank button
-        const moneyRankButton = createMoneyRankButton(interaction.user);
+        const moneyRankButton = createMoneyRankButton(user).setDisabled(true);
 
        // menu button
-        const homeButton = createHomeButton(interaction.user);
+        const homeButton = createHomeButton(user);
 
         // rows
         const buttonRow = new MessageActionRow().addComponents(moneyRankButton);

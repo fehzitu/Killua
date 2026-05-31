@@ -11,9 +11,6 @@ const createPingPage = require('../../components/embeds/pingPage');
 
 // import custom interactions
 const createMoneyRankButton = require('../../components/buttons/ranking/moneyRank');
-const createLevelRankButton = require('../../components/buttons/ranking/levelRank');
-const createMessageRankButton = require('../../components/buttons/ranking/messageRank');
-const createAchievementRankButton = require('../../components/buttons/ranking/achievementRank');
 const createHomeButton = require('../../components/buttons/homePage');
 const createHomeSelector = require('../../components/selectors/homePage');
 const createProfileSelector = require('../../components/selectors/profilePage');
@@ -37,10 +34,7 @@ module.exports = {
 
         // buttons
         const homeButton = createHomeButton(user);
-        const moneyRankButton = createMoneyRankButton(user).setDisabled(true);
-        const levelRankButton = createLevelRankButton(user).setDisabled(true);
-        const messageRankButton = createMessageRankButton(user).setDisabled(true);
-        const achievementRankButton = createAchievementRankButton(user).setDisabled(true);
+        const moneyRankButton = createMoneyRankButton(user, client);
 
         // selectors
         const homePageSelector = createHomeSelector(user);
@@ -71,7 +65,7 @@ module.exports = {
         // ranking page
         if (value === 'ranking') {
             // add componens to rows
-            buttonRow.addComponents(moneyRankButton, levelRankButton, messageRankButton, achievementRankButton);
+            buttonRow.addComponents(moneyRankButton);
             buttonRow2.addComponents(homeButton);
 
             // create page
