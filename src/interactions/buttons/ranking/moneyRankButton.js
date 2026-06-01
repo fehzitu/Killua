@@ -27,7 +27,7 @@ module.exports = {
         const embed = createMoneyRankPage(client, user);
         
         // money rank button
-        const moneyRankButton = createMoneyRankButton(user).setDisabled(true);
+        const moneyRankButton = createMoneyRankButton(user).setLabel('🔃');
 
        // menu button
         const homeButton = createHomeButton(user);
