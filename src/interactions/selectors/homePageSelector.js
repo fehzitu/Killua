@@ -42,9 +42,9 @@ module.exports = {
 
         // ranking buttons
         const moneyRankButton = createMoneyRankButton(user, client);
-        const levelRankButton = createLevelRankButton(user, client).setDisabled(true);
-        const messageRankButton = createMessageRankButton(user, client).setDisabled(true);
-        const achievementRankButton = createAchievementRankButton(user, client).setDisabled(true);
+        const levelRankButton = createLevelRankButton(user, client);
+        const messageRankButton = createMessageRankButton(user, client);
+        const achievementRankButton = createAchievementRankButton(user, client);
 
         // selectors
         const homePageSelector = createHomeSelector(user);

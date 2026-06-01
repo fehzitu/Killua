@@ -2,13 +2,13 @@
 const { MessageActionRow } = require('discord.js');
 
 // import custom components
-const createMoneyRankPage = require('../../../components/embeds/ranking/moneyRank');
+const createLevelRankPage = require('../../../components/embeds/ranking/levelRank');
 const createMoneyRankButton = require('../../../components/buttons/ranking/moneyRank');
 const createLevelRankButton = require('../../../components/buttons/ranking/levelRank');
 const createHomeButton = require('../../../components/buttons/homePage');
 
 module.exports = {
-    customId: 'moneyRankButton',
+    customId: 'levelRankButton',
     async execute(interaction) {
         const [id, ownerId] = interaction.customId.split(':');
 
@@ -29,7 +29,6 @@ module.exports = {
         
         // rank buttons
         const moneyRankButton = createMoneyRankButton(user).setLabel('🔃');
-        const levelRankButton = createLevelRankButton(user);
 
        // menu button
         const homeButton = createHomeButton(user);
