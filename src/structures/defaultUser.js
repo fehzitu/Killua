@@ -5,7 +5,7 @@ function createDefaultUser() {
         rpg: {
             level: 1,
             xp: 0,
-            money: 100
+            money: 0
         },
         honor: {
             achievements: []
