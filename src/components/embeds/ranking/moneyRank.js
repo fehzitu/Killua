@@ -4,8 +4,10 @@ const sortByCategory = require('../../../utils/sortByCategory.js');
 
 // return an embed with the page
 module.exports = function createMoneyRankPage(client, user) {
+    // get the top 5
     const ranking = sortByCategory(client.usersData, 'rpg.money').slice(0, 5);
 
+    // clean list
     const list = ranking.map(user => `👤 **<@${user.id}>** | 💸 R$**${user.rpg.money}**`).join('\n') || 'Nenhum usuário encontrado.';
 
     return (
