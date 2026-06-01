@@ -1,13 +1,18 @@
 // import custom functions
 const createEmbed = require('../../../utils/embed');
+const sortByCategory = require('../../../utils/sortByCategory.js');
 
 // return an embed with the page
 module.exports = function createMoneyRankPage(client, user) {
+    const ranking = sortByCategory(client.usersData, 'rpg.money').slice(0, 5);
+
+    const list = ranking.map(user => `**<@${user.id}>** | R$**${user.rpg.money}**`).join('\n') || 'Nenhum usuário encontrado.';
+
     return (
         createEmbed(user)
             .addFields([{
-                name: '---',
-                value: '---'
+                name: '**💰 Top dinheiro**',
+                value: list
             }])
             .setImage('https://cdn.discordapp.com/attachments/1477290272638632068/1496295806339383440/Money_Cash_GIF_-_Money_Cash_-_Discover__Share_GIFs.gif?ex=6a1c1f50&is=6a1acdd0&hm=755e5b0740afd2bcbab5713c06f11a4db5410e17f5503b90d0e66d785230762b&')
     );
