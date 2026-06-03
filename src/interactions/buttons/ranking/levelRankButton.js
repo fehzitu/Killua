@@ -5,6 +5,8 @@ const { MessageActionRow } = require('discord.js');
 const createLevelRankPage = require('../../../components/embeds/ranking/levelRank');
 const createMoneyRankButton = require('../../../components/buttons/ranking/moneyRank');
 const createLevelRankButton = require('../../../components/buttons/ranking/levelRank');
+const createMessageRankButton = require('../../../components/buttons/ranking/messageRank');
+const createAchievementRankButton = require('../../../components/buttons/ranking/achievementRank');
 const createHomeButton = require('../../../components/buttons/homePage');
 
 module.exports = {
@@ -25,16 +27,19 @@ module.exports = {
         };
 
         // embed
-        const embed = createMoneyRankPage(client, user);
+        const embed = createLevelRankPage(client, user);
         
         // rank buttons
-        const moneyRankButton = createMoneyRankButton(user).setLabel('🔃');
+        const moneyRankButton = createMoneyRankButton(user);
+        const levelRankButton = createLevelRankButton(user).setLabel('🔃');
+        const messageRankButton = createMessageRankButton(user);
+        const achievementRankButton = createAchievementRankButton(user);
 
        // menu button
         const homeButton = createHomeButton(user);
 
         // rows
-        const buttonRow = new MessageActionRow().addComponents(moneyRankButton);
+        const buttonRow = new MessageActionRow().addComponents(moneyRankButton, levelRankButton, messageRankButton, achievementRankButton);
         const buttonRow2 = new MessageActionRow().addComponents(homeButton);
 
         // edit message
