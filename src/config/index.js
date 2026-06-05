@@ -17,6 +17,7 @@ module.exports = {
     discord: {
         intents: [
             'GUILDS',
+            'GUILD_MEMBERS',
             'GUILD_MESSAGES',
             'MESSAGE_CONTENT'
         ]
