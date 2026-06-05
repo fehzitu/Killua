@@ -19,6 +19,7 @@ module.exports = {
     async execute(client, message) {
         // ignore bots
         if (message.author.bot) return;
+        if (message.guild.systemChannel) return;
 
         // get user id and tag
         const user = message.author;
