@@ -18,7 +18,6 @@ const createProfileSelector = require('../../components/selectors/profilePage');
 const createMoneyRankButton = require('../../components/buttons/ranking/moneyRank');
 const createLevelRankButton = require('../../components/buttons/ranking/levelRank');
 const createMessageRankButton = require('../../components/buttons/ranking/messageRank');
-const createAchievementRankButton = require('../../components/buttons/ranking/achievementRank');
 
 module.exports = {
     customId: 'homePageSelector',
@@ -44,7 +43,6 @@ module.exports = {
         const moneyRankButton = createMoneyRankButton(user, client);
         const levelRankButton = createLevelRankButton(user, client);
         const messageRankButton = createMessageRankButton(user, client);
-        const achievementRankButton = createAchievementRankButton(user, client);
 
         // selectors
         const homePageSelector = createHomeSelector(user);
@@ -75,7 +73,7 @@ module.exports = {
         // ranking page
         if (value === 'ranking') {
             // add componens to rows
-            buttonRow.addComponents(moneyRankButton, levelRankButton, messageRankButton, achievementRankButton);
+            buttonRow.addComponents(moneyRankButton, levelRankButton, messageRankButton);
             buttonRow2.addComponents(homeButton);
 
             // create page

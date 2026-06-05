@@ -6,7 +6,6 @@ const createLevelRankPage = require('../../../components/embeds/ranking/levelRan
 const createMoneyRankButton = require('../../../components/buttons/ranking/moneyRank');
 const createLevelRankButton = require('../../../components/buttons/ranking/levelRank');
 const createMessageRankButton = require('../../../components/buttons/ranking/messageRank');
-const createAchievementRankButton = require('../../../components/buttons/ranking/achievementRank');
 const createHomeButton = require('../../../components/buttons/homePage');
 
 module.exports = {
@@ -33,13 +32,12 @@ module.exports = {
         const moneyRankButton = createMoneyRankButton(user);
         const levelRankButton = createLevelRankButton(user).setLabel('🔃');
         const messageRankButton = createMessageRankButton(user);
-        const achievementRankButton = createAchievementRankButton(user);
 
        // menu button
         const homeButton = createHomeButton(user);
 
         // rows
-        const buttonRow = new MessageActionRow().addComponents(moneyRankButton, levelRankButton, messageRankButton, achievementRankButton);
+        const buttonRow = new MessageActionRow().addComponents(moneyRankButton, levelRankButton, messageRankButton);
         const buttonRow2 = new MessageActionRow().addComponents(homeButton);
 
         // edit message
