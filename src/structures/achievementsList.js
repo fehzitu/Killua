@@ -1,10 +1,10 @@
 // create an achievements list
 module.exports = [
     {
-        id: 'first_message',
+        id: 'initial_messages',
         name: 'Timido',
         icon: '💬',
-        goal: 'Enviar uma mensagem pela primeira vez',
+        goal: 'Enviar 5 mensagens pela primeira vez',
         rarity: '⭐️',
         hidden: false,
 

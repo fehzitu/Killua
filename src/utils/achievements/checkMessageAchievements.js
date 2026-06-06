@@ -7,10 +7,10 @@ function checkMessageAchievements(profile) {
     const unlocked = [];
 
     // first message achievement
-    if (profile.stats.messages >= 1) {
+    if (profile.stats.messages >= 5) {
         const achievement = unlockAchievement(
             profile,
-            'first_message'
+            'initial_messages'
         );
 
         if (achievement) unlocked.push(achievement);
