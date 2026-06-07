@@ -50,6 +50,9 @@ module.exports = {
             const id = interaction.customId.split(':')[0];
             const button = client.interactions.get(id);
 
+            // add xp
+            profile.rpg.xp += 50;
+
             if (!button) {
                 log('WARNING', `Botão não encontrado: ${interaction.customId}`);
                 return;
@@ -65,6 +68,9 @@ module.exports = {
             const id = interaction.customId.split(':')[0];
             const select = client.interactions.get(id);
 
+            // add xp
+            profile.rpg.xp += 50;
+
             if (!select) {
                 log('WARNING', `Seletor não encontrado: ${interaction.customId}`);
                 return;
@@ -79,6 +85,9 @@ module.exports = {
         if (interaction.isModalSubmit()) {
             const id = interaction.customId.split(':')[0];
             const modal = client.interactions.get(id);
+
+            // add xp
+            profile.rpg.xp += 50;
 
             if (!modal) {
                 log('WARNING', `Modal não encontrado: ${interaction.customId}`);
