@@ -27,7 +27,7 @@ module.exports = [
         }
     },
     {
-        id: 'rookie',
+        id: 'level5',
         name: 'Nível 5',
         icon: '5️⃣',
         goal: 'Chegar ao nivel 5',
@@ -40,16 +40,29 @@ module.exports = [
         }
     },
     {
-        id: 'rookie',
-        name: 'Nível 10',
-        icon: '🔟',
-        goal: 'Chegar ao nivel 10',
-        rarity: '⭐️⭐️',
+        id: 'level7',
+        name: 'Nível 7',
+        icon: '7️⃣',
+        goal: 'Chegar ao nivel 7',
+        rarity: '⭐️',
         hidden: false,
 
         reward: {
-            xp: 250,
-            money: 500
+            xp: 300,
+            money: 600
+        }
+    },
+    {
+        id: 'level10',
+        name: 'Nível 10',
+        icon: '🔟',
+        goal: 'Chegar ao nivel 10',
+        rarity: '⭐️',
+        hidden: false,
+
+        reward: {
+            xp: 350,
+            money: 700
         }
     },
     {
