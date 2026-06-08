@@ -1,6 +1,6 @@
 // import custom functions
-const createEmbed = require('../../../utils/embed');
-const ensureProfile = require('../../../utils/ensureProfile');
+const createEmbed = require('../../../utils/components/embed');
+const ensureProfile = require('../../../utils/custom/ensureProfile');
 
 // import achievements list
 const achievementsList = require('../../../structures/achievementsList');

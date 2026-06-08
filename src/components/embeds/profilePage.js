@@ -1,9 +1,9 @@
 // import custom functions
-const createEmbed = require('../../utils/embed');
-const ensureProfile = require('../../utils/ensureProfile');
+const createEmbed = require('../../utils/components/embed');
+const ensureProfile = require('../../utils/custom/ensureProfile');
 
 // import an single functions from various exports
-const { getXpNeeded } = require('../../utils/levelSystem');
+const { getXpNeeded } = require('../../utils/systems/levelSystem');
 
 // import achievements list
 const achievementsList = require('../../structures/achievementsList');

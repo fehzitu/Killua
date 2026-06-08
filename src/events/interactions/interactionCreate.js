@@ -1,16 +1,16 @@
 // import custom functions
 const config = require('../../config');
 const constants = require('../../config/constants');
-const checkCooldown = require('../../utils/cooldown');
-const ensureProfile = require('../../utils/ensureProfile');
-const createEmbed = require('../../utils/embed');
-const log = require('../../utils/logger');
+const checkCooldown = require('../../utils/systems/cooldown');
+const ensureProfile = require('../../utils/custom/ensureProfile');
+const createEmbed = require('../../utils/components/embed');
+const log = require('../../utils/systems/logger');
 const checkMessageAchievements = require('../../utils/achievements/checkMessageAchievements');
 const checkCommandAchievements = require('../../utils/achievements/checkCommandAchievements');
 const checkLevelAchievements = require('../../utils/achievements/checkLevelAchievements');
 
 // import an single function from various exports
-const { checkLevelUp } = require('../../utils/levelSystem');
+const { checkLevelUp } = require('../../utils/systems/levelSystem');
 const { createLevelUpMessage } = require('../../structures/defaultMessages');
 const { createAchievementsMessage } = require('../../structures/defaultMessages');
 

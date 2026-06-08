@@ -1,5 +1,5 @@
 // import custom functions
-const createButton = require('../../../utils/button');
+const createButton = require('../../../utils/components/button');
 
 // create rank button
 module.exports = function createMessageRankButton(user) {

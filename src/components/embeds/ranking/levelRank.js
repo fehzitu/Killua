@@ -1,6 +1,6 @@
 // import custom functions
-const createEmbed = require('../../../utils/embed');
-const sortByCategory = require('../../../utils/sortByCategory.js');
+const createEmbed = require('../../../utils/components/embed');
+const sortByCategory = require('../../../utils/custom/sortByCategory.js');
 
 // return an embed with the page
 module.exports = function createLevelRankPage(client, user) {

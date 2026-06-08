@@ -1,5 +1,5 @@
 // import custom functions
-const createSelector = require('../../utils/selector');
+const createSelector = require('../../utils/components/selector');
 
 // import achievements list
 const achievementsList = require('../../structures/achievementsList');
