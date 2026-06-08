@@ -5,8 +5,8 @@ const path = require('path');
 const { Client, Intents, Collection } = require('discord.js');
 
 const config = require('./config');
-const { loadJson, saveJson } = require('./utils/jsonHandler');
-const log = require('./utils/logger');
+const { loadJson, saveJson } = require('./utils/custom/jsonHandler');
+const log = require('./utils/systems/logger');
 
 // client
 const client = new Client({

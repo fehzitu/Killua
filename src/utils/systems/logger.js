@@ -1,4 +1,4 @@
-const constants = require('../config/constants');
+const constants = require('../../config/constants');
 
 // log
 module.exports = function log(type, message) {

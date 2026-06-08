@@ -1,7 +1,7 @@
 // import custom functions
 const activities = require('../../config/activities');
 const constants = require('../../config/constants');
-const log = require('../../utils/logger');
+const log = require('../../utils/systems/logger');
 
 module.exports = {
     name: 'ready',

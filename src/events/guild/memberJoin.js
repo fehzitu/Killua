@@ -1,5 +1,5 @@
 // import custom functions
-const createEmbed = require('../../utils/embed');
+const createEmbed = require('../../utils/components/embed');
 
 module.exports = {
     // "name" will receive the value that will be the chat message that the bot captures as a command

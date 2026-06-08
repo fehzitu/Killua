@@ -1,6 +1,6 @@
 // import custom functions
-const createDefaultUser = require('../structures/defaultUser');
-const log = require('./logger');
+const createDefaultUser = require('../../structures/defaultUser');
+const log = require('../systems/logger');
 
 module.exports = function ensureProfile(client, user) {
     // get the users

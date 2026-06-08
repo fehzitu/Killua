@@ -1,5 +1,5 @@
 // import custom functions
-const createEmbed = require('../utils/embed');
+const createEmbed = require('../../utils/embed');
 
 // level msg
 function createLevelUpMessage(user, level) {

@@ -6,7 +6,7 @@ const path = require('path');
 const { REST } = require('@discordjs/rest');
 const { Routes } = require('discord-api-types/v9');
 
-const log = require('../utils/logger');
+const log = require('../utils/systems/logger');
 
 // config
 const CLIENT_ID = process.env.CLIENT_ID;
