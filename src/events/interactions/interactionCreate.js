@@ -53,6 +53,20 @@ module.exports = {
             // add xp
             profile.rpg.xp += 50;
 
+            // check level
+            const resultLevel = checkLevelUp(profile);
+
+            // level up message
+            const levelUpEmbed = createLevelUpMessage(interaction.user, resultLevel.level);
+
+            // level up message
+            if (resultLevel.leveledUp) {
+                // send level up message
+                await interaction.channel.send({
+                    embeds: [levelUpEmbed]
+                });
+            };
+
             if (!button) {
                 log('WARNING', `Botão não encontrado: ${interaction.customId}`);
                 return;
@@ -71,6 +85,20 @@ module.exports = {
             // add xp
             profile.rpg.xp += 50;
 
+            // check level
+            const resultLevel = checkLevelUp(profile);
+
+            // level up message
+            const levelUpEmbed = createLevelUpMessage(interaction.user, resultLevel.level);
+
+            // level up message
+            if (resultLevel.leveledUp) {
+                // send level up message
+                await interaction.channel.send({
+                    embeds: [levelUpEmbed]
+                });
+            };
+
             if (!select) {
                 log('WARNING', `Seletor não encontrado: ${interaction.customId}`);
                 return;
@@ -88,6 +116,20 @@ module.exports = {
 
             // add xp
             profile.rpg.xp += 50;
+
+            // check level
+            const resultLevel = checkLevelUp(profile);
+
+            // level up message
+            const levelUpEmbed = createLevelUpMessage(interaction.user, resultLevel.level);
+
+            // level up message
+            if (resultLevel.leveledUp) {
+                // send level up message
+                await interaction.channel.send({
+                    embeds: [levelUpEmbed]
+                });
+            };
 
             if (!modal) {
                 log('WARNING', `Modal não encontrado: ${interaction.customId}`);
