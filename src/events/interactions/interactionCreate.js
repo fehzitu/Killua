@@ -67,6 +67,19 @@ module.exports = {
                 });
             };
 
+            // check level achievements
+            const unlockedLevels = checkLevelAchievements(profile);
+
+            // send achievement messages
+            for (const achievement of unlockedLevels) {
+                // achievement message
+                const achievementEmbed = createAchievementsMessage(interaction.user, achievement);
+    
+                await interaction.channel.send({
+                    embeds: [achievementEmbed]
+                });
+            };
+
             if (!button) {
                 log('WARNING', `Botão não encontrado: ${interaction.customId}`);
                 return;
@@ -99,6 +112,19 @@ module.exports = {
                 });
             };
 
+            // check level achievements
+            const unlockedLevels = checkLevelAchievements(profile);
+
+            // send achievement messages
+            for (const achievement of unlockedLevels) {
+                // achievement message
+                const achievementEmbed = createAchievementsMessage(interaction.user, achievement);
+    
+                await interaction.channel.send({
+                    embeds: [achievementEmbed]
+                });
+            };
+
             if (!select) {
                 log('WARNING', `Seletor não encontrado: ${interaction.customId}`);
                 return;
@@ -128,6 +154,19 @@ module.exports = {
                 // send level up message
                 await interaction.channel.send({
                     embeds: [levelUpEmbed]
+                });
+            };
+
+            // check level achievements
+            const unlockedLevels = checkLevelAchievements(profile);
+
+            // send achievement messages
+            for (const achievement of unlockedLevels) {
+                // achievement message
+                const achievementEmbed = createAchievementsMessage(interaction.user, achievement);
+    
+                await interaction.channel.send({
+                    embeds: [achievementEmbed]
                 });
             };
 
@@ -203,7 +242,7 @@ module.exports = {
 
             // check command achievements
             const unlocked = checkCommandAchievements(profile);
-            
+
             // send achievement messages
             for (const achievement of unlocked) {
                 // achievement message
