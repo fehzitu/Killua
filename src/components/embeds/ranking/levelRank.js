@@ -8,7 +8,7 @@ module.exports = function createLevelRankPage(client, user) {
     const ranking = sortByCategory(client.usersData, 'rpg.level').slice(0, 5);
 
     // clean list
-    const list = ranking.map(user => `👤 **<@${user.id}>**\n**↗️ ${user.rpg.level} | 📈 ${user.rpg.totalXp}**`).join('\n') || 'Nenhum usuário encontrado.';
+    const list = ranking.map(user => `👤 **<@${user.id}>**\n↗️ **Nivel: ${user.rpg.level}** | 📈 **Xp: ${user.rpg.totalXp}**`).join('\n') || 'Nenhum usuário encontrado.';
 
     return (
         createEmbed(user)

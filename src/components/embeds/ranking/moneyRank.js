@@ -8,7 +8,7 @@ module.exports = function createMoneyRankPage(client, user) {
     const ranking = sortByCategory(client.usersData, 'rpg.money').slice(0, 5);
 
     // clean list
-    const list = ranking.map(user => `👤 **<@${user.id}>**\n💸 R$**${user.rpg.money} | 👤${user.rpg.role}**`).join('\n') || 'Nenhum usuário encontrado.';
+    const list = ranking.map(user => `👤 **<@${user.id}>**\n💸 **Saldo: R$${user.rpg.money}** | 👤 **Cargo: ${user.rpg.role}**`).join('\n') || 'Nenhum usuário encontrado.';
 
     return (
         createEmbed(user)

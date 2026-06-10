@@ -7,7 +7,7 @@ function createDefaultUser() {
             xp: 0,
             totalXp: 0,
             money: 0,
-            role: ''
+            role: 'Usuário'
         },
         honor: {
             achievements: []
