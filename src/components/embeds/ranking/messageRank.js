@@ -8,7 +8,7 @@ module.exports = function createLevelRankPage(client, user) {
     const ranking = sortByCategory(client.usersData, 'stats.messages').slice(0, 5);
 
     // clean list
-    const list = ranking.map(user => `👤 **<@${user.id}>** | **💬 ${user.stats.messages}**`).join('\n') || 'Nenhum usuário encontrado.';
+    const list = ranking.map(user => `👤 **<@${user.id}>**\n**💬 ${user.stats.messages} | 🤖 ${user.stats.commands}**`).join('\n') || 'Nenhum usuário encontrado.';
 
     return (
         createEmbed(user)
