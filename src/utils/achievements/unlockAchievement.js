@@ -17,7 +17,10 @@ function unlockAchievement(profile, achievementId) {
     profile.honor.achievements.push(achievementId);
 
     // give rewards
-    if (achievement.reward?.xp) profile.rpg.xp += achievement.reward.xp;
+    if (achievement.reward?.xp) {
+        profile.rpg.totalXp += achievement.reward.xp;
+        profile.rpg.xp += achievement.reward.xp;
+    };
 
     if (achievement.reward?.money) profile.rpg.money += achievement.reward.money;
 
