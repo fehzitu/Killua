@@ -37,6 +37,7 @@ module.exports = {
 
         // add xp
         profile.rpg.xp += 50;
+        profile.rpg.totalXp += 50;
 
         // check xp
         const messageResult = checkLevelUp(profile);
@@ -138,6 +139,7 @@ module.exports = {
         try {
             // add an extra xp for commands
             profile.rpg.xp += 50;
+            profile.rpg.totalXp += 50;
 
             // check xp
             const commandResult = checkLevelUp(profile);

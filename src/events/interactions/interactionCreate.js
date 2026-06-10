@@ -52,6 +52,7 @@ module.exports = {
 
             // add xp
             profile.rpg.xp += 50;
+            profile.rpg.totalXp += 50;
 
             // check level
             const resultLevel = checkLevelUp(profile);
@@ -97,6 +98,7 @@ module.exports = {
 
             // add xp
             profile.rpg.xp += 50;
+            profile.rpg.totalXp += 50;
 
             // check level
             const resultLevel = checkLevelUp(profile);
@@ -142,6 +144,7 @@ module.exports = {
 
             // add xp
             profile.rpg.xp += 50;
+            profile.rpg.totalXp += 50;
 
             // check level
             const resultLevel = checkLevelUp(profile);
@@ -211,7 +214,8 @@ module.exports = {
 
         try {
             // add xp
-            profile.rpg.xp += 100;
+            profile.rpg.xp += 250;
+            profile.rpg.totalXp += 250;
 
             // check level
             const resultLevel = checkLevelUp(profile);
