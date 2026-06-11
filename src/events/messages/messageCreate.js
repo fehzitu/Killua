@@ -29,8 +29,8 @@ module.exports = {
         const profile = ensureProfile(client, user);
 
         // log message
-        const guild = message.guild ? message.guild.name : 'DM';
-        const channel = message.guild ? message.channel.name : 'DM';
+        const guild = message.guild ? message.guild.name : 'Mensagem';
+        const channel = message.guild ? message.channel.name : 'privada';
 
         // message log
         log('RESET', `[${new Date().toLocaleDateString()} ${new Date().toLocaleTimeString()} @${userTag} ${guild} ${channel}]: ${message.content}`);

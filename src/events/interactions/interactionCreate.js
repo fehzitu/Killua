@@ -42,8 +42,8 @@ module.exports = {
         const profile = ensureProfile(client, user);
 
         // formated info
-        const guild = interaction.guild ? interaction.guild.name : 'DM';
-        const channel = interaction.guild ? interaction.channel.name : 'DM';
+        const guild = interaction.guild ? interaction.guild.name : 'Mensagem';
+        const channel = interaction.guild ? interaction.channel.name : 'privada';
 
         // buttons
         if (interaction.isButton()) {
