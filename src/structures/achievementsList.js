@@ -1,10 +1,62 @@
 // create an achievements list
 module.exports = [
     {
-        id: 'initial_messages',
+        id: '5_messages',
         name: 'Timido',
         icon: '💬',
         goal: 'Enviar 5 mensagens pela primeira vez',
+        rarity: '⭐️',
+        hidden: false,
+
+        reward: {
+            xp: 50,
+            money: 100
+        }
+    },
+    {
+        id: '25_messages',
+        name: 'Conversinha',
+        icon: '💬',
+        goal: 'Enviar 25 mensagens pela primeira vez',
+        rarity: '⭐️',
+        hidden: false,
+
+        reward: {
+            xp: 50,
+            money: 100
+        }
+    },
+    {
+        id: '50_messages',
+        name: 'Falante',
+        icon: '💬',
+        goal: 'Enviar 50 mensagens pela primeira vez',
+        rarity: '⭐️',
+        hidden: false,
+
+        reward: {
+            xp: 50,
+            money: 100
+        }
+    },
+    {
+        id: '75_messages',
+        name: 'Tagarela',
+        icon: '💬',
+        goal: 'Enviar 75 mensagens pela primeira vez',
+        rarity: '⭐️',
+        hidden: false,
+
+        reward: {
+            xp: 50,
+            money: 100
+        }
+    },
+    {
+        id: '100_messages',
+        name: 'Maritaca',
+        icon: '💬',
+        goal: 'Enviar 100 mensagens pela primeira vez',
         rarity: '⭐️',
         hidden: false,
 
