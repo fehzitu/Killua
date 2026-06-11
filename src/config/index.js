@@ -19,6 +19,7 @@ module.exports = {
             'GUILDS',
             'GUILD_MEMBERS',
             'GUILD_MESSAGES',
+            'DIRECT_MESSAGES',
             'MESSAGE_CONTENT'
         ]
     }

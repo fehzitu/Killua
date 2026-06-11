@@ -10,7 +10,8 @@ const log = require('./utils/systems/logger');
 
 // client
 const client = new Client({
-    intents: config.discord.intents.map(i => Intents.FLAGS[i])
+    intents: config.discord.intents.map(i => Intents.FLAGS[i]),
+    partials: ['CHANNEL']
 });
 
 // collections
