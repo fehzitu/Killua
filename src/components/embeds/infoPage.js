@@ -23,7 +23,7 @@ module.exports = function createInfoPage(client, user) {
                 inline: true
             },
                 {
-                    name: `🏰 Comunidade: Drakay`,
+                    name: `🏰 Comunidade: https://discord.gg/Wpgu4qXWUk`,
                     value: `🏠 Servidores: **${totalGuilds}** | 👥 Usuários: **${totalUsers}**`,
                     inline: true
                 })
