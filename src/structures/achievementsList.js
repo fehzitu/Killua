@@ -18,7 +18,7 @@ module.exports = [
         name: '100 chats',
         icon: '💬',
         goal: 'Enviar 100 mensagens pela primeira vez',
-        rarity: '⭐️',
+        rarity: '⭐️⭐️',
         hidden: false,
 
         reward: {
@@ -28,7 +28,7 @@ module.exports = [
     },
     {
         id: '25_commands',
-        name: '25 comando',
+        name: '25 comandos',
         icon: '⚡',
         goal: 'Usar 25 comandos pela primeira vez',
         rarity: '⭐️',
@@ -44,7 +44,7 @@ module.exports = [
         name: '50 comandos',
         icon: '⚡',
         goal: 'Usar 50 comandos pela primeira vez',
-        rarity: '⭐️',
+        rarity: '⭐️⭐️',
         hidden: false,
 
         reward: {
@@ -70,12 +70,12 @@ module.exports = [
         name: 'Nível 30',
         icon: '⚜️',
         goal: 'Chegar ao nivel 30',
-        rarity: '⭐️',
+        rarity: '⭐️⭐️',
         hidden: false,
 
         reward: {
-            xp: 350,
-            money: 700
+            xp: 500,
+            money: 1000
         }
     },
     {
