@@ -7,28 +7,19 @@ function checkLevelAchievements(profile) {
     const unlocked = [];
 
     // level achievements
-    if (profile.rpg.level >= 5) {
+    if (profile.rpg.level >= 15) {
         const achievement = unlockAchievement(
             profile,
-            'level5'
+            'level15'
         );
 
         if (achievement) unlocked.push(achievement);
     };
 
-    if (profile.rpg.level >= 7) {
+    if (profile.rpg.level >= 30) {
         const achievement = unlockAchievement(
             profile,
-            'level7'
-        );
-
-        if (achievement) unlocked.push(achievement);
-    };
-
-    if (profile.rpg.level >= 10) {
-        const achievement = unlockAchievement(
-            profile,
-            'level10'
+            'level30'
         );
 
         if (achievement) unlocked.push(achievement);

@@ -1,34 +1,8 @@
 // create an achievements list
 module.exports = [
     {
-        id: '5_messages',
-        name: 'Timido',
-        icon: '💬',
-        goal: 'Enviar 5 mensagens pela primeira vez',
-        rarity: '⭐️',
-        hidden: false,
-
-        reward: {
-            xp: 50,
-            money: 100
-        }
-    },
-    {
-        id: '25_messages',
-        name: 'Conversinha',
-        icon: '💬',
-        goal: 'Enviar 25 mensagens pela primeira vez',
-        rarity: '⭐️',
-        hidden: false,
-
-        reward: {
-            xp: 50,
-            money: 100
-        }
-    },
-    {
         id: '50_messages',
-        name: 'Falante',
+        name: '50 chats',
         icon: '💬',
         goal: 'Enviar 50 mensagens pela primeira vez',
         rarity: '⭐️',
@@ -40,21 +14,8 @@ module.exports = [
         }
     },
     {
-        id: '75_messages',
-        name: 'Tagarela',
-        icon: '💬',
-        goal: 'Enviar 75 mensagens pela primeira vez',
-        rarity: '⭐️',
-        hidden: false,
-
-        reward: {
-            xp: 50,
-            money: 100
-        }
-    },
-    {
         id: '100_messages',
-        name: 'Maritaca',
+        name: '100 chats',
         icon: '💬',
         goal: 'Enviar 100 mensagens pela primeira vez',
         rarity: '⭐️',
@@ -66,10 +27,10 @@ module.exports = [
         }
     },
     {
-        id: 'first_command',
-        name: 'Novato',
+        id: '25_commands',
+        name: '25 comando',
         icon: '⚡',
-        goal: 'Usar um comando pela primeira vez',
+        goal: 'Usar 25 comandos pela primeira vez',
         rarity: '⭐️',
         hidden: false,
 
@@ -79,10 +40,23 @@ module.exports = [
         }
     },
     {
-        id: 'level5',
-        name: 'Nível 5',
-        icon: '5️⃣',
-        goal: 'Chegar ao nivel 5',
+        id: '50_commands',
+        name: '50 comandos',
+        icon: '⚡',
+        goal: 'Usar 50 comandos pela primeira vez',
+        rarity: '⭐️',
+        hidden: false,
+
+        reward: {
+            xp: 50,
+            money: 100
+        }
+    },
+    {
+        id: 'level15',
+        name: 'Nível 15',
+        icon: '⚜️',
+        goal: 'Chegar ao nivel 15',
         rarity: '⭐️',
         hidden: false,
 
@@ -92,23 +66,10 @@ module.exports = [
         }
     },
     {
-        id: 'level7',
-        name: 'Nível 7',
-        icon: '7️⃣',
-        goal: 'Chegar ao nivel 7',
-        rarity: '⭐️',
-        hidden: false,
-
-        reward: {
-            xp: 300,
-            money: 600
-        }
-    },
-    {
-        id: 'level10',
-        name: 'Nível 10',
-        icon: '🔟',
-        goal: 'Chegar ao nivel 10',
+        id: 'level30',
+        name: 'Nível 30',
+        icon: '⚜️',
+        goal: 'Chegar ao nivel 30',
         rarity: '⭐️',
         hidden: false,
 
@@ -122,7 +83,7 @@ module.exports = [
         name: 'Boa alma',
         icon: '✨',
         goal: 'Ter 50 karmas positivos',
-        rarity: '⭐️⭐️⭐️',
+        rarity: '⭐️⭐️⭐️⭐️',
         hidden: true,
 
         reward: {
@@ -135,7 +96,7 @@ module.exports = [
         name: 'Caótico',
         icon: '😈',
         goal: 'Ter 50 karmas negativos',
-        rarity: '⭐️⭐️⭐️',
+        rarity: '⭐️⭐️⭐️⭐️',
         hidden: true,
 
         reward: {
@@ -148,7 +109,7 @@ module.exports = [
         name: 'Betinha',
         icon: '👑',
         goal: 'Participar da beta',
-        rarity: '⭐️⭐️⭐️⭐️',
+        rarity: '⭐️⭐️⭐️⭐️⭐',
         hidden: false,
 
         reward: {
