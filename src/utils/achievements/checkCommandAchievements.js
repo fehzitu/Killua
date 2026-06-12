@@ -10,7 +10,7 @@ function checkCommandAchievements(profile) {
     if (profile.stats.commands >= 25) {
         const achievement = unlockAchievement(
             profile,
-            '25_command'
+            '25_commands'
         );
 
         if (achievement) unlocked.push(achievement);
