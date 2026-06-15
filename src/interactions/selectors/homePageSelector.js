@@ -2,12 +2,12 @@
 const { MessageActionRow } = require('discord.js');
 
 // import custom pages
-const createProfilePage = require('../../components/embeds/profilePage');
-const createRankingPage = require('../../components/embeds/rankingPage');
-const createInfoPage = require('../../components/embeds/infoPage');
-const createHelpPage = require('../../components/embeds/helpPage');
-const createSupportPage = require('../../components/embeds/supportPage');
-const createPingPage = require('../../components/embeds/pingPage');
+const createProfilePage = require('../../components/embeds/menu/profilePage');
+const createRankingPage = require('../../components/embeds/menu/rankingPage');
+const createInfoPage = require('../../components/embeds/menu/infoPage');
+const createHelpPage = require('../../components/embeds/menu/helpPage');
+const createSupportPage = require('../../components/embeds/menu/supportPage');
+const createPingPage = require('../../components/embeds/menu/pingPage');
 
 // import custom interactions
 const createHomeButton = require('../../components/buttons/homePage');

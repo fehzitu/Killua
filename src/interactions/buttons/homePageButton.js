@@ -2,7 +2,7 @@
 const { MessageActionRow } = require('discord.js');
 
 // import custom components
-const createHomePage = require('../../components/embeds/homePage');
+const createHomePage = require('../../components/embeds/menu/homePage');
 const createHomeSelector = require('../../components/selectors/homePage');
 
 module.exports = {
