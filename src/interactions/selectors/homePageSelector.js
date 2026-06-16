@@ -77,7 +77,7 @@ module.exports = {
             buttonRow.addComponents(homeButton);
 
             // create page
-            embed = createRankingPage(user);
+            embed = createAchievementPage(user);
             componentsList = [buttonRow];
         };
 
