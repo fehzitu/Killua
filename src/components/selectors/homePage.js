@@ -13,6 +13,11 @@ module.exports = function createHomeSelector(user) {
             value: 'profile'
         },
         {
+            label: '🏅 Conquistas',
+            description: 'Acessa as conquistas',
+            value: 'achievements'
+        },
+        {
             label: '🏆 Ranking',
             description: 'Acessa o ranking',
             value: 'ranking'

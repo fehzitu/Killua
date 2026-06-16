@@ -6,21 +6,21 @@ function checkMessageAchievements(profile) {
     // unlocked achievements
     const unlocked = [];
 
-    // 50 messages achievement
-    if (profile.stats.messages >= 50) {
-        const achievement = unlockAchievement(
-            profile,
-            '50_messages'
-        );
-
-        if (achievement) unlocked.push(achievement);
-    };
-
     // 100 messages achievement
     if (profile.stats.messages >= 100) {
         const achievement = unlockAchievement(
             profile,
             '100_messages'
+        );
+
+        if (achievement) unlocked.push(achievement);
+    };
+
+    // 150 messages achievement
+    if (profile.stats.messages >= 150) {
+        const achievement = unlockAchievement(
+            profile,
+            '150_messages'
         );
 
         if (achievement) unlocked.push(achievement);

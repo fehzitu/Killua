@@ -1,10 +1,10 @@
 // create an achievements list
 module.exports = [
     {
-        id: '50_messages',
-        name: '50 chats',
+        id: '100_messages',
+        name: '100 chats',
         icon: '💬',
-        goal: 'Enviar 50 mensagens pela primeira vez',
+        goal: 'Enviar 100 mensagens pela primeira vez',
         rarity: '⭐️',
         hidden: false,
 
@@ -14,10 +14,10 @@ module.exports = [
         }
     },
     {
-        id: '100_messages',
-        name: '100 chats',
+        id: '150_messages',
+        name: '150 chats',
         icon: '💬',
-        goal: 'Enviar 100 mensagens pela primeira vez',
+        goal: 'Enviar 150 mensagens pela primeira vez',
         rarity: '⭐️⭐️',
         hidden: false,
 
