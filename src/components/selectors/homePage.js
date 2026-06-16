@@ -14,8 +14,8 @@ module.exports = function createHomeSelector(user) {
         },
         {
             label: '🏅 Conquistas',
-            description: 'Acessa as conquistas',
-            value: 'achievements'
+            description: 'Acessa todas as conquistas',
+            value: 'achievement'
         },
         {
             label: '🏆 Ranking',

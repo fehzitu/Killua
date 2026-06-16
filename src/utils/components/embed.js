@@ -4,6 +4,7 @@ const { MessageEmbed } = require('discord.js');
 module.exports = function createEmbed(user, tag = true) {
     const embed = new MessageEmbed()
         .setColor('RANDOM')
+        .setDescription('Øľª Mųŋɗø')
         .setTimestamp()
         .setFooter({ text: 'Atualizado' });
 
