@@ -3,8 +3,8 @@ const { SlashCommandBuilder } = require('@discordjs/builders');
 const { MessageActionRow } = require('discord.js');
 
 // import custom components
-const createHomePage = require('../components/embeds/menu/homePage');
-const createHomeSelect = require('../components/selectors/homePage');
+const createMenuPage = require('../components/embeds/menu/menuPage');
+const createMenuSelect = require('../components/selectors/menuPage');
 
 module.exports = {
     // slash data
@@ -22,10 +22,10 @@ module.exports = {
         const user = ctx.user || ctx.author;
 
         // embed
-        const embed = createHomePage(user);
+        const embed = createMenuPage(user);
 
         // select
-        const select = createHomeSelect(user);
+        const select = createMenuSelect(user);
 
         // rows
         const selectRow = new MessageActionRow().addComponents(select);

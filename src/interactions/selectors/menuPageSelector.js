@@ -10,8 +10,8 @@ const createSupportPage = require('../../components/embeds/menu/supportPage');
 const createPingPage = require('../../components/embeds/menu/pingPage');
 
 // import custom interactions
-const createHomeButton = require('../../components/buttons/homePage');
-const createHomeSelector = require('../../components/selectors/homePage');
+const createMenuButton = require('../../components/buttons/menuPage');
+const createMenuSelector = require('../../components/selectors/menuPage');
 const createProfileSelector = require('../../components/selectors/profilePage');
 
 // import custom ranking buttons
@@ -20,7 +20,7 @@ const createLevelRankButton = require('../../components/buttons/ranking/levelRan
 const createMessageRankButton = require('../../components/buttons/ranking/messageRank');
 
 module.exports = {
-    customId: 'homePageSelector',
+    customId: 'menuPageSelector',
     async execute(interaction) {
         const [id, ownerId] = interaction.customId.split(':');
 
@@ -37,7 +37,7 @@ module.exports = {
         };
 
         // buttons
-        const homeButton = createHomeButton(user);
+        const menuButton = createMenuButton(user);
 
         // ranking buttons
         const moneyRankButton = createMoneyRankButton(user, client);
@@ -45,7 +45,7 @@ module.exports = {
         const messageRankButton = createMessageRankButton(user, client);
 
         // selectors
-        const homePageSelector = createHomeSelector(user);
+        const menuPageSelector = createMenuSelector(user);
         const profilePageSelector = createProfileSelector(user);
 
         // rows
@@ -63,7 +63,7 @@ module.exports = {
         if (value === 'profile') {
             // add component to rows
             selectorRow.addComponents(profilePageSelector);
-            buttonRow.addComponents(homeButton);
+            buttonRow.addComponents(menuButton);
 
             // create page
             embed = createProfilePage(client, user);
@@ -74,7 +74,7 @@ module.exports = {
         if (value === 'ranking') {
             // add componens to rows
             buttonRow.addComponents(moneyRankButton, levelRankButton, messageRankButton);
-            buttonRow2.addComponents(homeButton);
+            buttonRow2.addComponents(menuButton);
 
             // create page
             embed = createRankingPage(user);
@@ -84,7 +84,7 @@ module.exports = {
         // info page
         if (value === 'info') {
             // add component to rows
-            buttonRow.addComponents(homeButton);
+            buttonRow.addComponents(menuButton);
 
             // create page
             embed = createInfoPage(client, user);
@@ -94,7 +94,7 @@ module.exports = {
         // info page
         if (value === 'help') {
             // add component to rows
-            buttonRow.addComponents(homeButton);
+            buttonRow.addComponents(menuButton);
 
             // create page
             embed = createHelpPage(user);
@@ -104,7 +104,7 @@ module.exports = {
         // support page
         if (value === 'support') {
             // add component to rows
-            buttonRow.addComponents(homeButton);
+            buttonRow.addComponents(menuButton);
 
             // create page
             embed = createSupportPage(user);
@@ -114,7 +114,7 @@ module.exports = {
         // support page
         if (value === 'ping') {
             // add component to rows
-            buttonRow.addComponents(homeButton);
+            buttonRow.addComponents(menuButton);
 
             // create page
             embed = createPingPage(client, user);

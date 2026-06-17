@@ -2,11 +2,11 @@
 const { MessageActionRow } = require('discord.js');
 
 // import custom components
-const createHomePage = require('../../components/embeds/menu/homePage');
-const createHomeSelector = require('../../components/selectors/homePage');
+const createMenuPage = require('../../components/embeds/menu/menuPage');
+const createMenuSelector = require('../../components/selectors/menuPage');
 
 module.exports = {
-    customId: 'homePageButton',
+    customId: 'menuPageButton',
     async execute(interaction) {
         const [id, ownerId] = interaction.customId.split(':');
 
@@ -23,10 +23,10 @@ module.exports = {
         };
 
         // home embed
-        const embed = createHomePage(user);
+        const embed = createMenuPage(user);
 
         // select
-        const selector = createHomeSelector(user);
+        const selector = createMenuSelector(user);
 
         // rows
         let selectorRow = new MessageActionRow().addComponents(selector);
