@@ -6,7 +6,7 @@ const createLevelRankPage = require('../../../components/embeds/ranking/levelRan
 const createMoneyRankButton = require('../../../components/buttons/ranking/moneyRank');
 const createLevelRankButton = require('../../../components/buttons/ranking/levelRank');
 const createMessageRankButton = require('../../../components/buttons/ranking/messageRank');
-const createHomeButton = require('../../../components/buttons/homePage');
+const createMenuButton = require('../../../components/buttons/menuPage');
 
 module.exports = {
     customId: 'levelRankButton',
@@ -34,11 +34,11 @@ module.exports = {
         const messageRankButton = createMessageRankButton(user);
 
        // menu button
-        const homeButton = createHomeButton(user);
+        const menuButton = createHomeButton(user);
 
         // rows
         const buttonRow = new MessageActionRow().addComponents(moneyRankButton, levelRankButton, messageRankButton);
-        const buttonRow2 = new MessageActionRow().addComponents(homeButton);
+        const buttonRow2 = new MessageActionRow().addComponents(menuButton);
 
         // edit message
         return interaction.update({
