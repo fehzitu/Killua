@@ -2,9 +2,9 @@
 const createButton = require('../../utils/components/button');
 
 // create home page back button
-module.exports = function createHomeButton(user) {
+module.exports = function createMenuButton(user) {
     return createButton({
-        customId: 'homePageButton',
+        customId: 'menuPageButton',
         label: '🏠 Menu principal',
         user
     });

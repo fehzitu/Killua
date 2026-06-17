@@ -2,9 +2,9 @@
 const createSelector = require('../../utils/components/selector');
 
 // create home page selector
-module.exports = function createHomeSelector(user) {
+module.exports = function createMenuSelector(user) {
     return createSelector({
-        customId: 'homePageSelector',
+        customId: 'menuPageSelector',
         user,
         placeholder: '🧾 Escolha uma página',
         optionsList: [{
