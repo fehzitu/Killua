@@ -4,7 +4,7 @@ const createEmbed = require('../../../utils/components/embed');
 // return an embed with the page
 module.exports = function createHomePage(user) {
     return (
-        createEmbed(user, tag = false)
+        createEmbed(user)
             .addFields([{
                 name: '**💫 Menu de interação**',
                 value: '**👤: Perfil - ``Acessa os dados do perfil``\n🎮: Jogos - ``Lista de jogos`` { OFF }\n😝: Interações - ``Interação entre usuários`` { OFF }\n📄: Comandos - ``Lista de comandos`` { OFF }\n🏅: Conquistas - ``Lista de conquistas``\n🏆: Ranking - ``Lista de ranking``\n⚙️: Informações - ``Infos do bot``\n📋: Ajuda - ``Receba ajuda sobre o bot``\n❓: Suporte - ``Suporte do bot``\n📡: Ping - ``Ver o ping do bot``\n\n❕️: Cada interação (botão, seletor ou modal) gera um pouco de xp pro usuário**'

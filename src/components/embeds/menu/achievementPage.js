@@ -5,5 +5,9 @@ const createEmbed = require('../../../utils/components/embed');
 module.exports = function createAchievementPage(user) {
     return (
         createEmbed(user)
+            .addFields([{
+                name: '',
+                value: ''
+            }])
     );
 };
