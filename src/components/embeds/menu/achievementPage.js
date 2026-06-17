@@ -6,8 +6,8 @@ module.exports = function createAchievementPage(user) {
     return (
         createEmbed(user)
             .addFields([{
-                name: '',
-                value: ''
+                name: '🏅 **Lista completa das conquistas**',
+                value: 'list[0].names'
             }])
     );
 };
