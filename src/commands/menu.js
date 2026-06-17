@@ -3,7 +3,7 @@ const { SlashCommandBuilder } = require('@discordjs/builders');
 const { MessageActionRow } = require('discord.js');
 
 // import custom components
-const createMenuPage = require('../components/embeds/menu/menuPage');
+const createMenuPage = require('../components/embeds/menuPage');
 const createMenuSelect = require('../components/selectors/menuPage');
 
 module.exports = {

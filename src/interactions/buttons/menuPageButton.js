@@ -2,7 +2,7 @@
 const { MessageActionRow } = require('discord.js');
 
 // import custom components
-const createMenuPage = require('../../components/embeds/menu/menuPage');
+const createMenuPage = require('../../components/embeds/menuPage');
 const createMenuSelector = require('../../components/selectors/menuPage');
 
 module.exports = {
