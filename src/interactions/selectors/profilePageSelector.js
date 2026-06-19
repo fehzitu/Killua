@@ -6,7 +6,7 @@ const createProfilePage = require('../../components/embeds/menu/profilePage');
 const createAchievementsPage = require('../../components/embeds/achievement/achievementsPage');
 
 // import custom interactions
-const createHomeButton = require('../../components/buttons/homePage');
+const createMenuButton = require('../../components/buttons/menuPage');
 const createProfileSelector = require('../../components/selectors/profilePage');
 
 module.exports = {
@@ -33,11 +33,11 @@ module.exports = {
         const profilePageSelector = createProfileSelector(user);
 
         // menu button
-        const homeButton = createHomeButton(user);
+        const menuButton = createMenuButton(user);
 
         // rows
         const profileSelectorRow = new MessageActionRow().addComponents(profilePageSelector);
-        const profileButtonRow = new MessageActionRow().addComponents(homeButton);
+        const profileButtonRow = new MessageActionRow().addComponents(menuButton);
 
         // selected value
         const value = interaction.values?.[0];

@@ -13,6 +13,11 @@ module.exports = function createMenuSelector(user) {
             value: 'profile'
         },
         {
+            label: '📄 Comandos',
+            description: 'Lista de comandos',
+            value: 'command'
+        },
+        {
             label: '🏆 Ranking',
             description: 'Acessa o ranking',
             value: 'ranking'

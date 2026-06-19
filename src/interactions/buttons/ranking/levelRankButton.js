@@ -34,7 +34,7 @@ module.exports = {
         const messageRankButton = createMessageRankButton(user);
 
        // menu button
-        const menuButton = createHomeButton(user);
+        const menuButton = createMenuButton(user);
 
         // rows
         const buttonRow = new MessageActionRow().addComponents(moneyRankButton, levelRankButton, messageRankButton);
