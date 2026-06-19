@@ -8,6 +8,7 @@ const log = require('../../utils/systems/logger');
 const checkMessageAchievements = require('../../utils/achievements/checkMessageAchievements');
 const checkCommandAchievements = require('../../utils/achievements/checkCommandAchievements');
 const checkLevelAchievements = require('../../utils/achievements/checkLevelAchievements');
+const checkRoleAchievements = require('../../utils/achievements/checkRoleAchievements');
 
 // import an single function from various exports
 const { checkLevelUp } = require('../../utils/systems/levelSystem');
@@ -249,6 +250,19 @@ module.exports = {
 
             // send achievement messages
             for (const achievement of unlocked) {
+                // achievement message
+                const achievementEmbed = createAchievementsMessage(interaction.user, achievement);
+    
+                await interaction.channel.send({
+                    embeds: [achievementEmbed]
+                });
+            };
+
+            // check role
+            const roleResult = checkRoleAchievements(profile);
+    
+            // send achievement messages
+            for (const achievement of roleResult) {
                 // achievement message
                 const achievementEmbed = createAchievementsMessage(interaction.user, achievement);
     
