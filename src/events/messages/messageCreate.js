@@ -111,6 +111,10 @@ module.exports = {
         const command = client.commands.get(commandName);
 
         if (!command) {
+            // remove xp
+            profile.rpg.xp -= 50;
+            profile.rpg.totalXp -= 50;
+
             log('WARNING', `Comando desconhecido: ${commandName}`);
             return;
         };
@@ -119,11 +123,15 @@ module.exports = {
         const remaining = checkCooldown(userId, constants.COOLDOWNS.COMMAND);
 
         if (remaining > 0) {
+            // remove xp
+            profile.rpg.xp -= 50;
+            profile.rpg.totalXp -= 50;
+
             const seconds = (remaining / 1000).toFixed(1);
 
             const embed = createEmbed(message.author);
 
-            embed.setDescription(`⏳ Sem spam!\nEspere **${seconds}s** para usar novamente.`);
+            embed.setDescription(`⏳ Sem spam!\nEspere **${seconds}s** para usar novamente.\n\n ⚠️ **-50 Xp** como punição`);
 
             return message.channel.send({
                 embeds: [embed]
@@ -194,6 +202,10 @@ module.exports = {
             // execute the command
             await command.execute(message, args);
         } catch (error) {
+            // remove xp
+            profile.rpg.xp -= 50;
+            profile.rpg.totalXp -= 50;
+
             log('ERROR', `Erro no comando (${commandName}): ${error.message}`);
 
             await message.channel.send({
