@@ -48,13 +48,13 @@ module.exports = {
 
         // buttons
         if (interaction.isButton()) {
+            const id = interaction.customId.split(':')[0];
+            const button = client.interactions.get(id);
+
             if (!button) {
                 log('WARNING', `Botão não encontrado: ${interaction.customId}`);
                 return;
             };
-
-            const id = interaction.customId.split(':')[0];
-            const button = client.interactions.get(id);
 
             // add xp
             profile.rpg.xp += 50;
@@ -94,13 +94,13 @@ module.exports = {
 
         // select menus
         if (interaction.isSelectMenu()) {
+            const id = interaction.customId.split(':')[0];
+            const select = client.interactions.get(id);
+
             if (!select) {
                 log('WARNING', `Seletor não encontrado: ${interaction.customId}`);
                 return;
             };
-
-            const id = interaction.customId.split(':')[0];
-            const select = client.interactions.get(id);
 
             // add xp
             profile.rpg.xp += 50;
@@ -140,13 +140,13 @@ module.exports = {
 
         // modals
         if (interaction.isModalSubmit()) {
+            const id = interaction.customId.split(':')[0];
+            const modal = client.interactions.get(id);
+
             if (!modal) {
                 log('WARNING', `Modal não encontrado: ${interaction.customId}`);
                 return;
             };
-
-            const id = interaction.customId.split(':')[0];
-            const modal = client.interactions.get(id);
 
             // add xp
             profile.rpg.xp += 50;
