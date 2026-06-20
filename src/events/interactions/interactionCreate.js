@@ -48,6 +48,11 @@ module.exports = {
 
         // buttons
         if (interaction.isButton()) {
+            if (!button) {
+                log('WARNING', `Botão não encontrado: ${interaction.customId}`);
+                return;
+            };
+
             const id = interaction.customId.split(':')[0];
             const button = client.interactions.get(id);
 
@@ -82,11 +87,6 @@ module.exports = {
                 });
             };
 
-            if (!button) {
-                log('WARNING', `Botão não encontrado: ${interaction.customId}`);
-                return;
-            };
-
             // log('RESET', `Botão: ${id} usado por ${userTag}`);
 
             return safeExecute(button, interaction);
@@ -94,6 +94,11 @@ module.exports = {
 
         // select menus
         if (interaction.isSelectMenu()) {
+            if (!select) {
+                log('WARNING', `Seletor não encontrado: ${interaction.customId}`);
+                return;
+            };
+
             const id = interaction.customId.split(':')[0];
             const select = client.interactions.get(id);
 
@@ -128,11 +133,6 @@ module.exports = {
                 });
             };
 
-            if (!select) {
-                log('WARNING', `Seletor não encontrado: ${interaction.customId}`);
-                return;
-            };
-
             // log('RESET', `Seletor: ${id} usado por ${userTag}`);
 
             return safeExecute(select, interaction);
@@ -140,6 +140,11 @@ module.exports = {
 
         // modals
         if (interaction.isModalSubmit()) {
+            if (!modal) {
+                log('WARNING', `Modal não encontrado: ${interaction.customId}`);
+                return;
+            };
+
             const id = interaction.customId.split(':')[0];
             const modal = client.interactions.get(id);
 
@@ -174,11 +179,6 @@ module.exports = {
                 });
             };
 
-            if (!modal) {
-                log('WARNING', `Modal não encontrado: ${interaction.customId}`);
-                return;
-            };
-
             // log('RESET', `Modal: ${id} usado por ${userTag}`);
 
             return safeExecute(modal, interaction);
@@ -202,7 +202,7 @@ module.exports = {
 
             const embed = createEmbed(interaction.user);
 
-            embed.setDescription(`⏳ Sem spam!\nEspere **${seconds}s** para usar novamente.`);
+            embed.setDescription(`⏳ Sem spam!\nEspere **${seconds}s** para usar novamente.\n\n ⚠️ **-50 Xp** como punição`);
 
             return interaction.reply({
                 embeds: [embed],
