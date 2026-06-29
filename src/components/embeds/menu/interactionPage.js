@@ -5,9 +5,5 @@ const createEmbed = require('../../../utils/components/embed');
 module.exports = function createInteractionPage(user) {
     return (
         createEmbed(user)
-            .addFields([{
-                name: '\u200B',
-                value: '\u200B'
-            }])
     );
 };
