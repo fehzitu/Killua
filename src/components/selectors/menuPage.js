@@ -13,6 +13,11 @@ module.exports = function createMenuSelector(user) {
             value: 'profile'
         },
         {
+            label: '😝 Interações',
+            description: 'Interagir com alguém',
+            value: 'interaction'
+        },
+        {
             label: '📄 Comandos',
             description: 'Lista de comandos',
             value: 'command'
