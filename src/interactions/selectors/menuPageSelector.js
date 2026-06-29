@@ -3,6 +3,7 @@ const { MessageActionRow } = require('discord.js');
 
 // import custom pages
 const createProfilePage = require('../../components/embeds/menu/profilePage');
+const createInteractionPage = require('../../components/embeds/menu/interactionPage');
 const createCommandPage = require('../../components/embeds/menu/commandPage');
 const createRankingPage = require('../../components/embeds/menu/rankingPage');
 const createInfoPage = require('../../components/embeds/menu/infoPage');
@@ -60,7 +61,7 @@ module.exports = {
         // selected value
         const value = interaction.values?.[0];
 
-        // info page
+        // profile page
         if (value === 'profile') {
             // add component to rows
             selectorRow.addComponents(profilePageSelector);
@@ -71,7 +72,17 @@ module.exports = {
             componentsList = [selectorRow, buttonRow];
         };
 
-        // commands page
+        // interaction page
+        if (value === 'profile') {
+            // add component to rows
+            buttonRow.addComponents(menuButton);
+
+            // create page
+            embed = createInteractionPage(user);
+            componentsList = [buttonRow];
+        };
+
+        // command page
         if (value === 'command') {
             // add componens to rows
             buttonRow.addComponents(menuButton);
@@ -102,7 +113,7 @@ module.exports = {
             componentsList = [buttonRow];
         };
 
-        // info page
+        // help page
         if (value === 'help') {
             // add component to rows
             buttonRow.addComponents(menuButton);
@@ -122,7 +133,7 @@ module.exports = {
             componentsList = [buttonRow];
         };
 
-        // support page
+        // ping page
         if (value === 'ping') {
             // add component to rows
             buttonRow.addComponents(menuButton);
