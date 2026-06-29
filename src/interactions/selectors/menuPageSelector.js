@@ -73,7 +73,7 @@ module.exports = {
         };
 
         // interaction page
-        if (value === 'profile') {
+        if (value === 'interaction') {
             // add component to rows
             buttonRow.addComponents(menuButton);
 
