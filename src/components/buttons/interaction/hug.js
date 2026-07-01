@@ -1,11 +1,11 @@
 // import custom functions
 const createButton = require('../../../utils/components/button');
 
-// create kiss button
-module.exports = function createKissButton(user) {
+// create hug button
+module.exports = function createHugButton(user) {
     return createButton({
-        customId: 'kissButton',
-        label: '😘',
+        customId: 'hugButton',
+        label: '🤗',
         user
     });
 };
