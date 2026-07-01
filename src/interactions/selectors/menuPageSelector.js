@@ -45,7 +45,7 @@ module.exports = {
         const menuButton = createMenuButton(user);
 
         // interaction buttons
-        const kissButton = createKissButton(user);
+        const kissButton = createKissButton(user).setDisabled(true);
 
         // ranking buttons
         const moneyRankButton = createMoneyRankButton(user, client);
