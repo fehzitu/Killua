@@ -50,22 +50,14 @@ module.exports = {
         const menuPageSelector = createMenuSelector(user);
         const profilePageSelector = createProfileSelector(user);
 
-        // rows
-        let selectorRow = new MessageActionRow();
-        let buttonRow = new MessageActionRow();
-        let buttonRow2 = new MessageActionRow();
-
-        // components list
-        let componentsList = [selectorRow];
-
         // selected value
         const value = interaction.values?.[0];
 
         // profile page
         if (value === 'profile') {
             // add component to rows
-            selectorRow.addComponents(profilePageSelector);
-            buttonRow.addComponents(menuButton);
+            const selectorRow = new MessageActionRow().addComponents(profilePageSelector);
+            const buttonRow = new MessageActionRow().addComponents(menuButton);
 
             // create page
             embed = createProfilePage(client, user);
@@ -75,7 +67,7 @@ module.exports = {
         // interaction page
         if (value === 'interaction') {
             // add component to rows
-            buttonRow.addComponents(menuButton);
+            const buttonRow = new MessageActionRow().addComponents(menuButton);
 
             // create page
             embed = createInteractionPage(user);
@@ -85,7 +77,7 @@ module.exports = {
         // command page
         if (value === 'command') {
             // add componens to rows
-            buttonRow.addComponents(menuButton);
+            const buttonRow = new MessageActionRow().addComponents(menuButton);
 
             // create page
             embed = createCommandPage(user);
@@ -95,8 +87,8 @@ module.exports = {
         // ranking page
         if (value === 'ranking') {
             // add componens to rows
-            buttonRow.addComponents(moneyRankButton, levelRankButton, messageRankButton);
-            buttonRow2.addComponents(menuButton);
+            const buttonRow = new MessageActionRow().addComponents(moneyRankButton, levelRankButton, messageRankButton);
+            const buttonRow2 = new MessageActionRow().addComponents(menuButton);
 
             // create page
             embed = createRankingPage(user);
@@ -106,7 +98,7 @@ module.exports = {
         // info page
         if (value === 'info') {
             // add component to rows
-            buttonRow.addComponents(menuButton);
+            const buttonRow = new MessageActionRow().addComponents(menuButton);
 
             // create page
             embed = createInfoPage(client, user);
@@ -116,7 +108,7 @@ module.exports = {
         // help page
         if (value === 'help') {
             // add component to rows
-            buttonRow.addComponents(menuButton);
+            const buttonRow = new MessageActionRow().addComponents(menuButton);
 
             // create page
             embed = createHelpPage(user);
@@ -126,7 +118,7 @@ module.exports = {
         // support page
         if (value === 'support') {
             // add component to rows
-            buttonRow.addComponents(menuButton);
+            const buttonRow = new MessageActionRow().addComponents(menuButton);
 
             // create page
             embed = createSupportPage(user);
@@ -136,7 +128,7 @@ module.exports = {
         // ping page
         if (value === 'ping') {
             // add component to rows
-            buttonRow.addComponents(menuButton);
+            const buttonRow = new MessageActionRow().addComponents(menuButton);
 
             // create page
             embed = createPingPage(client, user);
