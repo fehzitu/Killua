@@ -16,6 +16,9 @@ const createMenuButton = require('../../components/buttons/menuPage');
 const createMenuSelector = require('../../components/selectors/menuPage');
 const createProfileSelector = require('../../components/selectors/profilePage');
 
+// import custom interactions buttons
+const createKissButton = require('../../components/buttons/interaction/kiss');
+
 // import custom ranking buttons
 const createMoneyRankButton = require('../../components/buttons/ranking/moneyRank');
 const createLevelRankButton = require('../../components/buttons/ranking/levelRank');
@@ -38,8 +41,11 @@ module.exports = {
             });
         };
 
-        // buttons
+        // menu button
         const menuButton = createMenuButton(user);
+
+        // interaction buttons
+        const kissButton = createKissButton(user);
 
         // ranking buttons
         const moneyRankButton = createMoneyRankButton(user, client);
@@ -67,11 +73,12 @@ module.exports = {
         // interaction page
         if (value === 'interaction') {
             // add component to rows
-            const buttonRow = new MessageActionRow().addComponents(menuButton);
+            const buttonRow = new MessageActionRow().addComponents(kissButton);
+            const buttonRow2 = new MessageActionRow().addComponents(menuButton);
 
             // create page
             embed = createInteractionPage(user);
-            componentsList = [buttonRow];
+            componentsList = [buttonRow, buttonRow2];
         };
 
         // command page
