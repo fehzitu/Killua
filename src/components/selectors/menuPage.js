@@ -9,42 +9,42 @@ module.exports = function createMenuSelector(user) {
         placeholder: '🧾 Escolha uma página',
         optionsList: [{
             label: '👤 Perfil',
-            description: 'Acessa seu perfil',
+            description: 'Clique para acessar',
             value: 'profile'
         },
         {
             label: '😝 Interações',
-            description: 'Interagir com alguém',
+            description: 'Clique para acessar',
             value: 'interaction'
         },
         {
             label: '📄 Comandos',
-            description: 'Lista de comandos',
+            description: 'Clique para acessar',
             value: 'command'
         },
         {
             label: '🏆 Ranking',
-            description: 'Acessa o ranking',
+            description: 'Clique para acessar',
             value: 'ranking'
         },
         {
             label: '⚙️ Informações',
-            description: 'Ver info sobre nosso bot',
+            description: 'Clique para acessar',
             value: 'info'
         },
         {
             label: '📋 Ajuda',
-            description: 'Uma ajudinha sobre o bot',
+            description: 'Clique para acessar',
             value: 'help'
         },
         {
             label: '❓ Suporte',
-            description: 'Ver info sobre nosso suporte',
+            description: 'Clique para acessar',
             value: 'support'
         },
         {
             label: '📡 Ping',
-            description: 'Ver o ping do bot',
+            description: 'Clique para acessar',
             value: 'ping'
         }]
     });
