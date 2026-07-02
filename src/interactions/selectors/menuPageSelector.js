@@ -21,6 +21,7 @@ const createKissButton = require('../../components/buttons/interaction/kiss');
 const createHugButton = require('../../components/buttons/interaction/hug');
 const createGreetButton = require('../../components/buttons/interaction/greet');
 const createLaughtButton = require('../../components/buttons/interaction/laught');
+const createPartyButton = require('../../components/buttons/interaction/party');
 
 // import custom ranking buttons
 const createMoneyRankButton = require('../../components/buttons/ranking/moneyRank');
@@ -52,6 +53,7 @@ module.exports = {
         const hugButton = createHugButton(user).setDisabled(true);
         const greetButton = createGreetButton(user).setDisabled(true);
         const laughtButton = createLaughtButton(user).setDisabled(true);
+        const partyButton = createPartyButton(user).setDisabled(true);
 
         // ranking buttons
         const moneyRankButton = createMoneyRankButton(user, client);
@@ -79,7 +81,7 @@ module.exports = {
         // interaction page
         if (value === 'interaction') {
             // add component to rows
-            const buttonRow = new MessageActionRow().addComponents(kissButton, hugButton, greetButton, laughtButton);
+            const buttonRow = new MessageActionRow().addComponents(kissButton, hugButton, greetButton, laughtButton, partyButton);
             const buttonRow2 = new MessageActionRow().addComponents(menuButton);
 
             // create page
