@@ -16,7 +16,7 @@ module.exports = function createProfilePage(client, user) {
     return (
         createEmbed(user)
             .addFields([{
-                name: `👤 Cargo: **${profile.rpg.role}**`,
+                name: `👤 Tag: **${profile.rpg.role}**`,
                 value: `>>> ⏳ **Lv.${profile.rpg.level}『 ${profile.rpg.xp} / ${getXpNeeded(profile.rpg.level)}xp 』**💸 **R$${profile.rpg.money}**\n🧿 **Personalidade: ${profile.karma.personality}**\n🏆 **Conquistas: ${profile.honor.achievements.length} / ${achievementsList.length}**\n📚 **Mensagens: ${profile.stats.messages}**\n📡 **Comandos: ${profile.stats.commands}**`
             }])
             .setImage('https://i.pinimg.com/originals/fb/7d/25/fb7d25365c6f2deca04b86f35c8fee63.gif')
