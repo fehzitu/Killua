@@ -23,7 +23,7 @@ module.exports = {
         };
 
         // embed
-        const embed = createKissPage(user);
+        const embed = createKissPage(user); // change later
 
        // menu button
         const menuButton = createMenuButton(user);
