@@ -16,12 +16,15 @@ const createMenuButton = require('../../components/buttons/menuPage');
 const createMenuSelector = require('../../components/selectors/menuPage');
 const createProfileSelector = require('../../components/selectors/profilePage');
 
-// import custom interactions buttons
+// import custom positive interactions buttons
 const createKissButton = require('../../components/buttons/interaction/kiss');
 const createHugButton = require('../../components/buttons/interaction/hug');
 const createGreetButton = require('../../components/buttons/interaction/greet');
 const createLaughtButton = require('../../components/buttons/interaction/laught');
 const createPartyButton = require('../../components/buttons/interaction/party');
+
+// import custom negative interactions buttons
+const createPunchButton = require('../../components/buttons/interaction/punch');
 
 // import custom ranking buttons
 const createMoneyRankButton = require('../../components/buttons/ranking/moneyRank');
@@ -48,12 +51,15 @@ module.exports = {
         // menu button
         const menuButton = createMenuButton(user);
 
-        // interaction buttons
+        // positive interaction buttons
         const kissButton = createKissButton(user).setDisabled(true);
         const hugButton = createHugButton(user).setDisabled(true);
         const greetButton = createGreetButton(user).setDisabled(true);
         const laughtButton = createLaughtButton(user).setDisabled(true);
         const partyButton = createPartyButton(user).setDisabled(true);
+
+        // negative interaction buttons
+        const punchButton = createPunchButton(user).setDisabled(true);
 
         // ranking buttons
         const moneyRankButton = createMoneyRankButton(user, client);
@@ -82,11 +88,12 @@ module.exports = {
         if (value === 'interaction') {
             // add component to rows
             const buttonRow = new MessageActionRow().addComponents(kissButton, hugButton, greetButton, laughtButton, partyButton);
-            const buttonRow2 = new MessageActionRow().addComponents(menuButton);
+            const buttonRow2 = new MessageActionRow().addComponents(punchButton);
+            const buttonRow3 = new MessageActionRow().addComponents(menuButton);
 
             // create page
             embed = createInteractionPage(user);
-            componentsList = [buttonRow, buttonRow2];
+            componentsList = [buttonRow, buttonRow2, buttonRow3];
         };
 
         // command page
