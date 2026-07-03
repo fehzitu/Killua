@@ -26,6 +26,7 @@ const createPartyButton = require('../../components/buttons/interaction/party');
 // import custom negative interactions buttons
 const createPunchButton = require('../../components/buttons/interaction/punch');
 const createKickButton = require('../../components/buttons/interaction/kick');
+const createSlapButton = require('../../components/buttons/interaction/slap');
 
 // import custom ranking buttons
 const createMoneyRankButton = require('../../components/buttons/ranking/moneyRank');
@@ -62,6 +63,7 @@ module.exports = {
         // negative interaction buttons
         const punchButton = createPunchButton(user).setStyle('DANGER').setDisabled(true);
         const kickButton = createKickButton(user).setStyle('DANGER').setDisabled(true);
+        const slapButton = createSlapButton(user).setStyle('DANGER').setDisabled(true);
 
         // ranking buttons
         const moneyRankButton = createMoneyRankButton(user, client);
@@ -90,7 +92,7 @@ module.exports = {
         if (value === 'interaction') {
             // add component to rows
             const buttonRow = new MessageActionRow().addComponents(kissButton, hugButton, greetButton, laughtButton, partyButton);
-            const buttonRow2 = new MessageActionRow().addComponents(punchButton, kickButton);
+            const buttonRow2 = new MessageActionRow().addComponents(punchButton, kickButton, slapButton);
             const buttonRow3 = new MessageActionRow().addComponents(menuButton);
 
             // create page
