@@ -52,14 +52,14 @@ module.exports = {
         const menuButton = createMenuButton(user);
 
         // positive interaction buttons
-        const kissButton = createKissButton(user).setDisabled(true);
-        const hugButton = createHugButton(user).setDisabled(true);
-        const greetButton = createGreetButton(user).setDisabled(true);
-        const laughtButton = createLaughtButton(user).setDisabled(true);
-        const partyButton = createPartyButton(user).setDisabled(true);
+        const kissButton = createKissButton(user).setStyle('SUCCESS').setDisabled(true);
+        const hugButton = createHugButton(user).setStyle('SUCCESS').setDisabled(true);
+        const greetButton = createGreetButton(user).setStyle('SUCCESS').setDisabled(true);
+        const laughtButton = createLaughtButton(user).setStyle('SUCCESS').setDisabled(true);
+        const partyButton = createPartyButton(user).setStyle('SUCCESS').setDisabled(true);
 
         // negative interaction buttons
-        const punchButton = createPunchButton(user).setDisabled(true);
+        const punchButton = createPunchButton(user).setStyle('DANGER').setDisabled(true);
 
         // ranking buttons
         const moneyRankButton = createMoneyRankButton(user, client);
