@@ -6,16 +6,6 @@ function checkLevelAchievements(profile) {
     // unlocked achievements
     const unlocked = [];
 
-    // level achievements
-    if (profile.rpg.level >= 15) {
-        const achievement = unlockAchievement(
-            profile,
-            'level15'
-        );
-
-        if (achievement) unlocked.push(achievement);
-    };
-
     if (profile.rpg.level >= 30) {
         const achievement = unlockAchievement(
             profile,

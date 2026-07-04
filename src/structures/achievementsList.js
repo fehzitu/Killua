@@ -1,37 +1,11 @@
 // create an achievements list
 module.exports = [
     {
-        id: '100_messages',
-        name: '100 chats',
-        icon: '💬',
-        goal: 'Enviar 100 mensagens pela primeira vez',
-        rarity: '⭐️',
-        hidden: false,
-
-        reward: {
-            xp: 50,
-            money: 100
-        }
-    },
-    {
         id: '150_messages',
         name: '150 chats',
         icon: '💬',
         goal: 'Enviar 150 mensagens pela primeira vez',
         rarity: '⭐️⭐️',
-        hidden: false,
-
-        reward: {
-            xp: 50,
-            money: 100
-        }
-    },
-    {
-        id: '25_commands',
-        name: '25 comandos',
-        icon: '⚡',
-        goal: 'Usar 25 comandos pela primeira vez',
-        rarity: '⭐️',
         hidden: false,
 
         reward: {
@@ -50,19 +24,6 @@ module.exports = [
         reward: {
             xp: 50,
             money: 100
-        }
-    },
-    {
-        id: 'level15',
-        name: 'Nível 15',
-        icon: '⚜️',
-        goal: 'Chegar ao nivel 15',
-        rarity: '⭐️',
-        hidden: false,
-
-        reward: {
-            xp: 250,
-            money: 500
         }
     },
     {
