@@ -4,6 +4,9 @@ const { MessageActionRow } = require('discord.js');
 // import custom components
 const createEmbed = require('../../../utils/components/embed');
 
+// import custom interactions
+const createMenuButton = require('../../../components/buttons/menuPage');
+
 module.exports = {
     customId: 'kissButton',
     async execute(interaction) {
@@ -24,10 +27,16 @@ module.exports = {
         // home embed
         const embed = createEmbed(user);
 
+        // menu button
+        const menuButton = createMenuButton(user);
+
+        // row
+        const buttonRow = new MessageActionRow().addComponents(menuButton);
+
         // edit message
         return interaction.update({
             embeds: [embed],
-            components: []
+            components: [buttonRow]
         });
     }
 };
