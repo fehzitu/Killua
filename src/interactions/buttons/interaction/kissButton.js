@@ -2,7 +2,7 @@
 const { MessageActionRow } = require('discord.js');
 
 // import custom components
-const createEmbed = require('../../../utils/components/embed');
+const createKissPage = require('../../../components/embeds/kissPage');
 
 // import custom interactions
 const createMenuButton = require('../../../components/buttons/menuPage');
@@ -24,8 +24,8 @@ module.exports = {
             });
         };
 
-        // home embed
-        const embed = createEmbed(user);
+        // embed
+        const embed = createKissPage(user);
 
         // menu button
         const menuButton = createMenuButton(user);
