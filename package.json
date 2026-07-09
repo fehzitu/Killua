@@ -4,8 +4,8 @@
   "description": "Js discord bot",
   "main": "index.js",
   "scripts": {
-    "start": "node src/deploy/deploy-commands.js && node src/index.js",
-    "dev": "node src/deploy/deploy-commands.js && nodemon src/index.js"
+    "start": "node src/deploy/deploy-commands.js && node src/.",
+    "dev": "node src/deploy/deploy-commands.js && nodemon src/."
   },
   "repository": {
     "type": "git",
