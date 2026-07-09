@@ -2,12 +2,12 @@
 const createEmbed = require('../../../utils/components/embed');
 
 // return an embed with the page
-module.exports = function createKissPage(user, param) {
+module.exports = function createKissPage(user) {
     return (
         createEmbed(user)
             .addFields([{
-                name: `${user.username}`,
-                value: `${param}`
+                name: `**🫣 ${user.username} ta afim de dar um beijinho em alguém**`,
+                value: '**🤭 Escolha o sortudo(a) que vai ganhar um beijinho!**'
             }])
             //.setImage('')
     );

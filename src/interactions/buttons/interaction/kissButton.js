@@ -25,7 +25,7 @@ module.exports = {
         };
 
         // embed
-        const embed = createKissPage(user, 'kiss');
+        const embed = createKissPage(user);
 
         // menu button
         const menuButton = createMenuButton(user);
