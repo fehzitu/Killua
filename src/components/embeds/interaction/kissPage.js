@@ -7,8 +7,8 @@ module.exports = function createKissPage(user) {
         createEmbed(user)
             .addFields([{
                 name: `**🫣 ${user.username} ta afim de dar um beijinho em alguém**`,
-                value: '**🤭 Escolha o sortudo(a) que vai ganhar um beijinho!**'
+                value: '**🤭 Escolha o sortudo(a)!**'
             }])
-            //.setImage('')
+            .setImage('https://glq.pages.dev/posts/high_quality_gifs/assets/bad_ffmpeg_command.gif')
     );
 };
