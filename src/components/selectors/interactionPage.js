@@ -4,9 +4,9 @@ const createSelector = require('../../utils/components/selector');
 // create interaction page selector
 module.exports = function createInteractionSelector(user, members) {
     return createSelector({
-        customId: '',
+        customId: 'interactionPageSelector',
         user,
-        placeholder: 'Placeholder',
+        placeholder: '👤 Escolha alguém',
         optionsList: members
     });
 };
