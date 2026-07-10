@@ -1,3 +1,6 @@
+// import custom interactions
+const createInteractionSelectorPage = require('../../components/embeds/interaction/interactionSelectorPage');
+
 // select
 module.exports = {
     customId: 'interactionPageSelector',
@@ -22,9 +25,13 @@ module.exports = {
             });
         };
 
-        return interaction.reply({
-            content: `⚜️ Você escolheu: <@${value}>`,
-            ephemeral: true
+        // create an interaction selector page
+        const interactionSelector = createInteractionSelectorPage();
+
+        // reset embed
+        return interaction.update({
+            embeds: [interactionSelector],
+            components: []
         });
     }
 };
