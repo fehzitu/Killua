@@ -15,6 +15,7 @@ const createPingPage = require('../../components/embeds/menu/pingPage');
 const createMenuButton = require('../../components/buttons/menuPage');
 const createMenuSelector = require('../../components/selectors/menuPage');
 const createProfileSelector = require('../../components/selectors/profilePage');
+const createInteractionSelector = require('../../components/selectors/interactionPage');
 
 // import custom ranking buttons
 const createMoneyRankButton = require('../../components/buttons/ranking/moneyRank');
@@ -38,6 +39,17 @@ module.exports = {
             });
         };
 
+        // all guild members
+        const members = await interaction.guild.members.fetch();
+        const formatedMembers = [];
+        members.map(member => {
+            formatedMembers.push({
+                label: member.user.username,
+                description: member.user.globalName,
+                value: member.user.id
+            });
+        });
+
         // menu button
         const menuButton = createMenuButton(user);
 
@@ -49,6 +61,7 @@ module.exports = {
         // selectors
         const menuPageSelector = createMenuSelector(user);
         const profilePageSelector = createProfileSelector(user);
+        const interactionPageSelector = createInteractionSelector(user, formatedMembers);
 
         // selected value
         const value = interaction.values?.[0];
@@ -67,11 +80,12 @@ module.exports = {
         // interaction page
         if (value === 'interaction') {
             // add component to rows
+            const selectorRow = new MessageActionRow().addComponents(interactionPageSelector);
             const buttonRow = new MessageActionRow().addComponents(menuButton);
 
             // create page
             embed = createInteractionPage(user);
-            componentsList = [buttonRow];
+            componentsList = [selectorRow, buttonRow];
         };
 
         // command page
