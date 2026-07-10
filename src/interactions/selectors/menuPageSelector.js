@@ -41,6 +41,8 @@ module.exports = {
 
         // all guild members
         const members = await interaction.guild.members.fetch();
+        
+        // all formated members
         const formatedMembers = [];
         members.map(member => {
             formatedMembers.push({
@@ -49,6 +51,20 @@ module.exports = {
                 value: member.user.id
             });
         });
+
+        // get 25 itens from array
+        function getRamdom(array, amount = 25) {
+            const copy = [...array];
+            for (let i = copy.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [copy[i], copy[j]] = [copy[j], copy[i]];
+            };
+        
+            return copy.slice(0, Math.min(amount, copy.length));
+        };
+
+        // get 25 members
+        const only25members = await getRamdom(formatedMembers);
 
         // menu button
         const menuButton = createMenuButton(user);
@@ -61,7 +77,7 @@ module.exports = {
         // selectors
         const menuPageSelector = createMenuSelector(user);
         const profilePageSelector = createProfileSelector(user);
-        const interactionPageSelector = createInteractionSelector(user, formatedMembers);
+        const interactionPageSelector = createInteractionSelector(user, only25members);
 
         // selected value
         const value = interaction.values?.[0];
