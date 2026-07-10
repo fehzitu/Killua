@@ -34,7 +34,7 @@ module.exports = {
         };
 
         // create an interaction selector page
-        const interactionSelector = createInteractionSelectorPage(user, target);
+        const interactionSelector = createInteractionSelectorPage(user, target.user);
 
         // reset embed
         return interaction.update({
