@@ -1,4 +1,8 @@
+// discord imports
+const { MessageActionRow } = require('discord.js');
+
 // import custom interactions
+const createMenuButton = require('../../components/buttons/menuPage');
 const createInteractionSelectorPage = require('../../components/embeds/interaction/interactionSelectorPage');
 
 // select
@@ -33,13 +37,19 @@ module.exports = {
             });
         };
 
+        // menu button
+        const menuButton = createMenuButton(user);
+
+        // rows
+        const buttonRow = new MessageActionRow().addComponents(menuButton);
+
         // create an interaction selector page
         const interactionSelector = createInteractionSelectorPage(user, target.user);
 
         // reset embed
         return interaction.update({
             embeds: [interactionSelector],
-            components: []
+            components: [buttonRow]
         });
     }
 };
