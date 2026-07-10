@@ -41,7 +41,8 @@ module.exports = {
         const menuButton = createMenuButton(user);
 
         // rows
-        const buttonRow = new MessageActionRow().addComponents(menuButton);
+        const buttonRow = new MessageActionRow().addComponents(); // add components
+        const buttonRow2 = new MessageActionRow().addComponents(menuButton);
 
         // create an interaction selector page
         const interactionSelector = createInteractionSelectorPage(user, target.user);
@@ -49,7 +50,7 @@ module.exports = {
         // reset embed
         return interaction.update({
             embeds: [interactionSelector],
-            components: [buttonRow]
+            components: [buttonRow2]
         });
     }
 };
