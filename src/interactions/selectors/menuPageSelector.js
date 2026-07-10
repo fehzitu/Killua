@@ -34,7 +34,7 @@ module.exports = {
         // user restriction
         if (ownerId && user.id !== ownerId) {
             return interaction.reply({
-                content: '❌ Isso não é pra você!',
+content: '❌ Isso não é pra você!',
                 ephemeral: true
             });
         };
