@@ -3,7 +3,6 @@ const createEmbed = require('../../../utils/components/embed');
 
 // return an embed with the page
 module.exports = function createInteractionSelectorPage(user, target) {
-    console.log(target);
     return (
         createEmbed(user)
             .addFields([{
