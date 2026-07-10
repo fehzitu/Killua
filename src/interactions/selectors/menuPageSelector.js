@@ -42,9 +42,12 @@ module.exports = {
         // all guild members
         const members = await interaction.guild.members.fetch();
         
+        // only humans member
+        const onlyUsers = members.filter(member => !member.user.bot);
+        
         // all formated members
         const formatedMembers = [];
-        members.map(member => {
+        onlyUsers.map(member => {
             formatedMembers.push({
                 label: member.user.username,
                 description: member.user.globalName,
