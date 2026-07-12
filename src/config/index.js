@@ -3,14 +3,14 @@ require('dotenv').config();
 module.exports = {
     // bot core
     token: process.env.TOKEN,
-    prefix: process.env.PREFIX || '!',
+    prefix: 'k.',
 
     // environment
     isDev: process.env.NODE_ENV === 'development',
 
     // database
     database: {
-        usersPath: process.env.USERS_PATH || './users.json'
+        usersPath: './users.json'
     },
 
     // discord settings
