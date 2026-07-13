@@ -10,7 +10,7 @@ const createMenuButton = require('../../../components/buttons/menuPage');
 module.exports = {
     customId: 'kissButton',
     async execute(interaction) {
-        const [id, ownerId, targetId] = interaction.customId.split(':');
+        const [id, ownerId] = interaction.customId.split(':');
 
         // get client and user
         const user = interaction.user;
@@ -25,7 +25,7 @@ module.exports = {
         };
 
         // embed
-        const embed = createKissPage(user, targetId);
+        const embed = createKissPage(user);
 
         // menu button
         const menuButton = createMenuButton(user);
