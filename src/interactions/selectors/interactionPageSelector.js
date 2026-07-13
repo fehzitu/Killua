@@ -55,8 +55,8 @@ module.exports = {
         // menu button
         const menuButton = createMenuButton(user);
 
-// positive interaction buttons
-        const kissButton = createKissButton(user).setStyle('SUCCESS').setDisabled(true);
+        // positive interaction buttons
+        const kissButton = createKissButton(user, target);
         const hugButton = createHugButton(user).setStyle('SUCCESS').setDisabled(true);
         const greetButton = createGreetButton(user).setStyle('SUCCESS').setDisabled(true);
         const laughtButton = createLaughtButton(user).setStyle('SUCCESS').setDisabled(true);

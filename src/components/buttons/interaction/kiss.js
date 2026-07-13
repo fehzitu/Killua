@@ -2,9 +2,9 @@
 const createButton = require('../../../utils/components/button');
 
 // create kiss button
-module.exports = function createKissButton(user) {
+module.exports = function createKissButton(user, target) {
     return createButton({
-        customId: 'kissButton',
+        customId: `kissButton:${target}`,
         label: '😘',
         user
     });

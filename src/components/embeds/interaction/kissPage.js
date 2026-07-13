@@ -6,8 +6,8 @@ module.exports = function createKissPage(user, target) {
     return (
         createEmbed(user)
             .addFields([{
-                name: `**${user.username} | ${target.username}**`,
-                value: '**---**'
+                name: `**<@${user.id}>**`,
+                value: `**<@${target.id}>**`
             }])
             //.setImage('')
     );
