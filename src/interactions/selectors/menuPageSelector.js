@@ -3,7 +3,6 @@ const { MessageActionRow } = require('discord.js');
 
 // import custom pages
 const createProfilePage = require('../../components/embeds/menu/profilePage');
-const createInteractionPage = require('../../components/embeds/menu/interactionPage');
 const createCommandPage = require('../../components/embeds/menu/commandPage');
 const createRankingPage = require('../../components/embeds/menu/rankingPage');
 const createInfoPage = require('../../components/embeds/menu/infoPage');
@@ -15,7 +14,6 @@ const createPingPage = require('../../components/embeds/menu/pingPage');
 const createMenuButton = require('../../components/buttons/menuPage');
 const createMenuSelector = require('../../components/selectors/menuPage');
 const createProfileSelector = require('../../components/selectors/profilePage');
-const createInteractionSelector = require('../../components/selectors/interactionPage');
 
 // import custom ranking buttons
 const createMoneyRankButton = require('../../components/buttons/ranking/moneyRank');
@@ -39,36 +37,6 @@ module.exports = {
             });
         };
 
-        // all guild members
-        const members = await interaction.guild.members.fetch();
-        
-        // only humans member
-        const onlyUsers = members.filter(member => !member.user.bot);
-        
-        // all formated members
-        const formatedMembers = [];
-        onlyUsers.map(member => {
-            formatedMembers.push({
-                label: member.user.username,
-                description: member.user.globalName,
-                value: member.user.id
-            });
-        });
-
-        // get 25 itens from array
-        function getRamdom(array, amount = 25) {
-            const copy = [...array];
-            for (let i = copy.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [copy[i], copy[j]] = [copy[j], copy[i]];
-            };
-        
-            return copy.slice(0, Math.min(amount, copy.length));
-        };
-
-        // get 25 members
-        const only25members = await getRamdom(formatedMembers);
-
         // menu button
         const menuButton = createMenuButton(user);
 
@@ -80,7 +48,6 @@ module.exports = {
         // selectors
         const menuPageSelector = createMenuSelector(user);
         const profilePageSelector = createProfileSelector(user);
-        const interactionPageSelector = createInteractionSelector(user, only25members);
 
         // selected value
         const value = interaction.values?.[0];
@@ -93,17 +60,6 @@ module.exports = {
 
             // create page
             embed = createProfilePage(client, user);
-            componentsList = [selectorRow, buttonRow];
-        };
-
-        // interaction page
-        if (value === 'interaction') {
-            // add component to rows
-            const selectorRow = new MessageActionRow().addComponents(interactionPageSelector);
-            const buttonRow = new MessageActionRow().addComponents(menuButton);
-
-            // create page
-            embed = createInteractionPage(user);
             componentsList = [selectorRow, buttonRow];
         };
 
