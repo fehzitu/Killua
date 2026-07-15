@@ -25,6 +25,9 @@ const createMessageRankButton = require('../../components/buttons/ranking/messag
 module.exports = {
     customId: 'menuPageSelector',
     async execute(interaction) {
+        // used to dont expire any interaction / timeout
+        await interaction.deferUpdate();
+
         const [id, ownerId] = interaction.customId.split(':');
 
         // get client and user
@@ -34,7 +37,7 @@ module.exports = {
         // user restriction
         if (ownerId && user.id !== ownerId) {
             return interaction.reply({
-content: '❌ Isso não é pra você!',
+                content: '❌ Isso não é pra você!',
                 ephemeral: true
             });
         };
@@ -168,7 +171,7 @@ content: '❌ Isso não é pra você!',
             componentsList = [buttonRow];
         };
 
-        return interaction.update({
+        return interaction.editReply({
             embeds: [embed],
             components: componentsList
         });
