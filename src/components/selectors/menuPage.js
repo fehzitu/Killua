@@ -13,6 +13,11 @@ module.exports = function createMenuSelector(user) {
             value: 'profile'
         },
         {
+            label: '🎮 Jogos',
+            description: 'Clique para acessar { EM DEV }',
+            value: 'game'
+        },
+        {
             label: '😝 Interações',
             description: 'Clique para acessar { EM DEV }',
             value: 'interaction'
