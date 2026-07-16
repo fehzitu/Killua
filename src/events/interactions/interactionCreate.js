@@ -198,6 +198,10 @@ module.exports = {
         const remaining = checkCooldown(userId, constants.COOLDOWNS.COMMAND);
 
         if (remaining > 0) {
+            // remove xp
+            profile.rpg.xp -= 50;
+            profile.rpg.totalXp -= 50;
+
             const seconds = (remaining / 1000).toFixed(1);
 
             const embed = createEmbed(interaction.user);
