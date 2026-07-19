@@ -8,9 +8,9 @@ module.exports = function createModal(options = {}) {
         style = 'SHORT',
         placeholder,
         value,
-        required = true,
         minLength,
-        maxLength
+        maxLength,
+        required = true
     } = options;
 
     const modal = new TextInputComponent()
