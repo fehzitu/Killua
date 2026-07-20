@@ -5,17 +5,17 @@ module.exports = {
 
         const ids = fields.split(',').filter(Boolean);
 
-        let content = '✅ **Modal de teste funcionando!**\n';
+        let content = '✅ **Modal de teste funcionando!**\n\n';
 
         ids.forEach((id, index) => {
             const value = interaction.fields.getTextInputValue(id);
-            console.log(ids);
 
             content += `**Campo ${index + 1}:** ${value}\n`;
         });
 
         await interaction.reply({
-            content
+            content,
+            ephemeral: true
         });
     }
 };
