@@ -1,37 +1,53 @@
+// custom imports
 const { Modal, MessageActionRow, TextInputComponent } = require('discord.js');
 
 module.exports = function createModal(options = {}) {
     const {
         modalId = 'defaultModal',
         title = '🧪 Modal de teste',
-        inputId = 'text',
-        label = 'Escreva algo',
-        style = 'SHORT',
-        placeholder = 'Esse é apenas um modal de teste',
-        value = '',
-        minLength = 1,
-        maxLength = 50,
-        required = true
+        inputs = [{
+            id: 'default_input',
+            label: 'Escreva algo',
+            style: 'SHORT',
+            placeholder: 'Esse é apenas um modal de teste',
+            value: '',
+            minLength: 1,
+            maxLength: 50,
+            required: true
+        }]
     } = options;
 
-    const input = new TextInputComponent()
-        .setCustomId(inputId)
-        .setLabel(label)
-        .setStyle(style)
-        .setPlaceholder(placeholder)
-        .setRequired(required)
-        .setMinLength(minLength)
-        .setMaxLength(maxLength);
+    const modal = new Modal()
+        .setCustomId(modalId)
+        .setTitle(title);
 
-    if (value) {
-        input.setValue(value);
+    for (const field of inputs) {
+        const input = new TextInputComponent()
+            .setCustomId(field.id)
+            .setLabel(field.label)
+            .setStyle(field.style || 'SHORT')
+            .setPlaceholder(
+                field.placeholder || 'Digite algo...'
+            )
+            .setRequired(
+                field.required ?? true
+            )
+            .setMinLength(
+                field.minLength ?? 1
+            )
+            .setMaxLength(
+                field.maxLength ?? 50
+            );
+
+        if (field.value) {
+            input.setValue(field.value);
+        };
+
+        modal.addComponents(
+            new MessageActionRow()
+                .addComponents(input)
+        );
     };
 
-    const row = new MessageActionRow()
-        .addComponents(input);
-
-    return new Modal()
-        .setCustomId(modalId)
-        .setTitle(title)
-        .addComponents(row);
+    return modal;
 };
