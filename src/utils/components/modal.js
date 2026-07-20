@@ -1,35 +1,37 @@
-// modal
-const { TextInputComponent } = require('discord.js');
+const { Modal, MessageActionRow, TextInputComponent } = require('discord.js');
 
 module.exports = function createModal(options = {}) {
     const {
-        customId = 'defaultModal',
-        label = 'ℹ️ Modal de exemplo',
+        modalId = 'defaultModal',
+        title = '🧪 Modal de teste',
+        inputId = 'text',
+        label = 'Escreva algo',
         style = 'SHORT',
-        placeholder,
-        value,
-        minLength,
-        maxLength,
+        placeholder = 'Esse é apenas um modal de teste',
+        value = '',
+        minLength = 1,
+        maxLength = 50,
         required = true
     } = options;
 
-    const modal = new TextInputComponent()
-        .setCustomId(customId)
+    const input = new TextInputComponent()
+        .setCustomId(inputId)
         .setLabel(label)
         .setStyle(style)
-        .setRequired(required);
+        .setPlaceholder(placeholder)
+        .setRequired(required)
+        .setMinLength(minLength)
+        .setMaxLength(maxLength);
 
-    if (placeholder) modal.setPlaceholder(placeholder);
-
-    if (value) modal.setValue(value);
-
-    if (minLength !== undefined) {
-        modal.setMinLength(minLength);
+    if (value) {
+        input.setValue(value);
     };
 
-    if (maxLength !== undefined) {
-        modal.setMaxLength(maxLength);
-    };
+    const row = new MessageActionRow()
+        .addComponents(input);
 
-    return modal;
+    return new Modal()
+        .setCustomId(modalId)
+        .setTitle(title)
+        .addComponents(row);
 };
