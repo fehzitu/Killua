@@ -17,8 +17,12 @@ module.exports = function createModal(options = {}) {
         }]
     } = options;
 
+    const fieldIds = inputs
+        .map(field => field.id)
+        .join(',');
+
     const modal = new Modal()
-        .setCustomId(modalId)
+        .setCustomId(`${modalId}:${fieldIds}`)
         .setTitle(title);
 
     for (const field of inputs) {
