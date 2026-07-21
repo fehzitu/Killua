@@ -18,11 +18,6 @@ module.exports = function createMenuSelector(user) {
             value: 'game'
         },
         {
-            label: '😝 Interações',
-            description: 'Clique para acessar { EM DEV }',
-            value: 'interaction'
-        },
-        {
             label: '📄 Comandos',
             description: 'Clique para acessar',
             value: 'command'
