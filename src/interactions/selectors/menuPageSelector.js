@@ -21,6 +21,9 @@ const createMoneyRankButton = require('../../components/buttons/ranking/moneyRan
 const createLevelRankButton = require('../../components/buttons/ranking/levelRank');
 const createMessageRankButton = require('../../components/buttons/ranking/messageRank');
 
+// import custom games buttons
+const createRouletteButton = require('../../components/buttons/games/roulettePage');
+
 module.exports = {
     customId: 'menuPageSelector',
     async execute(interaction) {
@@ -46,6 +49,9 @@ module.exports = {
         const levelRankButton = createLevelRankButton(user, client);
         const messageRankButton = createMessageRankButton(user, client);
 
+        // games buttons
+        const rouletteButton = createRouletteButton(user).setDisabled(true);
+
         // selectors
         const menuPageSelector = createMenuSelector(user);
         const profilePageSelector = createProfileSelector(user);
@@ -67,11 +73,12 @@ module.exports = {
         // game page
         if (value === 'game') {
             // add componens to rows
-            const buttonRow = new MessageActionRow().addComponents(menuButton);
+            const buttonRow = new MessageActionRow().addComponents(rouletteButton);
+            const menuRow = new MessageActionRow().addComponents(menuButton);
 
             // create page
             embed = createGamePage(user);
-            componentsList = [buttonRow];
+            componentsList = [buttonRow, menuRow];
         };
 
         // command page
