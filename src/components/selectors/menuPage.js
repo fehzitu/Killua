@@ -14,7 +14,7 @@ module.exports = function createMenuSelector(user) {
         },
         {
             label: '🎮 Jogos',
-            description: 'Clique para acessar { EM DEV }',
+            description: 'Clique para acessar',
             value: 'game'
         },
         {
