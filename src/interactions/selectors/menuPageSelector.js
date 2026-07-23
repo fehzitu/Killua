@@ -22,7 +22,7 @@ const createLevelRankButton = require('../../components/buttons/ranking/levelRan
 const createMessageRankButton = require('../../components/buttons/ranking/messageRank');
 
 // import custom games buttons
-const createRouletteButton = require('../../components/buttons/games/roulettePage');
+const createRouletteButton = require('../../components/buttons/game/roulettePage');
 
 module.exports = {
     customId: 'menuPageSelector',
@@ -50,7 +50,7 @@ module.exports = {
         const messageRankButton = createMessageRankButton(user, client);
 
         // games buttons
-        const rouletteButton = createRouletteButton(user).setDisabled(true);
+        const rouletteButton = createRouletteButton(user);
 
         // selectors
         const menuPageSelector = createMenuSelector(user);
