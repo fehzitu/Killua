@@ -29,19 +29,21 @@ module.exports = {
         const embed = createRoulettePage(user);
 
         // values
-        const value100 = createRouletteValueButton(user, 100).setDisabled(true);
+        const red100 = createRouletteValueButton(user, 100, 'red').setStyle('DANGER').setDisabled(true);
+        const black100 = createRouletteValueButton(user, 100, 'black').setStyle('SECONDARY').setDisabled(true);
 
        // menu button
         const menuButton = createMenuButton(user);
 
         // rows
-        const buttonRow = new MessageActionRow().addComponents(value100);
-        const buttonRow2 = new MessageActionRow().addComponents(menuButton);
+        const buttonRow = new MessageActionRow().addComponents(red100);
+        const buttonRow2 = new MessageActionRow().addComponents(black100);
+        const buttonRow3 = new MessageActionRow().addComponents(menuButton);
 
         // edit message
         return interaction.update({
             embeds: [embed],
-            components: [buttonRow, buttonRow2]
+            components: [buttonRow, buttonRow2, buttonRow3]
         });
     }
 };
