@@ -5,7 +5,7 @@ const createButton = require('../../../utils/components/button');
 module.exports = function createRouletteValueButton(user, value) {
     return createButton({
         customId: `rouletteValueButton:${value}`,
-        label: '💸',
+        label: `R$${value}`,
         user
     });
 };

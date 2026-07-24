@@ -41,7 +41,7 @@ module.exports = {
         // edit message
         return interaction.update({
             embeds: [embed],
-            components: [buttonRow]
+            components: [buttonRow, buttonRow2]
         });
     }
 };
